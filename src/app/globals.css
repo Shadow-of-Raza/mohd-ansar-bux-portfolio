@@ -1,26 +1,150 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 1) Remove Tailwind's default colour palette so only our tokens exist */
+@theme {
+  --color-*: initial;
+
+  /* base */
+  --color-void: #000000;
+  --color-night: #080616;
+  --color-navy: #1a1953;
+  --color-royal: #162e93;
+  --color-electric: #2f2fe4;
+  --color-white: #ffffff;
+
+  /* derived */
+  --color-surface-1: #0d0b25;
+  --color-surface-2: #111035;
+  --color-electric-hover: #4e4ee8;
+  --color-electric-400: #5f5fea;
+  --color-electric-300: #8f8ff1;
+  --color-electric-200: #c1c1f7;
+
+  /* semantic text & lines (white with alpha) */
+  --color-fg: #ffffff;
+  --color-fg-muted: rgb(255 255 255 / 0.68);
+  --color-fg-subtle: rgb(255 255 255 / 0.55); /* lowest allowed for text */
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.16);
+
+  /* radius */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* easing (shared with motion tokens in 04) */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
+/* 2) Fonts come from next/font CSS variables (see §5) */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-archivo-black);
+  --font-body: var(--font-abhaya-libre);
+  --font-label: var(--font-alegreya-sc);
+  --font-accent: var(--font-averia-serif-libre);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 3) Base */
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--color-night);
+  }
+  body {
+    background: var(--color-night);
+    color: var(--color-fg);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-electric);
+    color: var(--color-white);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-electric-300);
+    outline-offset: 3px;
+    border-radius: var(--radius-xs);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* 4) Fluid type scale */
+@utility text-display-2xl {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 11vw, 11rem);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+
+@utility text-display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 7vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+}
+
+@utility text-display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+@utility text-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+}
+
+@utility text-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+@utility text-lead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+
+@utility text-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+@utility text-small {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+@utility text-label {
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+}
+
+@utility text-micro {
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
 }
