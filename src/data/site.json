@@ -1,4 +1,72 @@
 {
-  "name": "Your Name",
-  "role": "Full-Stack Software Engineer"
+  "name": "Mohd Ansar Bux",
+  "role": "Full-Stack Software Engineer",
+  "location": "Indore, India",
+  "url": "https://ansarbux.dev",
+  "logo": {
+    "text": "MAB",
+    "src": "/images/brand/logo.svg",
+    "alt": "Mohd Ansar Bux logo",
+    "width": 120,
+    "height": 40
+  },
+  "availability": {
+    "open": true,
+    "label": "Open to freelance & full-time roles"
+  },
+  "hero": {
+    "eyebrow": "Full-stack engineer — Indore, India",
+    "headline": "I build web products that *ship*",
+    "intro": "Java, Spring Boot, Node.js and React/Next.js — from database architecture to smooth deployment.",
+    "primaryCta": {
+      "label": "View projects",
+      "href": "/projects"
+    },
+    "secondaryCta": {
+      "label": "Contact me",
+      "href": "/contact"
+    },
+    "poster": {
+      "src": "/hero/hero-poster.webp",
+      "alt": "Cinematic 3D hero poster",
+      "width": 1600,
+      "height": 1200
+    }
+  },
+  "socials": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/Shadow-of-Raza",
+      "icon": "github"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/mohdansarbux",
+      "icon": "linkedin"
+    }
+  ],
+  "footer": {
+    "intro": "Full-stack engineer building fast, dependable web products for teams and businesses.",
+    "ctaTitle": "Have a project *in mind?*"
+  },
+  "seo": {
+    "title": "Mohd Ansar Bux — Full-Stack Software Engineer",
+    "description": "Portfolio of Mohd Ansar Bux, full-stack engineer working with Java, Spring Boot, Node.js, React and Next.js.",
+    "ogImage": {
+      "src": "/images/og/default.jpg",
+      "alt": "Mohd Ansar Bux portfolio",
+      "width": 1200,
+      "height": 630
+    },
+    "keywords": [
+      "full-stack developer",
+      "Next.js developer",
+      "Spring Boot developer",
+      "Indore",
+      "React developer",
+      "Java engineer"
+    ]
+  }
 }

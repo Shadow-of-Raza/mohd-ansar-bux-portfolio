@@ -2,26 +2,26 @@
 
 ## 1. Stack
 
-| Concern | Choice | Version policy | Why |
-|---|---|---|---|
-| Framework | **Next.js 16** (App Router, Turbopack) | latest `16.x` | Static generation, file routing, Metadata/Sitemap APIs, `next/image`, `next/font` |
-| UI runtime | **React 19** | ships with Next 16 | Server Components, Actions |
-| Language | **TypeScript** (strict) | latest `5.x` | Types inferred from data schemas |
-| Styling | **Tailwind CSS v4** (CSS-first `@theme`) | latest `4.x` | Design tokens live in CSS; default palette disabled |
-| Class utils | `clsx` + `tailwind-merge` → `cn()` | latest | Conditional, conflict-free classes |
-| Data validation | **Zod** | latest `4.x` | Validate every JSON file at build; infer TS types. Use v4 APIs (`z.url()`, `.prefault()`) |
-| Smooth scroll | **Lenis** | latest `1.x` | Weighted, cinematic scrolling without hijacking |
-| Scroll-driven animation | **GSAP** + ScrollTrigger + SplitText, `@gsap/react` | latest `3.x` | Scrubbed timelines, pinning, text splitting (all GSAP plugins are free) |
-| Component animation | **Motion** (`motion/react`, formerly Framer Motion) | latest `14.x` | Hover, presence, layout animations, header show/hide |
-| 3D | **three** + **@react-three/fiber** + **@react-three/drei** | R3F `9.x`, drei `10.x` (React 19) | One lazy-loaded hero scene |
-| UI icons | **lucide-react** | latest | Thin, consistent stroke icons |
-| Skill logos | Local SVGs in `public/icons/skills/` (sourced from Devicon / official brand kits) | — | No icon-library gaps; full control over mono/colour states |
-| Email | **Resend** via a Server Action | latest | Contact form delivery |
-| Lint / format | ESLint (flat config, `eslint .`) + Prettier + `prettier-plugin-tailwindcss` | latest | Next 16 removed `next lint`; run ESLint directly |
-| Scripts | `tsx` | latest | Run the data validator before build |
-| Package manager | **pnpm** | latest | Fast, strict |
-| Runtime | Node.js **20.9+** (24 LTS used locally; `.nvmrc` = 24, match on Vercel) | — | Next 16 requirement |
-| Hosting | **Vercel** | — | Zero-config Next.js, image optimisation, previews |
+| Concern                 | Choice                                                                            | Version policy                    | Why                                                                                       |
+| ----------------------- | --------------------------------------------------------------------------------- | --------------------------------- | ----------------------------------------------------------------------------------------- |
+| Framework               | **Next.js 16** (App Router, Turbopack)                                            | latest `16.x`                     | Static generation, file routing, Metadata/Sitemap APIs, `next/image`, `next/font`         |
+| UI runtime              | **React 19**                                                                      | ships with Next 16                | Server Components, Actions                                                                |
+| Language                | **TypeScript** (strict)                                                           | latest `5.x`                      | Types inferred from data schemas                                                          |
+| Styling                 | **Tailwind CSS v4** (CSS-first `@theme`)                                          | latest `4.x`                      | Design tokens live in CSS; default palette disabled                                       |
+| Class utils             | `clsx` + `tailwind-merge` → `cn()`                                                | latest                            | Conditional, conflict-free classes                                                        |
+| Data validation         | **Zod**                                                                           | latest `4.x`                      | Validate every JSON file at build; infer TS types. Use v4 APIs (`z.url()`, `.prefault()`) |
+| Smooth scroll           | **Lenis**                                                                         | latest `1.x`                      | Weighted, cinematic scrolling without hijacking                                           |
+| Scroll-driven animation | **GSAP** + ScrollTrigger + SplitText, `@gsap/react`                               | latest `3.x`                      | Scrubbed timelines, pinning, text splitting (all GSAP plugins are free)                   |
+| Component animation     | **Motion** (`motion/react`, formerly Framer Motion)                               | latest `14.x`                     | Hover, presence, layout animations, header show/hide                                      |
+| 3D                      | **three** + **@react-three/fiber** + **@react-three/drei**                        | R3F `9.x`, drei `10.x` (React 19) | One lazy-loaded hero scene                                                                |
+| UI icons                | **lucide-react**                                                                  | latest                            | Thin, consistent stroke icons                                                             |
+| Skill logos             | Local SVGs in `public/icons/skills/` (sourced from Devicon / official brand kits) | —                                 | No icon-library gaps; full control over mono/colour states                                |
+| Email                   | **Resend** via a Server Action                                                    | latest                            | Contact form delivery                                                                     |
+| Lint / format           | ESLint (flat config, `eslint .`) + Prettier + `prettier-plugin-tailwindcss`       | latest                            | Next 16 removed `next lint`; run ESLint directly                                          |
+| Scripts                 | `tsx`                                                                             | latest                            | Run the data validator before build                                                       |
+| Package manager         | **pnpm**                                                                          | latest                            | Fast, strict                                                                              |
+| Runtime                 | Node.js **20.9+** (24 LTS used locally; `.nvmrc` = 24, match on Vercel)           | —                                 | Next 16 requirement                                                                       |
+| Hosting                 | **Vercel**                                                                        | —                                 | Zero-config Next.js, image optimisation, previews                                         |
 
 > Pin **major** versions in `package.json`; let the lockfile hold exact minors. **Installed versions in `package.json` are authoritative** — never downgrade a package to match this table; update the table instead.
 >
@@ -67,12 +67,12 @@ CONTACT_FROM_EMAIL=portfolio@yourdomain.com   # verified sender domain in Resend
 
 ## 2. Rendering strategy
 
-| Route | Strategy |
-|---|---|
-| All pages | **Static (SSG)** at build time — data is imported JSON |
-| `/projects/[slug]` | `generateStaticParams()` from visible projects; `export const dynamicParams = false` → unknown slugs 404 |
-| `/contact` | Static page; the form posts to a **Server Action** (runs on demand) |
-| `sitemap.ts`, `robots.ts` | Generated from the same availability logic as the nav |
+| Route                     | Strategy                                                                                                 |
+| ------------------------- | -------------------------------------------------------------------------------------------------------- |
+| All pages                 | **Static (SSG)** at build time — data is imported JSON                                                   |
+| `/projects/[slug]`        | `generateStaticParams()` from visible projects; `export const dynamicParams = false` → unknown slugs 404 |
+| `/contact`                | Static page; the form posts to a **Server Action** (runs on demand)                                      |
+| `sitemap.ts`, `robots.ts` | Generated from the same availability logic as the nav                                                    |
 
 Next 16 note: `params` and `searchParams` are **Promises** in page props — always `await` them.
 
@@ -205,17 +205,17 @@ app/ (routes)  ──reads──►  lib/data (server-only)
 
 ## 5. Conventions
 
-| Item | Rule |
-|---|---|
-| File names | `PascalCase.tsx` for components, `camelCase.ts` for utils/hooks, `kebab-case` for route folders and image files |
-| Exports | Named exports for components (`export function ProjectCard`). Default exports only where Next requires them (pages, layouts, template, not-found) |
-| Props | `type Props = {...}` above the component; accept `className?: string` on every visual component and merge with `cn()` |
-| Server vs client | Server by default. Add `"use client"` only for: state, effects, event handlers, Motion/GSAP/Lenis/R3F usage, browser APIs |
-| Styling | Tailwind utilities with design-token classes only (`bg-night`, `text-fg-muted`). No arbitrary hex values (`bg-[#123456]`) — the default palette is disabled (see 03 §3) |
-| Copy | Section headings, labels and button text that are personal content come from JSON. Pure UI strings ("Clear filters", "Close") may live in components |
-| Images | Always `next/image` with `width`, `height` (from JSON) and `sizes`. Hero/LCP image gets `priority` |
-| Links | Internal: `next/link`. External: `target="_blank" rel="noopener noreferrer"` + visually-hidden "(opens in new tab)" |
-| Accessibility | Semantic landmarks (`header`, `nav`, `main`, `footer`), one `h1` per page, headings in order, visible focus states, 44 px minimum touch targets |
+| Item             | Rule                                                                                                                                                                    |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| File names       | `PascalCase.tsx` for components, `camelCase.ts` for utils/hooks, `kebab-case` for route folders and image files                                                         |
+| Exports          | Named exports for components (`export function ProjectCard`). Default exports only where Next requires them (pages, layouts, template, not-found)                       |
+| Props            | `type Props = {...}` above the component; accept `className?: string` on every visual component and merge with `cn()`                                                   |
+| Server vs client | Server by default. Add `"use client"` only for: state, effects, event handlers, Motion/GSAP/Lenis/R3F usage, browser APIs                                               |
+| Styling          | Tailwind utilities with design-token classes only (`bg-night`, `text-fg-muted`). No arbitrary hex values (`bg-[#123456]`) — the default palette is disabled (see 03 §3) |
+| Copy             | Section headings, labels and button text that are personal content come from JSON. Pure UI strings ("Clear filters", "Close") may live in components                    |
+| Images           | Always `next/image` with `width`, `height` (from JSON) and `sizes`. Hero/LCP image gets `priority`                                                                      |
+| Links            | Internal: `next/link`. External: `target="_blank" rel="noopener noreferrer"` + visually-hidden "(opens in new tab)"                                                     |
+| Accessibility    | Semantic landmarks (`header`, `nav`, `main`, `footer`), one `h1` per page, headings in order, visible focus states, 44 px minimum touch targets                         |
 
 ---
 
@@ -232,12 +232,14 @@ import { ServiceCard } from "@/components/shared/ServiceCard";
 type Props = { data: ServicesData | null };
 
 export function ServicesPreviewSection({ data }: Props) {
-  if (!data || data.featured.length === 0) return null;   // presence rule
+  if (!data || data.featured.length === 0) return null; // presence rule
 
   return (
     <Section id="services" eyebrow={data.home.eyebrow} title={data.home.title} intro={data.home.intro}>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {data.featured.map((s, i) => <ServiceCard key={s.id} service={s} index={i} />)}
+        {data.featured.map((s, i) => (
+          <ServiceCard key={s.id} service={s} index={i} />
+        ))}
       </div>
       {/* "See all" only when the Services page exists — guaranteed by data !== null */}
     </Section>
@@ -258,7 +260,7 @@ import { HeroSection } from "@/sections/home/HeroSection";
 // …other imports
 
 export default function HomePage() {
-  const d = getHomeData();  // every key is data | null
+  const d = getHomeData(); // every key is data | null
   return (
     <>
       <HeroSection data={d.hero} />
@@ -296,6 +298,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 ---
 
 ## 8. SEO & metadata
+
 - `app/layout.tsx` exports base `metadata` (title template `%s — {Name}`, description, `metadataBase` from `NEXT_PUBLIC_SITE_URL`, Open Graph, Twitter card) built from `site.json`.
 - Each page exports `generateMetadata()` using its JSON `page.seo` block, falling back to `site.seo`.
 - `sitemap.ts` lists only available routes + every visible project slug.
@@ -304,16 +307,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
 ## 9. Build phases
 
-| Phase | Deliverable | Done when |
-|---|---|---|
-| 0 | Scaffold, lint/format, env, folder skeleton, tokens, data stubs ✅ | `pnpm dev`, `pnpm lint`, `pnpm typecheck` pass |
-| 1 | Design tokens, fonts, `ui/` primitives | Style-guide route (dev only) shows all primitives correctly |
-| 2 | Data layer: schemas, loaders, relations, availability, validator | Removing a JSON array hides its page, nav link and sitemap entry |
-| 3 | Layout: Header, Footer, MobileMenu | Keyboard and mobile pass |
-| 4 | Home sections HOME-00 → HOME-07 (static, no motion) | Matches 01 §5.1 |
-| 5 | Inner pages + project detail | Matches 01 §5.2–5.10 |
-| 6 | Motion layer: Lenis, reveals, transitions, hovers | Matches 04, reduced-motion verified |
-| 7 | 3D hero scene + fallback | 60 fps desktop, poster on low-end/mobile |
-| 8 | Contact action + Resend | Real email received; spam guards work |
-| 9 | SEO, a11y audit, performance pass | Targets in 01 §1 met |
-| 10 | Deploy to Vercel + domain | Production URL live |
+| Phase | Deliverable                                                        | Done when                                                        |
+| ----- | ------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| 0     | Scaffold, lint/format, env, folder skeleton, tokens, data stubs ✅ | `pnpm dev`, `pnpm lint`, `pnpm typecheck` pass                   |
+| 1     | Design tokens, fonts, `ui/` primitives                             | Style-guide route (dev only) shows all primitives correctly      |
+| 2     | Data layer: schemas, loaders, relations, availability, validator   | Removing a JSON array hides its page, nav link and sitemap entry |
+| 3     | Layout: Header, Footer, MobileMenu                                 | Keyboard and mobile pass                                         |
+| 4     | Home sections HOME-00 → HOME-07 (static, no motion)                | Matches 01 §5.1                                                  |
+| 5     | Inner pages + project detail                                       | Matches 01 §5.2–5.10                                             |
+| 6     | Motion layer: Lenis, reveals, transitions, hovers                  | Matches 04, reduced-motion verified                              |
+| 7     | 3D hero scene + fallback                                           | 60 fps desktop, poster on low-end/mobile                         |
+| 8     | Contact action + Resend                                            | Real email received; spam guards work                            |
+| 9     | SEO, a11y audit, performance pass                                  | Targets in 01 §1 met                                             |
+| 10    | Deploy to Vercel + domain                                          | Production URL live                                              |

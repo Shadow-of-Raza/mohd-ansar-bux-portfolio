@@ -1,5 +1,54 @@
 {
-  "page": {},
-  "home": {},
-  "items": []
+  "page": {
+    "eyebrow": "Education",
+    "title": "What I've *studied*",
+    "intro": "Academic background, foundational computer science training, and degrees.",
+    "seo": {
+      "title": "Education — Mohd Ansar Bux",
+      "description": "Academic background and engineering qualifications of Mohd Ansar Bux."
+    }
+  },
+  "home": {
+    "eyebrow": "Education",
+    "title": "Learning *path*",
+    "intro": "Formal education in computer science and software systems."
+  },
+  "items": [
+    {
+      "id": "btech-cse",
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science & Engineering",
+      "institution": {
+        "name": "[PLACEHOLDER] Engineering Institute",
+        "logo": {
+          "src": "/images/institutions/engineering-institute.svg",
+          "alt": "Engineering Institute logo",
+          "width": 64,
+          "height": 64
+        },
+        "url": "https://example.edu"
+      },
+      "board": "[PLACEHOLDER] State Technical University",
+      "location": "Indore, India",
+      "start": "2020-08",
+      "end": "2024-05",
+      "status": "completed",
+      "score": {
+        "label": "CGPA",
+        "value": "8.4 / 10"
+      },
+      "highlights": [
+        "[PLACEHOLDER] Capstone project: Distributed task scheduling architecture with fault-tolerant workers.",
+        "[PLACEHOLDER] Active member of the computer science technical society."
+      ],
+      "coursework": [
+        "Data Structures & Algorithms",
+        "Database Management Systems",
+        "Operating Systems",
+        "Object-Oriented Programming (Java)",
+        "Computer Networks",
+        "Software Engineering Principles"
+      ]
+    }
+  ]
 }

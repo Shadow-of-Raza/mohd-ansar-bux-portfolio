@@ -1,5 +1,153 @@
 {
-  "page": {},
-  "home": {},
-  "items": []
+  "page": {
+    "eyebrow": "Projects",
+    "title": "Selected *work*",
+    "intro": "Production systems, enterprise applications, and open-source software.",
+    "seo": {
+      "title": "Projects — Mohd Ansar Bux",
+      "description": "Selected engineering projects built with Java, Spring Boot, React, and Next.js."
+    }
+  },
+  "home": {
+    "eyebrow": "Projects",
+    "title": "Selected *work*",
+    "intro": "Featured full-stack platforms and tools built for production.",
+    "limit": 6
+  },
+  "items": [
+    {
+      "id": "enterprise-analytics-platform",
+      "slug": "enterprise-analytics-platform",
+      "title": "Enterprise Analytics Platform",
+      "tagline": "High-throughput telemetry and business intelligence dashboard.",
+      "summary": "Full-stack analytics suite processing millions of events with real-time Spring Boot streaming.",
+      "type": "professional",
+      "organization": {
+        "name": "[PLACEHOLDER] Tech Innovators",
+        "url": "https://example.com"
+      },
+      "role": "Lead Full-Stack Developer",
+      "status": "live",
+      "featured": true,
+      "order": 1,
+      "confidential": false,
+      "timeline": {
+        "start": "2025-01",
+        "end": "2025-06",
+        "durationLabel": "6 months"
+      },
+      "links": {
+        "github": null,
+        "live": "https://example.com"
+      },
+      "cover": {
+        "src": "/images/projects/enterprise-analytics-platform/cover.webp",
+        "alt": "Analytics platform dashboard overview",
+        "width": 1600,
+        "height": 1000
+      },
+      "gallery": [
+        {
+          "src": "/images/projects/enterprise-analytics-platform/01.webp",
+          "alt": "Data visualisation charts",
+          "width": 1600,
+          "height": 1000
+        }
+      ],
+      "techStack": [
+        {
+          "skill": "spring-boot",
+          "reason": "High-throughput REST API and streaming"
+        },
+        {
+          "skill": "react",
+          "reason": "Interactive dashboards"
+        },
+        {
+          "skill": "mysql",
+          "reason": "Relational storage"
+        },
+        {
+          "skill": "aws",
+          "reason": "Cloud deployment"
+        }
+      ],
+      "writeup": {
+        "overview": [
+          "[PLACEHOLDER] Architecture and design of a high-scale dashboard servicing distributed telemetry.",
+          "[PLACEHOLDER] Implemented asynchronous messaging queues to decouple ingest from analytical queries."
+        ],
+        "purpose": [
+          "[PLACEHOLDER] Enable real-time visibility into mission-critical business metrics with sub-second refresh rates."
+        ],
+        "features": [
+          "Real-time data streaming over WebSockets",
+          "Customizable KPI widget builder with responsive layouts",
+          "Automated weekly PDF report generation"
+        ],
+        "challenges": [
+          "[PLACEHOLDER] Handling peak query loads efficiently without degrading write throughput.",
+          "[PLACEHOLDER] Solved by introducing read replicas and in-memory query result caching."
+        ],
+        "outcome": ["Reduced dashboard query latencies by 60% and improved reporting speed across all teams."]
+      }
+    },
+    {
+      "id": "open-source-api-toolkit",
+      "slug": "open-source-api-toolkit",
+      "title": "Open Source API Toolkit",
+      "tagline": "Developer utilities for clean RESTful Spring Boot services.",
+      "summary": "Lightweight open-source library simplifying response formatting and declarative validation.",
+      "type": "open-source",
+      "role": "Author & Maintainer",
+      "status": "completed",
+      "featured": true,
+      "order": 2,
+      "confidential": false,
+      "timeline": {
+        "start": "2024-08",
+        "end": "2024-11",
+        "durationLabel": "3 months"
+      },
+      "links": {
+        "github": "https://github.com/Shadow-of-Raza/api-toolkit",
+        "live": null
+      },
+      "cover": {
+        "src": "/images/projects/open-source-api-toolkit/cover.webp",
+        "alt": "API Toolkit documentation screenshot",
+        "width": 1600,
+        "height": 1000
+      },
+      "gallery": [],
+      "techStack": [
+        {
+          "skill": "java",
+          "reason": "Core library language"
+        },
+        {
+          "skill": "spring-boot",
+          "reason": "Spring Boot starter integration"
+        }
+      ],
+      "writeup": {
+        "overview": [
+          "[PLACEHOLDER] Open-source utility created to eliminate boilerplate response formatting.",
+          "[PLACEHOLDER] Provides opinionated RFC 7807 problem details out of the box."
+        ],
+        "purpose": [
+          "[PLACEHOLDER] Standardise error envelopes, pagination payloads, and input validation handling."
+        ],
+        "features": [
+          "RFC 7807 compliant problem details exceptions",
+          "Declarative pagination parameters with JPA support",
+          "Zero external third-party dependencies"
+        ],
+        "challenges": [
+          "[PLACEHOLDER] Designing seamless auto-configuration compatible with multiple Spring Boot versions."
+        ],
+        "outcome": ["Adopted across multiple microservices, reducing boilerplate code by over 1,500 lines."]
+      }
+    }
+  ]
 }

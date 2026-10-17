@@ -9,6 +9,7 @@ description: "Design tokens, colour, typography, layout and visual rules for any
 Full spec: @docs/context/03-design-system.md. Read the relevant section before styling anything new.
 
 ## Colour
+
 - Allowed colour utilities come only from tokens in `src/app/globals.css`:
   - base: `void`, `night`, `navy`, `royal`, `electric`, `white`;
   - derived: `surface-1`, `surface-2`, `electric-hover`, `electric-400`, `electric-300`, `electric-200`;
@@ -25,6 +26,7 @@ Full spec: @docs/context/03-design-system.md. Read the relevant section before s
 - Errors use `electric-200` plus an alert icon. There is no red.
 
 ## Typography
+
 - Use the type utilities, not ad-hoc sizes: `text-display-2xl`, `text-display-xl`, `text-display-lg`, `text-heading`, `text-title`, `text-lead`, `text-body`, `text-small`, `text-label`, `text-micro`.
 - `font-display` (Archivo Black): h1–h3 only, never below 24 px, never for paragraphs.
 - `font-body` (Abhaya Libre): minimum 18 px for paragraphs, line length ≤ 68ch.
@@ -34,6 +36,7 @@ Full spec: @docs/context/03-design-system.md. Read the relevant section before s
   - Style: `font-accent italic font-normal text-electric-300`.
 
 ## Layout & shape
+
 - Use the `Container` component: max width 1440 px, padding `clamp(1.25rem, 4vw, 4rem)`.
 - Use a 12-column grid. Prefer **asymmetric** compositions (e.g. heading in cols 1–5, content in cols 7–12).
 - Section vertical padding is `clamp(5rem, 12vw, 10rem)`. The hero is `100svh` (min 640 px).
@@ -50,6 +53,7 @@ Full spec: @docs/context/03-design-system.md. Read the relevant section before s
 - Follow the component specs in `03 §10` exactly (button heights, chip sizes, badge styles, input styles).
 
 ## Media & icons
+
 - Images: `next/image` with `width`/`height` from JSON and a `sizes` attribute. The LCP image gets `priority`. Never use a raw `<img>`.
 - Photos are slightly desaturated (`saturate(0.85) contrast(1.05)`).
 - UI icons: `lucide-react`, `strokeWidth={1.5}`, 18–20 px, `currentColor`.
@@ -57,6 +61,7 @@ Full spec: @docs/context/03-design-system.md. Read the relevant section before s
 - No emoji anywhere in the UI.
 
 ## Accessibility (always)
+
 - Visible `:focus-visible` on every interactive element.
 - Touch targets ≥ 44 × 44 px.
 - One `h1` per page, with headings in order. Semantic landmarks.
@@ -64,5 +69,6 @@ Full spec: @docs/context/03-design-system.md. Read the relevant section before s
 - Hover-only info must also work on focus and tap.
 
 ## Anti-"AI look" (`03 §11`)
+
 - Avoid: centred-everything layouts, gradient blobs, glassmorphism stacks, gradient text, identical icon-in-circle card rows, "Hi, I'm X 👋".
 - Keep: numbered eyebrows (`01 — Services`), hairline dividers, strong scale contrast, grain overlay, real photos.

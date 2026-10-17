@@ -1,5 +1,61 @@
 {
-  "page": {},
-  "home": {},
-  "items": []
+  "page": {
+    "eyebrow": "Experience",
+    "title": "Where I've *worked*",
+    "intro": "Career trajectory, software engineering roles, and technical contributions.",
+    "seo": {
+      "title": "Experience — Mohd Ansar Bux",
+      "description": "Professional engineering experience of Mohd Ansar Bux across enterprise platforms."
+    }
+  },
+  "home": {
+    "eyebrow": "Experience",
+    "title": "Recent *roles*",
+    "intro": "Engineering positions where I designed and delivered production systems.",
+    "limit": 3
+  },
+  "items": [
+    {
+      "id": "tech-innovators",
+      "featured": true,
+      "order": 1,
+      "company": {
+        "name": "[PLACEHOLDER] Tech Innovators Pvt. Ltd.",
+        "logo": {
+          "src": "/images/companies/tech-innovators.svg",
+          "alt": "Tech Innovators logo",
+          "width": 64,
+          "height": 64
+        },
+        "url": "https://example.com",
+        "location": "Indore, India"
+      },
+      "roles": [
+        {
+          "id": "tech-innovators-fse",
+          "title": "Full-Stack Software Engineer",
+          "employmentType": "Full-time",
+          "mode": "On-site",
+          "start": "2024-06",
+          "end": null,
+          "summary": "Building enterprise microservices with Java Spring Boot and responsive Next.js web applications.",
+          "description": [
+            "[PLACEHOLDER] Designing core backend services, relational database schemas, and interactive web client applications.",
+            "[PLACEHOLDER] Collaborating with cross-functional product teams to deliver telemetry dashboards on schedule."
+          ],
+          "responsibilities": [
+            "Architect and develop RESTful microservices using Spring Boot and Hibernate",
+            "Build reactive web interfaces using Next.js, React, and Tailwind CSS",
+            "Optimize complex SQL queries and manage database migrations"
+          ],
+          "achievements": [
+            "Reduced critical API response times by 35% through query optimization and caching",
+            "Engineered an automated data export pipeline handling high-volume reporting"
+          ],
+          "skills": ["java", "spring-boot", "react", "nextjs", "mysql", "aws"],
+          "projects": ["enterprise-analytics-platform"]
+        }
+      ]
+    }
+  ]
 }

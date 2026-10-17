@@ -8,22 +8,25 @@ description: "Read before adding or changing any animation, transition, scroll e
 Full spec: @docs/context/04-motion-and-effects.md. The per-section animation specs are in §5, the 3D scene in §6, reduced motion in §7.
 
 ## Phase gate
+
 - Motion is **Phase 6** and the 3D hero is **Phase 7** (`02 §9`).
 - Before those phases, build sections **static**: no imports from `motion/react`, `gsap`, `lenis` or `@react-three/*`, unless I explicitly ask.
 - Keep markup motion-ready so effects can be added later without layout changes: stable wrapper elements, `overflow-hidden` masks around headings and media, final image dimensions reserved.
 
 ## One library per element
-| Library | Owns |
-|---|---|
-| Lenis | Smooth scroll and programmatic `scrollTo` only. Use it via the `SmoothScroll` provider and `useLenis()` |
-| GSAP + ScrollTrigger + SplitText | Scroll-linked motion: scrub, pin, parallax, line drawing, text splitting, preloader timeline |
-| Motion (`motion/react`) | State and interaction: hover, tap, `AnimatePresence`, `layout`, header show/hide, page enter, simple `whileInView` reveals |
-| R3F / drei | The hero 3D scene only |
-| CSS | Underlines, colour/border transitions, grain, marquee loop, logo colour fade |
+
+| Library                          | Owns                                                                                                                       |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Lenis                            | Smooth scroll and programmatic `scrollTo` only. Use it via the `SmoothScroll` provider and `useLenis()`                    |
+| GSAP + ScrollTrigger + SplitText | Scroll-linked motion: scrub, pin, parallax, line drawing, text splitting, preloader timeline                               |
+| Motion (`motion/react`)          | State and interaction: hover, tap, `AnimatePresence`, `layout`, header show/hide, page enter, simple `whileInView` reveals |
+| R3F / drei                       | The hero 3D scene only                                                                                                     |
+| CSS                              | Underlines, colour/border transitions, grain, marquee loop, logo colour fade                                               |
 
 Never animate the same element with two libraries.
 
 ## Implementation rules
+
 - **Client leaves.** Every component using these libraries is a `"use client"` leaf. Its parent section stays a Server Component and passes data as props.
 - **Tokens.** Durations, eases, staggers, distances and the viewport come from `@/lib/motion/tokens`; no inline magic numbers.
   - GSAP ease names: `out` → `"expo.out"`, `inOut` → `"power4.inOut"`, `soft` → `"power2.out"`.
@@ -47,12 +50,15 @@ Never animate the same element with two libraries.
   - no remote HDRI and no drei `Environment` presets.
 
 ## Reduced motion (`04 §7`)
+
 With reduced motion, these are **off** or static:
+
 - Lenis, preloader, splits, scrub, pinning, parallax;
 - tilt, magnetic, spotlight, cursor, marquee movement;
 - WebGL (the poster image shows instead).
 
 These change form instead:
+
 - reveals become an opacity-only fade of 0.3 s;
 - the page curtain becomes a 0.2 s fade;
 - the timeline is fully drawn with all nodes active.
@@ -60,6 +66,7 @@ These change form instead:
 Hover colour and border feedback stays on. Verify by emulating `prefers-reduced-motion: reduce` in the browser.
 
 ## Don't
+
 - No bounce or elastic easing, no spinners, no confetti, no scroll-snapping or scroll-jacking.
 - No parallax on body text, no auto-playing carousels.
 - Never delay LCP text from being visible in the initial HTML.

@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "validate:data": "tsx scripts/validate-data.ts",
+    "validate:data": "tsx --conditions=react-server scripts/validate-data.ts",
     "prebuild": "pnpm validate:data",
     "build": "next build",
     "start": "next start",

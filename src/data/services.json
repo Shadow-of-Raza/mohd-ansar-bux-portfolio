@@ -1,5 +1,143 @@
 {
-  "page": {},
-  "home": {},
-  "items": []
+  "page": {
+    "eyebrow": "Services",
+    "title": "What I can *build* for you",
+    "intro": "End-to-end full-stack engineering tailored for scalable web products and business systems.",
+    "seo": {
+      "title": "Services — Mohd Ansar Bux",
+      "description": "Full-stack web application development and API engineering services."
+    }
+  },
+  "home": {
+    "eyebrow": "Services",
+    "title": "How I can *help*",
+    "intro": "Custom engineering solutions from database schema to interactive frontend.",
+    "limit": 3
+  },
+  "items": [
+    {
+      "id": "full-stack-web-development",
+      "slug": "full-stack-web-development",
+      "title": "Full-Stack Web Development",
+      "tagline": "Fast, responsive web applications built for scale and high conversion.",
+      "summary": "Modern web products built with Next.js, React, and TypeScript — fast loading, accessible, and maintainable.",
+      "icon": "monitor",
+      "featured": true,
+      "order": 1,
+      "definition": [
+        "Full-stack development brings together frontend craftsmanship and robust backend architecture into a cohesive web product."
+      ],
+      "whyNeeded": [
+        {
+          "title": "Speed & Performance",
+          "description": "Optimized Core Web Vitals keep visitors engaged and improve search visibility."
+        },
+        {
+          "title": "Reliable Architecture",
+          "description": "Type-safe engineering across client and server reduces regressions and maintenance cost."
+        }
+      ],
+      "deliverables": [
+        "Responsive, mobile-first design",
+        "SEO and metadata optimization",
+        "Server-rendered and static page generation",
+        "CI/CD pipeline and cloud deployment"
+      ],
+      "process": [
+        {
+          "title": "Discovery",
+          "description": "Understanding user journeys, technical constraints, and product requirements."
+        },
+        {
+          "title": "Architecture",
+          "description": "Component structure, state management, and API contracts."
+        },
+        {
+          "title": "Implementation",
+          "description": "Incremental development with continuous testing and review."
+        },
+        {
+          "title": "Launch",
+          "description": "Production deployment, performance audits, and monitoring."
+        }
+      ],
+      "technologies": ["nextjs", "react", "typescript", "tailwindcss", "aws"],
+      "idealFor": [
+        "SaaS startups launching MVPs",
+        "Businesses upgrading legacy web frontends",
+        "Product teams needing full-stack support"
+      ],
+      "faqs": [
+        {
+          "question": "What is the typical timeline for a web project?",
+          "answer": "Timelines vary by scope. A focused product MVP typically takes 3 to 6 weeks from kickoff to deployment."
+        }
+      ],
+      "cta": {
+        "label": "Discuss this service"
+      }
+    },
+    {
+      "id": "api-backend-engineering",
+      "slug": "api-backend-engineering",
+      "title": "API & Backend Engineering",
+      "tagline": "Resilient, high-throughput backend services and microservices.",
+      "summary": "Dependable RESTful APIs and microservices engineered with Java, Spring Boot, and relational databases.",
+      "icon": "server",
+      "featured": true,
+      "order": 2,
+      "definition": [
+        "Backend engineering provides the secure foundation, data storage, and business logic that powers modern applications."
+      ],
+      "whyNeeded": [
+        {
+          "title": "Scalable Throughput",
+          "description": "Handle thousands of concurrent requests with efficient connection pooling and asynchronous processing."
+        },
+        {
+          "title": "Data Integrity",
+          "description": "Strict transactional guarantees and schema validation prevent corruption and data loss."
+        }
+      ],
+      "deliverables": [
+        "RESTful API design and OpenAPI documentation",
+        "Relational database schema modeling and indexing",
+        "Authentication, authorization, and rate limiting",
+        "Automated unit and integration test suites"
+      ],
+      "process": [
+        {
+          "title": "Domain Modeling",
+          "description": "Entity relationships, business constraints, and data flows."
+        },
+        {
+          "title": "API Specification",
+          "description": "Contract-first endpoint definitions and validation rules."
+        },
+        {
+          "title": "Service Implementation",
+          "description": "Robust Spring Boot services with connection pooling and caching."
+        },
+        {
+          "title": "Hardening",
+          "description": "Load testing, error handling verification, and security audits."
+        }
+      ],
+      "technologies": ["java", "spring-boot", "mysql", "postgresql", "docker"],
+      "idealFor": [
+        "Enterprise platforms needing high-throughput APIs",
+        "Applications transitioning from monolithic to microservices",
+        "Teams needing secure third-party integrations"
+      ],
+      "faqs": [
+        {
+          "question": "Do you handle database migrations?",
+          "answer": "Yes, all schema evolutions are scripted with versioned migration tools like Flyway or Liquibase."
+        }
+      ],
+      "cta": {
+        "label": "Discuss this service"
+      }
+    }
+  ]
 }

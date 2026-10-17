@@ -1,1 +1,107 @@
-{}
+{
+  "page": {
+    "eyebrow": "About",
+    "title": "The engineer *behind* the code",
+    "intro": "Full-stack engineer based in Indore, India, focused on shipping dependable digital products.",
+    "seo": {
+      "title": "About — Mohd Ansar Bux",
+      "description": "Background, philosophy, and engineering toolkit of Mohd Ansar Bux."
+    }
+  },
+  "home": {
+    "eyebrow": "About me",
+    "title": "Engineer, builder, *problem-solver*",
+    "summary": [
+      "I design and build production web applications from database architecture to smooth user interfaces.",
+      "With expertise in Java, Spring Boot, React, and Next.js, I focus on dependable systems that ship on time."
+    ],
+    "facts": [
+      {
+        "label": "Experience",
+        "value": "2+ years"
+      },
+      {
+        "label": "Based in",
+        "value": "Indore, India"
+      }
+    ]
+  },
+  "portrait": {
+    "src": "/images/profile/portrait.webp",
+    "alt": "Portrait of Mohd Ansar Bux",
+    "width": 1200,
+    "height": 1500
+  },
+  "bio": [
+    "I am a full-stack engineer who loves building clean, resilient web software.",
+    "[PLACEHOLDER] Experienced in architecting Spring Boot microservices, optimizing relational queries, and creating responsive Next.js frontends with meticulous attention to detail."
+  ],
+  "resume": {
+    "file": "/resume/mohd-ansar-bux-resume.pdf",
+    "label": "Download Resume",
+    "updated": "2026-10"
+  },
+  "gallery": [
+    {
+      "src": "/images/gallery/01.webp",
+      "alt": "[PLACEHOLDER] Engineering workspace setup",
+      "caption": "Indore, 2025",
+      "width": 1600,
+      "height": 1067
+    }
+  ],
+  "interests": {
+    "title": "What I'm *into*",
+    "items": [
+      {
+        "id": "distributed-systems",
+        "title": "Distributed Systems",
+        "description": "Designing resilient microservices, messaging pipelines, and caching layers.",
+        "icon": "server"
+      },
+      {
+        "id": "frontend-craft",
+        "title": "Frontend Craft",
+        "description": "Building fluid, accessible, and typographic web experiences.",
+        "icon": "layout"
+      }
+    ]
+  },
+  "hobbies": {
+    "title": "Away from the *keyboard*",
+    "items": [
+      {
+        "id": "technical-reading",
+        "title": "Technical Reading",
+        "description": "System architecture blogs, engineering whitepapers, and software patterns.",
+        "image": {
+          "src": "/images/gallery/hobby-reading.webp",
+          "alt": "Books and notebooks on engineering desk",
+          "width": 800,
+          "height": 1000
+        }
+      }
+    ]
+  },
+  "basicInfo": {
+    "title": "Basic *information*",
+    "items": [
+      {
+        "label": "Full name",
+        "value": "Mohd Ansar Bux"
+      },
+      {
+        "label": "Role",
+        "value": "Full-Stack Software Engineer"
+      },
+      {
+        "label": "Location",
+        "value": "Indore, India"
+      },
+      {
+        "label": "Languages",
+        "value": "English, Hindi"
+      }
+    ]
+  }
+}

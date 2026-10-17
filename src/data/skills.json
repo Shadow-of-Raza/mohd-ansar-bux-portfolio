@@ -1,7 +1,149 @@
 {
-  "page": {},
-  "home": {},
-  "usage": {},
-  "categories": [],
-  "items": []
+  "page": {
+    "eyebrow": "Skills",
+    "title": "My *toolkit*",
+    "intro": "Technologies and tools I use to build scalable, high-performance web products.",
+    "seo": {
+      "title": "Skills — Mohd Ansar Bux",
+      "description": "Full-stack toolkit: Java, Spring Boot, React, Next.js, TypeScript, SQL, and AWS."
+    }
+  },
+  "home": {
+    "eyebrow": "Skills",
+    "title": "Tools I *work* with",
+    "intro": "Modern full-stack technologies for scalable web applications."
+  },
+  "usage": {
+    "usedLabel": "Used in",
+    "emptyLabel": "Not used in a project yet",
+    "emptyCta": {
+      "label": "Want to build something with it?",
+      "href": "/contact"
+    }
+  },
+  "categories": [
+    {
+      "id": "frontend",
+      "label": "Frontend",
+      "order": 1
+    },
+    {
+      "id": "backend",
+      "label": "Backend",
+      "order": 2
+    },
+    {
+      "id": "database",
+      "label": "Database",
+      "order": 3
+    },
+    {
+      "id": "cloud-devops",
+      "label": "Cloud & DevOps",
+      "order": 4
+    },
+    {
+      "id": "tools",
+      "label": "Tools",
+      "order": 5
+    }
+  ],
+  "items": [
+    {
+      "id": "java",
+      "name": "Java",
+      "category": "backend",
+      "icon": "/icons/skills/java.svg",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "spring-boot",
+      "name": "Spring Boot",
+      "category": "backend",
+      "icon": "/icons/skills/spring-boot.svg",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "category": "backend",
+      "icon": "/icons/skills/nodejs.svg",
+      "featured": false,
+      "order": 3
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "category": "frontend",
+      "icon": "/icons/skills/typescript.svg",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "category": "frontend",
+      "icon": "/icons/skills/react.svg",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "category": "frontend",
+      "icon": "/icons/skills/nextjs.svg",
+      "featured": true,
+      "order": 3
+    },
+    {
+      "id": "tailwindcss",
+      "name": "Tailwind CSS",
+      "category": "frontend",
+      "icon": "/icons/skills/tailwindcss.svg",
+      "featured": false,
+      "order": 4
+    },
+    {
+      "id": "mysql",
+      "name": "MySQL",
+      "category": "database",
+      "icon": "/icons/skills/mysql.svg",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "category": "database",
+      "icon": "/icons/skills/postgresql.svg",
+      "featured": false,
+      "order": 2
+    },
+    {
+      "id": "aws",
+      "name": "AWS",
+      "category": "cloud-devops",
+      "icon": "/icons/skills/aws.svg",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "category": "cloud-devops",
+      "icon": "/icons/skills/docker.svg",
+      "featured": false,
+      "order": 2
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "category": "tools",
+      "icon": "/icons/skills/git.svg",
+      "featured": false,
+      "order": 1
+    }
+  ]
 }
