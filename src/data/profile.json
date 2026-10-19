@@ -2,18 +2,19 @@
   "page": {
     "eyebrow": "About",
     "title": "The engineer *behind* the code",
-    "intro": "Full-stack engineer based in Indore, India, focused on shipping dependable digital products.",
+    "intro": "Full-stack software engineer based in Indore, India, focused on shipping dependable, scalable digital products.",
     "seo": {
       "title": "About — Mohd Ansar Bux",
-      "description": "Background, philosophy, and engineering toolkit of Mohd Ansar Bux."
+      "description": "Background, technical philosophy, and engineering toolkit of Mohd Ansar Bux."
     }
   },
   "home": {
     "eyebrow": "About me",
     "title": "Engineer, builder, *problem-solver*",
     "summary": [
-      "I design and build production web applications from database architecture to smooth user interfaces.",
-      "With expertise in Java, Spring Boot, React, and Next.js, I focus on dependable systems that ship on time."
+      "I design and build production web applications from database architecture to smooth, accessible user interfaces.",
+      "With expertise spanning Java, Spring Boot, React, and Next.js, I focus on dependable systems that ship reliably on time.",
+      "Whether designing resilient microservices or optimizing core web vitals, I write clean, maintainable code built for scale."
     ],
     "facts": [
       {
@@ -23,6 +24,14 @@
       {
         "label": "Based in",
         "value": "Indore, India"
+      },
+      {
+        "label": "Primary Focus",
+        "value": "Full-Stack Web Systems"
+      },
+      {
+        "label": "Core Stack",
+        "value": "Java, Spring Boot, React, Next.js"
       }
     ]
   },
@@ -33,8 +42,10 @@
     "height": 1500
   },
   "bio": [
-    "I am a full-stack engineer who loves building clean, resilient web software.",
-    "[PLACEHOLDER] Experienced in architecting Spring Boot microservices, optimizing relational queries, and creating responsive Next.js frontends with meticulous attention to detail."
+    "I am a full-stack engineer who loves building clean, resilient web software that creates genuine business value.",
+    "My technical journey began with foundational computer science principles and deep exploration of object-oriented architecture in Java. Over the past several years, I have architected high-throughput Spring Boot microservices, designed normalized relational databases in MySQL and PostgreSQL, and built intuitive frontends with React and Next.js.",
+    "I believe that great software balances technical rigor with pragmatic execution. Every abstraction must earn its place, and performance is a feature that should be measured from day one.",
+    "When I'm not writing code or analyzing query execution plans, I contribute to developer communities, read technical whitepapers, and experiment with modern web motion and typography."
   ],
   "resume": {
     "file": "/resume/mohd-ansar-bux-resume.pdf",
@@ -44,8 +55,22 @@
   "gallery": [
     {
       "src": "/images/gallery/01.webp",
-      "alt": "[PLACEHOLDER] Engineering workspace setup",
+      "alt": "Engineering workspace and development setup",
       "caption": "Indore, 2025",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "/images/gallery/02.webp",
+      "alt": "Focused architecture planning session with dual monitors",
+      "caption": "System Architecture Review, 2025",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "/images/gallery/03.webp",
+      "alt": "Hardware and code review desk setup with mechanical keyboard",
+      "caption": "Night Coding Session, 2026",
       "width": 1600,
       "height": 1067
     }
@@ -56,14 +81,26 @@
       {
         "id": "distributed-systems",
         "title": "Distributed Systems",
-        "description": "Designing resilient microservices, messaging pipelines, and caching layers.",
+        "description": "Designing resilient microservices, asynchronous messaging pipelines, and fault-tolerant background queues.",
         "icon": "server"
       },
       {
         "id": "frontend-craft",
         "title": "Frontend Craft",
-        "description": "Building fluid, accessible, and typographic web experiences.",
+        "description": "Building fluid, accessible, and typographic web experiences with Next.js, React, and strict design systems.",
         "icon": "layout"
+      },
+      {
+        "id": "database-architecture",
+        "title": "Database Architecture",
+        "description": "Optimizing relational schema design, indexing strategies, and transactional consistency in high-load scenarios.",
+        "icon": "database"
+      },
+      {
+        "id": "cloud-infrastructure",
+        "title": "Cloud Infrastructure",
+        "description": "Deploying containerized environments, setting up CI/CD automation, and monitoring telemetry on AWS.",
+        "icon": "cpu"
       }
     ]
   },
@@ -73,10 +110,32 @@
       {
         "id": "technical-reading",
         "title": "Technical Reading",
-        "description": "System architecture blogs, engineering whitepapers, and software patterns.",
+        "description": "Diving into system design literature, software engineering history, and database internals.",
         "image": {
           "src": "/images/gallery/hobby-reading.webp",
-          "alt": "Books and notebooks on engineering desk",
+          "alt": "Books and technical notes on engineering desk",
+          "width": 800,
+          "height": 1000
+        }
+      },
+      {
+        "id": "strategy-games",
+        "title": "Chess & Strategy",
+        "description": "Engaging in rapid and classical chess tactics to sharpen spatial reasoning and anticipation.",
+        "image": {
+          "src": "/images/gallery/hobby-chess.webp",
+          "alt": "Chess board with pieces in mid-game position",
+          "width": 800,
+          "height": 1000
+        }
+      },
+      {
+        "id": "coffee-keyboards",
+        "title": "Coffee & Keyboards",
+        "description": "Brewing single-origin pour-overs and customizing mechanical keyboards with lubricated linear switches.",
+        "image": {
+          "src": "/images/gallery/hobby-coffee.webp",
+          "alt": "Artisanal pour over coffee maker on wooden tabletop",
           "width": 800,
           "height": 1000
         }
@@ -99,8 +158,24 @@
         "value": "Indore, India"
       },
       {
+        "label": "Nationality",
+        "value": "Indian"
+      },
+      {
         "label": "Languages",
-        "value": "English, Hindi"
+        "value": "English (Professional), Hindi (Native)"
+      },
+      {
+        "label": "Education",
+        "value": "B.Tech in Computer Science & Engineering"
+      },
+      {
+        "label": "Availability",
+        "value": "Full-time roles & contract consultations"
+      },
+      {
+        "label": "Timezone",
+        "value": "IST (UTC+5:30)"
       }
     ]
   }

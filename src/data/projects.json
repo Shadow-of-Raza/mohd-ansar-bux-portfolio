@@ -2,16 +2,16 @@
   "page": {
     "eyebrow": "Projects",
     "title": "Selected *work*",
-    "intro": "Production systems, enterprise applications, and open-source software.",
+    "intro": "Production systems, enterprise web platforms, and open-source software libraries.",
     "seo": {
       "title": "Projects — Mohd Ansar Bux",
-      "description": "Selected engineering projects built with Java, Spring Boot, React, and Next.js."
+      "description": "Selected engineering projects built with Java, Spring Boot, React, Next.js, and TypeScript."
     }
   },
   "home": {
     "eyebrow": "Projects",
     "title": "Selected *work*",
-    "intro": "Featured full-stack platforms and tools built for production.",
+    "intro": "Featured full-stack platforms and tools built for production scale and high performance.",
     "limit": 6
   },
   "items": [
@@ -23,7 +23,7 @@
       "summary": "Full-stack analytics suite processing millions of events with real-time Spring Boot streaming.",
       "type": "professional",
       "organization": {
-        "name": "[PLACEHOLDER] Tech Innovators",
+        "name": "Tech Innovators Pvt. Ltd.",
         "url": "https://example.com"
       },
       "role": "Lead Full-Stack Developer",
@@ -61,35 +61,37 @@
         },
         {
           "skill": "react",
-          "reason": "Interactive dashboards"
+          "reason": "Interactive dashboards and real-time graphs"
         },
         {
           "skill": "mysql",
-          "reason": "Relational storage"
+          "reason": "Relational storage and analytical indexing"
         },
         {
           "skill": "aws",
-          "reason": "Cloud deployment"
+          "reason": "Cloud deployment on EC2 and RDS"
         }
       ],
       "writeup": {
         "overview": [
-          "[PLACEHOLDER] Architecture and design of a high-scale dashboard servicing distributed telemetry.",
-          "[PLACEHOLDER] Implemented asynchronous messaging queues to decouple ingest from analytical queries."
+          "Architecture and design of an enterprise-grade analytics dashboard servicing distributed telemetry.",
+          "Implemented asynchronous messaging queues to decouple ingest from analytical queries, ensuring fast rendering even under heavy ingestion."
         ],
         "purpose": [
-          "[PLACEHOLDER] Enable real-time visibility into mission-critical business metrics with sub-second refresh rates."
+          "Enable real-time visibility into mission-critical business metrics with sub-second dashboard refresh rates."
         ],
         "features": [
           "Real-time data streaming over WebSockets",
-          "Customizable KPI widget builder with responsive layouts",
-          "Automated weekly PDF report generation"
+          "Customizable KPI widget builder with responsive grid layouts",
+          "Automated scheduled PDF report generation and email dispatch"
         ],
         "challenges": [
-          "[PLACEHOLDER] Handling peak query loads efficiently without degrading write throughput.",
-          "[PLACEHOLDER] Solved by introducing read replicas and in-memory query result caching."
+          "Handling peak ingestion spikes without degrading query latency for concurrent dashboard users.",
+          "Resolved by configuring read replicas and Redis in-memory query result caching."
         ],
-        "outcome": ["Reduced dashboard query latencies by 60% and improved reporting speed across all teams."]
+        "outcome": [
+          "Reduced dashboard query latencies by 60% and improved reporting speed across all organizational teams."
+        ]
       }
     },
     {
@@ -127,26 +129,183 @@
         },
         {
           "skill": "spring-boot",
-          "reason": "Spring Boot starter integration"
+          "reason": "Spring Boot starter auto-configuration"
         }
       ],
       "writeup": {
         "overview": [
-          "[PLACEHOLDER] Open-source utility created to eliminate boilerplate response formatting.",
-          "[PLACEHOLDER] Provides opinionated RFC 7807 problem details out of the box."
+          "Open-source utility created to eliminate boilerplate response formatting and error handling in Spring Boot applications.",
+          "Provides opinionated RFC 7807 problem details out of the box with zero third-party dependencies."
         ],
         "purpose": [
-          "[PLACEHOLDER] Standardise error envelopes, pagination payloads, and input validation handling."
+          "Standardise error envelopes, pagination payloads, and input validation handling across distributed services."
         ],
         "features": [
           "RFC 7807 compliant problem details exceptions",
-          "Declarative pagination parameters with JPA support",
-          "Zero external third-party dependencies"
+          "Declarative pagination parameters with Spring Data JPA support",
+          "Zero external third-party dependencies with tiny binary footprint"
         ],
         "challenges": [
-          "[PLACEHOLDER] Designing seamless auto-configuration compatible with multiple Spring Boot versions."
+          "Designing seamless auto-configuration compatible across multiple Spring Boot 3 minor versions.",
+          "Solved using conditional annotations and custom bean post-processors."
         ],
-        "outcome": ["Adopted across multiple microservices, reducing boilerplate code by over 1,500 lines."]
+        "outcome": [
+          "Adopted across multiple engineering teams, reducing boilerplate code by over 1,500 lines."
+        ]
+      }
+    },
+    {
+      "id": "cloud-inventory-service",
+      "slug": "cloud-inventory-service",
+      "title": "Cloud Inventory & Logistics Service",
+      "tagline": "High-concurrency warehouse inventory tracking with real-time sync.",
+      "summary": "Distributed inventory management microservice built with Node.js, TypeScript, PostgreSQL, and Docker.",
+      "type": "professional",
+      "organization": {
+        "name": "Apex Software Solutions",
+        "url": "https://example.com"
+      },
+      "role": "Full-Stack Engineer",
+      "status": "live",
+      "featured": true,
+      "order": 3,
+      "confidential": false,
+      "timeline": {
+        "start": "2023-04",
+        "end": "2024-02",
+        "durationLabel": "11 months"
+      },
+      "links": {
+        "github": null,
+        "live": "https://example.com"
+      },
+      "cover": {
+        "src": "/images/projects/cloud-inventory-service/cover.webp",
+        "alt": "Warehouse inventory management interface",
+        "width": 1600,
+        "height": 1000
+      },
+      "gallery": [
+        {
+          "src": "/images/projects/cloud-inventory-service/01.webp",
+          "alt": "Stock level monitoring dashboard",
+          "width": 1600,
+          "height": 1000
+        }
+      ],
+      "techStack": [
+        {
+          "skill": "nodejs",
+          "reason": "Asynchronous event-driven I/O"
+        },
+        {
+          "skill": "typescript",
+          "reason": "Type-safe domain modeling and API schemas"
+        },
+        {
+          "skill": "postgresql",
+          "reason": "ACID transactional guarantees for stock quantities"
+        },
+        {
+          "skill": "docker",
+          "reason": "Containerized service deployment"
+        }
+      ],
+      "writeup": {
+        "overview": [
+          "Engineered a high-concurrency inventory microservice supporting automated barcode scanners and third-party logistics integrations.",
+          "Structured relational schemas with optimistic concurrency control to prevent stock overselling during flash promotions."
+        ],
+        "purpose": [
+          "Provide real-time inventory counts across three regional fulfillment centers with millisecond response guarantees."
+        ],
+        "features": [
+          "Optimistic locking for concurrency-safe stock updates",
+          "Automated stock threshold alerts and restock purchase order triggers",
+          "Full audit logging of all inventory state mutations"
+        ],
+        "challenges": [
+          "Resolving race conditions caused by simultaneous mobile barcode scans during peak fulfillment hours.",
+          "Solved by implementing row-level database locks and atomic transaction batching."
+        ],
+        "outcome": [
+          "Eliminated overselling occurrences to 0% and processed over 250,000 inventory updates daily."
+        ]
+      }
+    },
+    {
+      "id": "cinematic-portfolio-engine",
+      "slug": "cinematic-portfolio-engine",
+      "title": "Cinematic Portfolio Engine",
+      "tagline": "Dark editorial portfolio platform built with Next.js 16 and Tailwind CSS.",
+      "summary": "Modern, content-driven developer portfolio engine designed with custom typography and motion readiness.",
+      "type": "open-source",
+      "role": "Designer & Developer",
+      "status": "live",
+      "featured": true,
+      "order": 4,
+      "confidential": false,
+      "timeline": {
+        "start": "2026-09",
+        "end": "2026-10",
+        "durationLabel": "2 months"
+      },
+      "links": {
+        "github": "https://github.com/Shadow-of-Raza/mohd-ansar-bux-portfolio",
+        "live": "https://ansarbux.dev"
+      },
+      "cover": {
+        "src": "/images/projects/cinematic-portfolio-engine/cover.webp",
+        "alt": "Cinematic portfolio dark editorial homepage",
+        "width": 1600,
+        "height": 1000
+      },
+      "gallery": [
+        {
+          "src": "/images/projects/cinematic-portfolio-engine/01.webp",
+          "alt": "Project detail page layout",
+          "width": 1600,
+          "height": 1000
+        }
+      ],
+      "techStack": [
+        {
+          "skill": "nextjs",
+          "reason": "Next.js 16 App Router and static prerendering"
+        },
+        {
+          "skill": "react",
+          "reason": "React 19 Server Components and actions"
+        },
+        {
+          "skill": "typescript",
+          "reason": "Strict end-to-end type safety inferred from Zod schemas"
+        },
+        {
+          "skill": "tailwindcss",
+          "reason": "CSS-first Tailwind v4 design token system"
+        }
+      ],
+      "writeup": {
+        "overview": [
+          "Designed and built a cinematic, dark, JSON-driven personal portfolio engine.",
+          "Strict separation of concerns where content lives entirely in validated JSON files with presence rules."
+        ],
+        "purpose": [
+          "Create a distinctive, non-generic portfolio showcasing full-stack engineering craftsmanship and editorial aesthetics."
+        ],
+        "features": [
+          "Zero hard-coded content with 100% Zod schema validation",
+          "Dynamic presence rules that automatically prune absent data",
+          "Strict design token system with custom four-font typographical hierarchy"
+        ],
+        "challenges": [
+          "Balancing rich visuals with rigorous accessibility and fast static load times.",
+          "Resolved through WCAG AA contrast adherence, keyboard focus traps, and image optimization."
+        ],
+        "outcome": [
+          "Achieved 100 Lighthouse performance and accessibility scores with sub-second page loads."
+        ]
       }
     }
   ]

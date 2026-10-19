@@ -31,14 +31,7 @@ export type FooterProps = {
  * 5. Bottom bar: copyright, sitemap.xml link, back-to-top.
  * 6. Signature detail: oversized cropped wordmark of the name across the bottom edge.
  */
-export function Footer({
-  site,
-  navItems,
-  hasContact,
-  contact,
-  services,
-  className,
-}: FooterProps) {
+export function Footer({ site, navItems, hasContact, contact, services, className }: FooterProps) {
   const hasCtaHeading = Boolean(site.footer?.ctaTitle);
   const hasEmail = Boolean(contact?.email);
   const showCtaLine = hasCtaHeading || hasEmail || hasContact;
@@ -60,12 +53,12 @@ export function Footer({
           <div className="flex flex-col justify-between gap-8 border-b border-line pb-16 lg:flex-row lg:items-end">
             <div className="max-w-2xl">
               {hasCtaHeading && (
-                <p className="font-display text-display-lg leading-[0.95] text-white">
+                <p className="text-display-lg font-display leading-[0.95] text-white">
                   {renderAccent(site.footer?.ctaTitle)}
                 </p>
               )}
               {site.role && (
-                <p className="mt-3 font-body text-lead text-fg-muted">
+                <p className="mt-3 text-lead font-body text-fg-muted">
                   {site.role} — available for high-impact projects and engineering roles.
                 </p>
               )}
@@ -98,28 +91,29 @@ export function Footer({
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-5">
             <Link
               href="/"
-              className="inline-flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
+              className="group inline-flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
               aria-label={`${site.name} — Home`}
             >
               {site.logo?.src ? (
                 <Image
                   src={site.logo.src}
                   alt={site.logo.alt || site.name}
-                  width={site.logo.width || 120}
-                  height={site.logo.height || 40}
-                  className="h-8 w-auto object-contain"
+                  width={site.logo.width || 44}
+                  height={site.logo.height || 44}
+                  className="h-9 w-9 shrink-0 object-contain transition-opacity duration-200 group-hover:opacity-85 sm:h-10 sm:w-10"
                 />
               ) : (
-                <span className="font-display text-xl tracking-wider text-white">
-                  {site.logo?.text || site.name}
+                <span className="font-display text-lg tracking-wider text-white">
+                  {site.logo?.text || "MB"}
                 </span>
               )}
+              <span className="font-display text-lg tracking-wide text-white transition-colors duration-200 group-hover:text-electric-300 sm:text-xl">
+                {site.name}
+              </span>
             </Link>
 
             {site.footer?.intro && (
-              <p className="max-w-sm font-body text-body text-fg-muted">
-                {site.footer.intro}
-              </p>
+              <p className="max-w-sm text-body font-body text-fg-muted">{site.footer.intro}</p>
             )}
 
             {/* Social icons row */}
@@ -136,7 +130,7 @@ export function Footer({
           {/* Link Columns */}
           {/* Pages Column (HTML Sitemap) */}
           <div className="flex flex-col gap-4 lg:col-span-2">
-            <h3 className="border-b border-line pb-2 font-label text-micro tracking-[0.08em] text-fg-subtle">
+            <h3 className="border-b border-line pb-2 text-micro font-label tracking-[0.08em] text-fg-subtle">
               Pages
             </h3>
             <ul className="flex flex-col space-y-2.5">
@@ -144,7 +138,7 @@ export function Footer({
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="font-body text-small text-fg-muted transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
+                    className="text-small font-body text-fg-muted transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
                   >
                     {item.label}
                   </Link>
@@ -156,7 +150,7 @@ export function Footer({
           {/* Services Column (hidden if no visible services exist) */}
           {showServicesColumn && services && (
             <div className="flex flex-col gap-4 lg:col-span-2">
-              <h3 className="border-b border-line pb-2 font-label text-micro tracking-[0.08em] text-fg-subtle">
+              <h3 className="border-b border-line pb-2 text-micro font-label tracking-[0.08em] text-fg-subtle">
                 Services
               </h3>
               <ul className="flex flex-col space-y-2.5">
@@ -164,7 +158,7 @@ export function Footer({
                   <li key={srv.id}>
                     <Link
                       href={`/services#${srv.slug}`}
-                      className="font-body text-small text-fg-muted transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
+                      className="text-small font-body text-fg-muted transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
                     >
                       {srv.title}
                     </Link>
@@ -177,7 +171,7 @@ export function Footer({
           {/* Connect Column (social link text list) */}
           {showConnectColumn && (
             <div className="flex flex-col gap-4 lg:col-span-2">
-              <h3 className="border-b border-line pb-2 font-label text-micro tracking-[0.08em] text-fg-subtle">
+              <h3 className="border-b border-line pb-2 text-micro font-label tracking-[0.08em] text-fg-subtle">
                 Connect
               </h3>
               <ul className="flex flex-col space-y-2.5">
@@ -187,7 +181,7 @@ export function Footer({
                       href={s.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-body text-small text-fg-muted transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
+                      className="inline-flex items-center gap-1.5 text-small font-body text-fg-muted transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
                     >
                       <span>{s.label}</span>
                       <span className="sr-only"> (opens in new tab)</span>
@@ -201,14 +195,14 @@ export function Footer({
 
         {/* 5. Bottom Bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-line py-8 sm:flex-row">
-          <p className="font-label text-micro tracking-[0.06em] text-fg-subtle">
+          <p className="text-micro font-label tracking-[0.06em] text-fg-subtle">
             © <CurrentYear /> {site.name}. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">
             <Link
               href="/sitemap.xml"
-              className="font-label text-micro tracking-[0.06em] text-fg-subtle transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
+              className="text-micro font-label tracking-[0.06em] text-fg-subtle transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
             >
               Sitemap
             </Link>
@@ -222,9 +216,9 @@ export function Footer({
       {site.name && (
         <div
           aria-hidden="true"
-          className="pointer-events-none -mt-4 w-full select-none overflow-hidden text-center opacity-60 md:-mt-8"
+          className="pointer-events-none -mt-4 w-full overflow-hidden text-center opacity-60 select-none md:-mt-8"
         >
-          <span className="inline-block translate-y-[26%] font-display text-[13vw] leading-none tracking-tight text-white/[0.03] uppercase whitespace-nowrap">
+          <span className="inline-block translate-y-[26%] font-display text-[13vw] leading-none tracking-tight whitespace-nowrap text-white/[0.03] uppercase">
             {site.name}
           </span>
         </div>

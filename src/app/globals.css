@@ -159,3 +159,43 @@
     0 24px 60px -24px rgb(22 46 147 / 0.6),
     inset 0 1px 0 rgb(255 255 255 / 0.08);
 }
+
+/* 6) Micro-animations */
+@keyframes scroll-drop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+}
+
+@utility animate-scroll-drop {
+  animation: scroll-drop 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* 7) Ambient lighting */
+@utility hero-glow {
+  background: radial-gradient(circle, rgb(22 46 147 / 0.32) 0%, transparent 70%);
+}
+
+/* 8) Poster edge blend (fades outer edges into night) */
+@utility hero-poster-mask {
+  mask-image: radial-gradient(ellipse 80% 75% at center, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 75% at center, black 30%, transparent 80%);
+}
+
+/* 9) Viewport height utility (hides non-essential cues on short laptop displays) */
+@utility hidden-short-viewport {
+  @media (max-height: 759px) {
+    display: none;
+  }
+}

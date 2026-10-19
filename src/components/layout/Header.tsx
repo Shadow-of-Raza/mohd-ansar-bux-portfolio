@@ -25,13 +25,7 @@ export type HeaderProps = {
  * 40px scroll backdrop-blur transition, desktop link row, and mobile menu trigger.
  * Per docs/context/01-project-overview.md §4, 03-design-system.md §10, and 04-motion-and-effects.md §4.4.
  */
-export function Header({
-  site,
-  navItems,
-  hasContact,
-  contactEmail,
-  className,
-}: HeaderProps) {
+export function Header({ site, navItems, hasContact, contactEmail, className }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -49,7 +43,7 @@ export function Header({
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-40 h-16 transition-all duration-300 xl:h-[72px]",
+          "fixed top-0 right-0 left-0 z-40 h-16 transition-all duration-300 xl:h-[72px]",
           scrolled
             ? "border-b border-line bg-night/70 backdrop-blur-md"
             : "border-b border-transparent bg-transparent",
@@ -57,7 +51,7 @@ export function Header({
         )}
       >
         <Container className="flex h-full items-center justify-between">
-          {/* Brand Logo */}
+          {/* Brand Logo & Name */}
           <Link
             href="/"
             className="group flex items-center gap-3 py-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
@@ -67,23 +61,23 @@ export function Header({
               <Image
                 src={site.logo.src}
                 alt={site.logo.alt || site.name}
-                width={site.logo.width || 120}
-                height={site.logo.height || 40}
+                width={site.logo.width || 44}
+                height={site.logo.height || 44}
                 priority
-                className="h-8 w-auto object-contain transition-opacity duration-200 group-hover:opacity-85 xl:h-9"
+                className="h-8 w-8 shrink-0 object-contain transition-opacity duration-200 group-hover:opacity-85 xl:h-9 xl:w-9"
               />
             ) : (
-              <span className="font-display text-xl tracking-wider text-white transition-colors duration-200 group-hover:text-electric-300">
-                {site.logo?.text || site.name}
+              <span className="font-display text-lg tracking-wider text-white transition-colors duration-200 group-hover:text-electric-300">
+                {site.logo?.text || "MB"}
               </span>
             )}
+            <span className="hidden font-display text-base tracking-wide text-white transition-colors duration-200 group-hover:text-electric-300 sm:inline-block sm:text-lg">
+              {site.name}
+            </span>
           </Link>
 
           {/* Desktop Navigation Links (>= 1280px) */}
-          <nav
-            className="hidden items-center gap-7 xl:flex 2xl:gap-8"
-            aria-label="Primary navigation"
-          >
+          <nav className="hidden items-center gap-7 xl:flex 2xl:gap-8" aria-label="Primary navigation">
             {navItems.map((item) => (
               <NavLink key={item.href} href={item.href} label={item.label} />
             ))}
@@ -92,12 +86,7 @@ export function Header({
           {/* Right Action / Mobile Toggle */}
           <div className="flex items-center gap-3">
             {hasContact && (
-              <LinkButton
-                href="/contact"
-                variant="primary"
-                size="sm"
-                className="h-9 px-4 sm:h-10 sm:px-5"
-              >
+              <LinkButton href="/contact" variant="primary" size="sm" className="h-9 px-4 sm:h-10 sm:px-5">
                 Contact me
               </LinkButton>
             )}
@@ -109,7 +98,7 @@ export function Header({
               aria-label="Open navigation menu"
               aria-expanded={menuOpen}
               className={cn(
-                "flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-sm border border-line text-fg-muted transition-colors duration-200 xl:hidden",
+                "flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-sm border border-line text-fg-muted transition-colors duration-200 xl:hidden",
                 "hover:border-line-strong hover:bg-surface-2 hover:text-white",
                 "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300",
               )}

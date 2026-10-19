@@ -1,0 +1,18 @@
+# Walkthrough History
+
+| Date       | ID       | Type    | Summary                                                                         | Link                                                 |
+| ---------- | -------- | ------- | ------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| 2026-10-19 | HOME-04  | fix     | Compact home mode, clean meta separators, and pursuing badge test               | [HOME-04_2026-10-19-2.md](./HOME-04_2026-10-19-2.md) |
+| 2026-10-19 | HOME-04  | build   | Education (timeline) section with track, 10px nodes, and alternating cards     | [HOME-04_2026-10-19.md](./HOME-04_2026-10-19.md)     |
+| 2026-10-19 | HOME-03  | fix     | ExperienceItem typography, +N chips, internship exclusion, multi-role promotion | [HOME-03_2026-10-19-2.md](./HOME-03_2026-10-19-2.md) |
+| 2026-10-19 | HOME-03  | build   | Experience (preview) asymmetric timeline section & ExperienceItem               | [HOME-03_2026-10-19.md](./HOME-03_2026-10-19.md)     |
+| 2026-10-19 | HOME-02  | fix     | Header/footer logo text fix & ServiceCard hierarchy refinements                 | [HOME-02_2026-10-19-2.md](./HOME-02_2026-10-19-2.md) |
+| 2026-10-19 | HOME-02  | build   | Services (preview) section with cards, authentic tech chips, and CTAs           | [HOME-02_2026-10-19.md](./HOME-02_2026-10-19.md)     |
+| 2026-10-17 | HOME-00  | enhance | Visual polish (poster blend, hierarchy, quiet badge, resume CTA) & housekeeping | [HOME-00_2026-10-17-3.md](./HOME-00_2026-10-17-3.md) |
+| 2026-10-17 | HOME-01  | build   | About Me (preview) section with portrait, facts grid, and CTAs                  | [HOME-01_2026-10-17.md](./HOME-01_2026-10-17.md)     |
+| 2026-10-17 | HOME-00  | fix     | HOME-00 tidy-up: motion-reduce checks, deferred tracking, copy clarification    | [HOME-00_2026-10-17-2.md](./HOME-00_2026-10-17-2.md) |
+| 2026-10-17 | HOME-00  | build   | Hero section static implementation with poster and ambient lighting             | [HOME-00_2026-10-17.md](./HOME-00_2026-10-17.md)     |
+| 2026-10-17 | Phase-03 | build   | Global layout system: SkipLink, Header, NavLink, MobileMenu, Footer             | [Phase-03_2026-10-17.md](./Phase-03_2026-10-17.md)   |
+| 2026-10-16 | Phase-02 | build   | Data layer, Zod schemas, loaders, relations, full validator, sitemap/robots     | [Phase-02_2026-10-16.md](./Phase-02_2026-10-16.md)   |
+| 2026-10-16 | Phase-01 | build   | UI primitives, renderAccent(), Grain overlay & dev style guide                  | [Phase-01_2026-10-16.md](./Phase-01_2026-10-16.md)   |
+| 2026-10-16 | Phase-00 | build   | Project setup, tooling, Next 16, React 19, Tailwind v4 tokens & stubs           | [Phase-00_2026-10-16.md](./Phase-00_2026-10-16.md)   |

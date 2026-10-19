@@ -93,7 +93,7 @@ export function SocialLinks({ socials, className, showLabels = false }: SocialLi
           >
             {renderSocialIcon(s.icon || s.id)}
             {showLabels && (
-              <span className="font-label text-label tracking-[0.06em] text-inherit">{s.label}</span>
+              <span className="text-label font-label tracking-[0.06em] text-inherit">{s.label}</span>
             )}
             <span className="sr-only"> (opens in new tab)</span>
           </a>

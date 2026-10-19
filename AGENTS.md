@@ -52,6 +52,7 @@ When a task names a section ID, find it in `01 §5`, then follow the matching pa
 - **Missing content:** ask me for real content, or, with my permission, add entries whose text starts with `[PLACEHOLDER]`. List every placeholder in the Walkthrough and in `docs/PROGRESS.md`.
 - **Verify before done:** run `/verify`. For UI work also run `/review-ui`. A task isn't done until lint, typecheck and build pass.
 - **Walkthrough** lists files changed, deviations from the docs (with reasons), placeholders, and screenshots at 375 / 768 / 1440 px for UI work.
+- **Every change gets a walkthrough.** Any task that changes code or data (including fixes, review fixes and enhancements outside /build) saves a walkthrough and an INDEX line as described in /build step 6.
 - **Platform:** the dev machine is Windows. Use `pnpm` scripts and cross-platform commands; no bash-only syntax (`rm -rf`, `&&` chains in PowerShell 5, `export`).
 - **Git:** never push. Commit locally only when I ask.
 

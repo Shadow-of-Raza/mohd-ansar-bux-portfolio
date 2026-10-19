@@ -44,7 +44,7 @@ export function Section({
         )}
 
         {intro && intro.trim().length > 0 && (
-          <p className="mb-10 max-w-[52ch] text-lead text-fg-muted">{intro}</p>
+          <p className="mb-10 max-w-[52ch] text-lead text-pretty text-fg-muted">{intro}</p>
         )}
 
         {children}

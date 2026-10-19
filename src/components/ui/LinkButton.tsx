@@ -65,12 +65,12 @@ export function LinkButton({
     </>
   );
 
-  if (isExternal) {
+  if (isExternal || download) {
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         download={download}
         onClick={onClick}
         className={sharedClasses}

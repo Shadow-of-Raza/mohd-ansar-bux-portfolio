@@ -43,3 +43,33 @@ export function getNavItems(): NavItem[] {
 export function hasContactPage(): boolean {
   return getContact() !== null;
 }
+
+/**
+ * Checks whether the About page/route should exist.
+ */
+export function hasAboutPage(): boolean {
+  return getProfile() !== null;
+}
+
+/**
+ * Checks whether the Services page/route should exist.
+ */
+export function hasServicesPage(): boolean {
+  return getServices() !== null;
+}
+
+/**
+ * Checks whether the Experience page/route should exist.
+ */
+export function hasExperiencePage(): boolean {
+  return getExperience() !== null;
+}
+
+/**
+ * Checks whether the Education page/route should exist.
+ */
+export function hasEducationPage(): boolean {
+  return getEducation() !== null;
+}
+
+

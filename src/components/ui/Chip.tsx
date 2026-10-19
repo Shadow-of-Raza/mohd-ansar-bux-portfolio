@@ -21,7 +21,7 @@ export function Chip({ active = false, icon, onClick, as, className, disabled, c
       onClick={disabled ? undefined : onClick}
       disabled={Component === "button" ? disabled : undefined}
       className={cn(
-        "inline-flex h-8 items-center gap-2 rounded-full border px-3 text-micro font-label font-medium transition-colors duration-200 select-none",
+        "inline-flex h-8 shrink-0 items-center gap-2 rounded-full border px-3 text-micro font-label font-medium transition-colors duration-200 select-none",
         active ? "border-electric bg-navy text-white" : "border-line bg-surface-2 text-white",
         isInteractive &&
           !disabled &&

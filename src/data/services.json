@@ -2,16 +2,16 @@
   "page": {
     "eyebrow": "Services",
     "title": "What I can *build* for you",
-    "intro": "End-to-end full-stack engineering tailored for scalable web products and business systems.",
+    "intro": "End-to-end full-stack engineering tailored for scalable web products, resilient APIs, and cloud deployments.",
     "seo": {
       "title": "Services — Mohd Ansar Bux",
-      "description": "Full-stack web application development and API engineering services."
+      "description": "Full-stack web application development, backend API engineering, and cloud deployment services."
     }
   },
   "home": {
     "eyebrow": "Services",
     "title": "How I can *help*",
-    "intro": "Custom engineering solutions from database schema to interactive frontend.",
+    "intro": "Custom engineering solutions from database schema design to interactive web interfaces.",
     "limit": 3
   },
   "items": [
@@ -25,23 +25,24 @@
       "featured": true,
       "order": 1,
       "definition": [
-        "Full-stack development brings together frontend craftsmanship and robust backend architecture into a cohesive web product."
+        "Full-stack development brings together frontend craftsmanship and robust backend architecture into a cohesive web product.",
+        "From state management and accessibility to server-side rendering and database integration, every layer is built for longevity."
       ],
       "whyNeeded": [
         {
           "title": "Speed & Performance",
-          "description": "Optimized Core Web Vitals keep visitors engaged and improve search visibility."
+          "description": "Optimized Core Web Vitals keep visitors engaged, reduce bounce rates, and improve search visibility."
         },
         {
           "title": "Reliable Architecture",
-          "description": "Type-safe engineering across client and server reduces regressions and maintenance cost."
+          "description": "Type-safe engineering across client and server reduces regressions and maintenance cost over time."
         }
       ],
       "deliverables": [
-        "Responsive, mobile-first design",
-        "SEO and metadata optimization",
-        "Server-rendered and static page generation",
-        "CI/CD pipeline and cloud deployment"
+        "Responsive, mobile-first design with fluid typography",
+        "SEO and metadata optimization with JSON-LD schemas",
+        "Server-rendered and static page generation via Next.js",
+        "CI/CD pipeline and automated cloud deployment"
       ],
       "process": [
         {
@@ -71,6 +72,10 @@
         {
           "question": "What is the typical timeline for a web project?",
           "answer": "Timelines vary by scope. A focused product MVP typically takes 3 to 6 weeks from kickoff to deployment."
+        },
+        {
+          "question": "How do you ensure accessibility compliance?",
+          "answer": "Every interactive control is keyboard-accessible, passes WCAG AA contrast ratios, and supports assistive screen readers."
         }
       ],
       "cta": {
@@ -87,7 +92,8 @@
       "featured": true,
       "order": 2,
       "definition": [
-        "Backend engineering provides the secure foundation, data storage, and business logic that powers modern applications."
+        "Backend engineering provides the secure foundation, data storage, and business logic that powers modern applications.",
+        "Engineered with strict validation, connection pooling, and transactional boundaries to ensure flawless uptime."
       ],
       "whyNeeded": [
         {
@@ -133,6 +139,77 @@
         {
           "question": "Do you handle database migrations?",
           "answer": "Yes, all schema evolutions are scripted with versioned migration tools like Flyway or Liquibase."
+        },
+        {
+          "question": "How do you secure API endpoints?",
+          "answer": "Using industry standards including JWT authentication, role-based access control, rate limiting, and encrypted payloads."
+        }
+      ],
+      "cta": {
+        "label": "Discuss this service"
+      }
+    },
+    {
+      "id": "cloud-devops-deployment",
+      "slug": "cloud-devops-deployment",
+      "title": "Cloud & DevOps Architecture",
+      "tagline": "Automated CI/CD pipelines, container orchestration, and cloud hosting.",
+      "summary": "Scalable deployment automation and infrastructure on AWS and Docker, ensuring zero-downtime releases.",
+      "icon": "cloud",
+      "featured": true,
+      "order": 3,
+      "definition": [
+        "DevOps bridges development and operations through automation, infrastructure as code, and continuous delivery.",
+        "Ensures your application scales effortlessly under load and recovers automatically from server disruptions."
+      ],
+      "whyNeeded": [
+        {
+          "title": "Zero-Downtime Releases",
+          "description": "Continuous integration pipelines run automated tests and deploy updates seamlessly without service interruption."
+        },
+        {
+          "title": "Predictable Costs",
+          "description": "Right-sized container orchestration and cloud resource management minimize hosting expenditures."
+        }
+      ],
+      "deliverables": [
+        "Containerized Docker configurations for dev and production",
+        "Automated GitHub Actions workflows for lint, test, and build",
+        "Cloud provisioning on AWS (EC2, ECS, S3, RDS)",
+        "Logging, monitoring, and automated alerts setup"
+      ],
+      "process": [
+        {
+          "title": "Audit",
+          "description": "Evaluating existing infrastructure, bottlenecks, and hosting requirements."
+        },
+        {
+          "title": "Containerization",
+          "description": "Crafting lightweight, secure multi-stage Docker images."
+        },
+        {
+          "title": "Pipeline Automation",
+          "description": "Configuring automated test runners and deployment webhooks."
+        },
+        {
+          "title": "Monitoring",
+          "description": "Implementing health checks, log aggregation, and error tracking."
+        }
+      ],
+      "technologies": ["aws", "docker", "git", "nodejs"],
+      "idealFor": [
+        "Teams looking to modernize their deployment pipeline",
+        "Startups setting up production cloud environments",
+        "Companies moving applications from VPS to containerized clouds"
+      ],
+      "faqs": [
+        {
+          "question": "Which cloud provider do you recommend?",
+          "answer": "AWS is typically best for complex enterprise architectures, while platforms like Vercel or Railway excel for rapid product launches."
+        },
+        {
+          "question": "Can you containerize legacy applications?",
+          "answer": "Yes, I containerize existing Spring Boot, Node.js, and multi-service systems into standard Docker Compose workflows."
         }
       ],
       "cta": {

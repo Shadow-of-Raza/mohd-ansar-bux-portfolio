@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="#161824"/><circle cx="50" cy="50" r="30" fill="#2F2FE4"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <rect width="64" height="64" rx="12" fill="#111035" stroke="#2F2FE4" stroke-width="1.5"/>
+  <!-- Engineering gear and compass crest -->
+  <path d="M32 16L46 24V40L32 48L18 40V24L32 16Z" stroke="#6868F7" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="32" cy="32" r="7" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M32 21V25M32 39V43M21 32H25M39 32H43" stroke="#9393FA" stroke-width="2" stroke-linecap="round"/>
+</svg>

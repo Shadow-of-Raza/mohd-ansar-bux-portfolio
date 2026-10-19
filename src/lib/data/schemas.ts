@@ -65,6 +65,8 @@ export const HomeCopy = z
     title: optText,
     intro: optText,
     limit: z.number().int().positive().optional(),
+    statLabel: optText,
+    statDescription: optText,
   })
   .prefault({});
 

@@ -13,6 +13,8 @@ const MONTH_NAMES = [
   "Dec",
 ] as const;
 
+const DEFAULT_REFERENCE_DATE = new Date();
+
 export interface DurationResult {
   months: number;
   label: string;
@@ -56,7 +58,7 @@ function getMonthIndex(ym: string): number {
 export function calculateDuration(
   start: string,
   end?: string | null,
-  referenceDate = new Date(),
+  referenceDate = DEFAULT_REFERENCE_DATE,
 ): DurationResult {
   if (!start) return { months: 0, label: "" };
 
@@ -93,7 +95,7 @@ export function calculateDuration(
  */
 export function calculateTotalExperience(
   intervals: { start: string; end?: string | null }[],
-  referenceDate = new Date(),
+  referenceDate = DEFAULT_REFERENCE_DATE,
 ): string {
   if (!intervals.length) return "0 mos";
 

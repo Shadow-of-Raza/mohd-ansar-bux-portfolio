@@ -7,17 +7,17 @@
     "text": "MAB",
     "src": "/images/brand/logo.svg",
     "alt": "Mohd Ansar Bux logo",
-    "width": 120,
-    "height": 40
+    "width": 44,
+    "height": 44
   },
   "availability": {
     "open": true,
     "label": "Open to freelance & full-time roles"
   },
   "hero": {
-    "eyebrow": "Full-stack engineer — Indore, India",
-    "headline": "I build web products that *ship*",
-    "intro": "Java, Spring Boot, Node.js and React/Next.js — from database architecture to smooth deployment.",
+    "eyebrow": "Full-Stack Software Engineer — Indore, India",
+    "headline": "Architecting digital products that *ship*",
+    "intro": "Engineering robust Java & Spring Boot microservices and fast, accessible React/Next.js interfaces from concept to production.",
     "primaryCta": {
       "label": "View projects",
       "href": "/projects"
@@ -48,12 +48,12 @@
     }
   ],
   "footer": {
-    "intro": "Full-stack engineer building fast, dependable web products for teams and businesses.",
+    "intro": "Full-stack engineer crafting dependable backend architectures, high-performance APIs, and cinematic web interfaces.",
     "ctaTitle": "Have a project *in mind?*"
   },
   "seo": {
     "title": "Mohd Ansar Bux — Full-Stack Software Engineer",
-    "description": "Portfolio of Mohd Ansar Bux, full-stack engineer working with Java, Spring Boot, Node.js, React and Next.js.",
+    "description": "Portfolio of Mohd Ansar Bux, full-stack engineer specializing in Java, Spring Boot, React, Next.js, and cloud systems.",
     "ogImage": {
       "src": "/images/og/default.jpg",
       "alt": "Mohd Ansar Bux portfolio",
@@ -64,9 +64,10 @@
       "full-stack developer",
       "Next.js developer",
       "Spring Boot developer",
-      "Indore",
+      "Java engineer",
       "React developer",
-      "Java engineer"
+      "Indore software engineer",
+      "TypeScript developer"
     ]
   }
 }

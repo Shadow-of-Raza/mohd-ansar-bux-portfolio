@@ -14,7 +14,7 @@ export function SectionHeading({ as: Component = "h2", className, children, ...p
   const content = typeof children === "string" ? renderAccent(children) : children;
 
   return (
-    <Component className={cn("text-display-lg tracking-tight text-fg", className)} {...props}>
+    <Component className={cn("text-display-lg tracking-tight text-balance text-fg", className)} {...props}>
       {content}
     </Component>
   );

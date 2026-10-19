@@ -18,14 +18,7 @@ export type NavLinkProps = {
  * Navigation link with active-route detection and Alegreya SC styling.
  * Per docs/context/01-project-overview.md §4 and 03-design-system.md §5, §10.
  */
-export function NavLink({
-  href,
-  label,
-  number,
-  onClick,
-  className,
-  variant = "desktop",
-}: NavLinkProps) {
+export function NavLink({ href, label, number, onClick, className, variant = "desktop" }: NavLinkProps) {
   const pathname = usePathname();
 
   const isActive =
@@ -49,7 +42,7 @@ export function NavLink({
         {number && (
           <span
             className={cn(
-              "font-label text-micro tracking-[0.08em] transition-colors duration-200",
+              "text-micro font-label tracking-[0.08em] transition-colors duration-200",
               isActive ? "text-electric-300" : "text-fg-subtle group-hover:text-electric-300",
             )}
             aria-hidden="true"
@@ -65,12 +58,7 @@ export function NavLink({
         >
           {label}
         </span>
-        {isActive && (
-          <span
-            className="h-2 w-2 rounded-full bg-electric-300"
-            aria-hidden="true"
-          />
-        )}
+        {isActive && <span className="h-2 w-2 rounded-full bg-electric-300" aria-hidden="true" />}
       </Link>
     );
   }
@@ -81,7 +69,7 @@ export function NavLink({
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "relative inline-flex items-center py-2 font-label text-label tracking-[0.06em] select-none transition-colors duration-200",
+        "relative inline-flex items-center py-2 text-label font-label tracking-[0.06em] transition-colors duration-200 select-none",
         "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric-300",
         isActive ? "text-white" : "text-fg-muted hover:text-white",
         className,
@@ -91,7 +79,7 @@ export function NavLink({
       {/* Active-route indicator (Phase 3 CSS underline, Motion layoutId in Phase 6) */}
       {isActive ? (
         <span
-          className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-electric-300"
+          className="absolute right-0 -bottom-1 left-0 h-0.5 rounded-full bg-electric-300"
           aria-hidden="true"
         />
       ) : (

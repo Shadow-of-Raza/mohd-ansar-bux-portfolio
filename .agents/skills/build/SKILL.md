@@ -57,8 +57,19 @@ Run `/verify`. For UI work, also run `/review-ui` on each affected route or sect
 
 ## 6. Record
 
-- Update `docs/PROGRESS.md`: tick the phase or IDs, add the date, notes, and any placeholders or deferred items.
-- Write the Walkthrough: files changed, deviations from the docs and why, placeholders, screenshots at 375 / 768 / 1440 px.
+- Update `docs/PROGRESS.md`: tick the phase or IDs, add the date, notes, placeholders and deferred items.
+- Save a walkthrough to `docs/walkthroughs/<ID>_<YYYY-MM-DD>.md`
+  (e.g. `HOME-00_2026-10-17.md`, `Phase-02_2026-10-16.md`).
+  - Never overwrite. If the file already exists, add `-2`, `-3`, …
+  - An enhancement of an existing section always gets a new file.
+- The walkthrough contains: what was built or changed and why, files created/modified/deleted,
+  deviations from the docs and why, placeholders, deferred items, the verification table,
+  and screenshots.
+- Save screenshots at 375 / 768 / 1440 px to
+  `docs/walkthroughs/screenshots/<ID>_<YYYY-MM-DD>/` and link them with relative paths.
+- Screenshots must be copied into docs/walkthroughs/screenshots/. Never link to .gemini/ brain folders or use file:/// links; use relative paths only.
+- Add one line at the top of `docs/walkthroughs/INDEX.md`:
+  `| date | ID | type (build/fix/enhance/review) | one-line summary | link |`
 
 ---
 

@@ -26,14 +26,7 @@ export type MobileMenuProps = {
  * and contact/social details.
  * Per docs/context/01-project-overview.md §4 and 04-motion-and-effects.md §4.4.
  */
-export function MobileMenu({
-  isOpen,
-  onClose,
-  navItems,
-  hasContact,
-  site,
-  contactEmail,
-}: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose, navItems, hasContact, site, contactEmail }: MobileMenuProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const previouslyFocusedElementRef = useRef<HTMLElement | null>(null);
 
@@ -81,9 +74,7 @@ export function MobileMenu({
     // Initial focus on close button
     const timer = setTimeout(() => {
       if (dialogRef.current) {
-        const closeBtn = dialogRef.current.querySelector<HTMLElement>(
-          'button[aria-label="Close menu"]',
-        );
+        const closeBtn = dialogRef.current.querySelector<HTMLElement>('button[aria-label="Close menu"]');
         closeBtn?.focus();
       }
     }, 50);
@@ -114,21 +105,24 @@ export function MobileMenu({
         <Link
           href="/"
           onClick={onClose}
-          className="flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
+          className="group flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
         >
           {site.logo?.src ? (
             <Image
               src={site.logo.src}
               alt={site.logo.alt || site.name}
-              width={site.logo.width || 120}
-              height={site.logo.height || 40}
-              className="h-8 w-auto object-contain"
+              width={site.logo.width || 44}
+              height={site.logo.height || 44}
+              className="h-9 w-9 shrink-0 object-contain transition-opacity duration-200 group-hover:opacity-85 sm:h-10 sm:w-10"
             />
           ) : (
-            <span className="font-display text-xl tracking-wider text-white">
-              {site.logo?.text || site.name}
+            <span className="font-display text-lg tracking-wider text-white">
+              {site.logo?.text || "MB"}
             </span>
           )}
+          <span className="font-display text-base tracking-wide text-white transition-colors duration-200 group-hover:text-electric-300 sm:text-lg">
+            {site.name}
+          </span>
         </Link>
 
         <button
@@ -136,7 +130,7 @@ export function MobileMenu({
           onClick={onClose}
           aria-label="Close menu"
           className={cn(
-            "flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-sm border border-line text-fg-muted transition-colors duration-200",
+            "flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-sm border border-line text-fg-muted transition-colors duration-200",
             "hover:border-line-strong hover:bg-surface-2 hover:text-white",
             "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300",
           )}
@@ -175,7 +169,7 @@ export function MobileMenu({
             {contactEmail && (
               <a
                 href={`mailto:${contactEmail}`}
-                className="inline-flex min-h-[44px] items-center gap-2 font-label text-label tracking-[0.06em] text-fg-muted transition-colors hover:text-white"
+                className="inline-flex min-h-[44px] items-center gap-2 text-label font-label tracking-[0.06em] text-fg-muted transition-colors hover:text-white"
               >
                 <Mail className="h-4 w-4 text-electric-300" aria-hidden="true" />
                 <span>{contactEmail}</span>
@@ -186,9 +180,7 @@ export function MobileMenu({
 
         <div className="flex items-center justify-between">
           <SocialLinks socials={site.socials} />
-          <span className="font-label text-micro tracking-[0.08em] text-fg-subtle">
-            {site.location}
-          </span>
+          <span className="text-micro font-label tracking-[0.08em] text-fg-subtle">{site.location}</span>
         </div>
       </div>
     </div>
