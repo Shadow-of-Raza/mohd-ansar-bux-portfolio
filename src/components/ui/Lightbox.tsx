@@ -36,6 +36,31 @@ export function Lightbox({ isOpen, images, currentIndex, onClose, onNavigate, cl
     onNavigate((currentIndex + 1) % images.length);
   }, [currentIndex, images.length, hasMultiple, onNavigate]);
 
+  const [touchStartX, setTouchStartX] = React.useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    if (touch) {
+      setTouchStartX(touch.clientX);
+    }
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touch = e.changedTouches[0];
+    if (!touch) return;
+    const touchEndX = touch.clientX;
+    const diff = touchStartX - touchEndX;
+    const minSwipeDistance = 50;
+
+    if (diff > minSwipeDistance) {
+      handleNext();
+    } else if (diff < -minSwipeDistance) {
+      handlePrev();
+    }
+    setTouchStartX(null);
+  };
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -66,6 +91,8 @@ export function Lightbox({ isOpen, images, currentIndex, onClose, onNavigate, cl
       role="dialog"
       aria-modal="true"
       aria-label="Image gallery lightbox"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       className={cn(
         "animate-in fade-in-0 fixed inset-0 z-50 flex flex-col items-center justify-between bg-void/95 p-4 backdrop-blur-md duration-200 md:p-8",
         className,

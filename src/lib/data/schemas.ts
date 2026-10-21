@@ -41,6 +41,8 @@ export const ImageSchema = z.object({
   caption: optText,
 });
 
+export type Image = z.infer<typeof ImageSchema>;
+
 export const SeoSchema = z
   .object({
     title: optText,

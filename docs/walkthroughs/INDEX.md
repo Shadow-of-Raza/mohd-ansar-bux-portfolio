@@ -1,8 +1,9 @@
 # Walkthrough History
 
-| Date       | ID       | Type    | Summary                                                                         | Link                                                 |
-| ---------- | -------- | ------- | ------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| 2026-10-21 | Phase-04 | docs    | Close Phase 4: mark home sections static done, skip CTA bands, align placeholders | [Phase-04_2026-10-21.md](./Phase-04_2026-10-21.md)   |
+| Date       | ID          | Type    | Summary                                                                            | Link                                                       |
+| ---------- | ----------- | ------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| 2026-10-21 | ABOUT-01–05 | build   | Complete About Me page with bio, bento gallery, interests, hobbies, and info grid  | [ABOUT-01-05_2026-10-21.md](./ABOUT-01-05_2026-10-21.md)   |
+| 2026-10-21 | Phase-04    | docs    | Close Phase 4: mark home sections static done, skip CTA bands, align placeholders   | [Phase-04_2026-10-21.md](./Phase-04_2026-10-21.md)        |
 | 2026-10-21 | HOME-06  | build   | Skills Showcase section with authentic SVG logos, usage popovers, and editorial grid | [HOME-06_2026-10-21.md](./HOME-06_2026-10-21.md)     |
 | 2026-10-19 | HOME-05  | build   | Projects (preview) section with 16:10 covers, tech chips (+N), and stretched link | [HOME-05_2026-10-19.md](./HOME-05_2026-10-19.md)     |
 | 2026-10-19 | HOME-04  | fix     | Compact home mode, clean meta separators, and pursuing badge test               | [HOME-04_2026-10-19-2.md](./HOME-04_2026-10-19-2.md) |
