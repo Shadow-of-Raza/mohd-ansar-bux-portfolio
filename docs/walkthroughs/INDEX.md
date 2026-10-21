@@ -2,6 +2,7 @@
 
 | Date       | ID          | Type    | Summary                                                                            | Link                                                       |
 | ---------- | ----------- | ------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| 2026-10-21 | SERV-01–03  | build   | Complete Services page with hero, sticky sub-nav, scroll-spy, and 9-part anatomy   | [SERV-01-03_2026-10-21.md](./SERV-01-03_2026-10-21.md)     |
 | 2026-10-21 | ABOUT-01–05 | build   | Complete About Me page with bio, bento gallery, interests, hobbies, and info grid  | [ABOUT-01-05_2026-10-21.md](./ABOUT-01-05_2026-10-21.md)   |
 | 2026-10-21 | Phase-04    | docs    | Close Phase 4: mark home sections static done, skip CTA bands, align placeholders   | [Phase-04_2026-10-21.md](./Phase-04_2026-10-21.md)        |
 | 2026-10-21 | HOME-06  | build   | Skills Showcase section with authentic SVG logos, usage popovers, and editorial grid | [HOME-06_2026-10-21.md](./HOME-06_2026-10-21.md)     |

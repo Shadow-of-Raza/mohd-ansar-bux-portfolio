@@ -34,6 +34,7 @@ Full spec: @docs/context/03-design-system.md. Read the relevant section before s
 - `font-accent` (Averia Serif Libre): one italic accent word per heading.
   - It comes from `*word*` in JSON, rendered via `renderAccent()` in `src/lib/utils/format.ts`.
   - Style: `font-accent italic font-normal text-electric-300`.
+- Taglines, summaries and other supporting text always use font-body; font-accent is ONLY for the one *accent* word inside a heading.
 
 ## Layout & shape
 

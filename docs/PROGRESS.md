@@ -11,7 +11,7 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 | 2     | Data layer + full validator + sitemap/robots           | ✅ Done                                | 2026-10-16 | Schemas for all 8 files (Zod 4), loaders, relations, availability, dates/hasContent utils, validate-data script with all 6 error + 4 warning checks, sitemap.xml and robots.txt                 |
 | 3     | Header, Footer, MobileMenu                             | 🟨 Done (static)                       | 2026-10-17 | Header, Footer, MobileMenu, NavLink, SkipLink, SocialLinks, BackToTop wired in layout.tsx. Verified keyboard navigation (skip link, Esc, focus trap) & responsive layout across 375/768/1440px. |
 | 4     | Home sections HOME-00 → HOME-06 (static; HOME-07 skipped) | 🟨 Done (static)                    | 2026-10-21 | HOME-00 through HOME-06 Skills built static; HOME-07 skipped (covered by global footer CTA). Passed data validation, lint, typecheck, build, presence tests, and browser verification across 375/768/1440px. |
-| 5     | Inner pages (About page complete)                      | 🟨 In progress                         | 2026-10-21 | ABOUT-01 through ABOUT-05 built static with full responsive layout, Lightbox interaction, presence rules, verified across 375/768/1440px. |
+| 5     | Inner pages (About & Services pages complete)          | 🟨 In progress                         | 2026-10-21 | ABOUT-01–05 and SERV-01–03 built static with full responsive layout, Lightbox/Accordion, sticky sub-nav with scroll-spy, presence rules, verified across 375/768/1440px. |
 | 5b    | 404 page                                               | ⬜                                     |            | Standalone editorial 404 error page (Section 5.10)                                                                                                                                              |
 | 6     | Motion layer                                           | ⬜                                     |            |                                                                                                                                                                                                 |
 | 7     | 3D hero                                                | ⬜                                     |            |                                                                                                                                                                                                 |
@@ -29,7 +29,7 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 
 **About:** 🟨 ABOUT-01 · 🟨 ABOUT-02 · 🟨 ABOUT-03 · 🟨 ABOUT-04 · 🟨 ABOUT-05 · ⏭ ABOUT-06 (Skipped: covered by the global footer CTA)
 
-**Services:** ⬜ SERV-01 · ⬜ SERV-02 · ⬜ SERV-03 · ⏭ SERV-04 (Skipped: covered by the global footer CTA)
+**Services:** 🟨 SERV-01 · 🟨 SERV-02 · 🟨 SERV-03 · ⏭ SERV-04 (Skipped: covered by the global footer CTA)
 
 **Experience:** ⬜ EXP-01 · ⬜ EXP-02 · ⏭ EXP-03 (Skipped: covered by the global footer CTA)
 
