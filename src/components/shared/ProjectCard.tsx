@@ -1,0 +1,149 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Card } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
+import { TechChip } from "@/components/shared/TechChip";
+import { cn } from "@/lib/utils/cn";
+import type { Project } from "@/lib/data/schemas";
+
+export type ProjectCardProps = {
+  project: Project;
+  skillMap?: Record<string, { name: string; icon?: string }>;
+  className?: string;
+};
+
+/**
+ * Format project type identifier into display label.
+ */
+function formatTypeLabel(type: string): string {
+  switch (type) {
+    case "open-source":
+      return "Open source";
+    case "professional":
+      return "Professional";
+    case "freelance":
+      return "Freelance";
+    case "personal":
+      return "Personal";
+    default:
+      return type.charAt(0).toUpperCase() + type.slice(1);
+  }
+}
+
+/**
+ * ProjectCard component for HOME-05 and /projects listings.
+ * Follows design system specifications (01 §5.1, 03 §7, §8, §10):
+ * - 16:10 cover plate with subtle scale on hover.
+ * - Type badge ("Open source" / "Professional" / etc.) and organization name.
+ * - Archivo Black title with hover color transition.
+ * - Compact one-line summary / tagline.
+ * - Up to 4 tech chips with authentic logos, plus "+N" overflow pill.
+ * - Stretched link on "Read more" to /projects/[slug] for full-card clickability.
+ */
+export function ProjectCard({ project, skillMap, className }: ProjectCardProps) {
+  const summaryText = project.summary?.trim() || project.tagline?.trim();
+  const featuredTechs = project.techStack ? project.techStack.slice(0, 4) : [];
+  const remainingCount = project.techStack ? Math.max(0, project.techStack.length - 4) : 0;
+
+  return (
+    <Card
+      as="article"
+      interactive
+      className={cn(
+        "group flex h-full flex-col justify-between overflow-hidden p-6 sm:p-8",
+        className,
+      )}
+    >
+      <div>
+        {/* Project Cover: 16:10 Plate with Subtle Hover Zoom */}
+        {project.cover && (
+          <div className="relative mb-6 aspect-[16/10] w-full overflow-hidden rounded-sm border border-line/60 bg-surface-2">
+            <Image
+              src={project.cover.src}
+              alt={project.cover.alt || project.title}
+              width={project.cover.width || 1600}
+              height={project.cover.height || 1000}
+              sizes="(min-width: 1280px) 680px, (min-width: 768px) 50vw, 100vw"
+              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+          </div>
+        )}
+
+        {/* Meta Bar: Type Badge, Organization, and Timeline Duration */}
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <Badge variant={project.type === "open-source" ? "open-source" : "default"}>
+              {formatTypeLabel(project.type)}
+            </Badge>
+
+            {project.organization?.name && (
+              <span className="font-label text-micro tracking-wider text-fg-subtle">
+                {project.organization.name}
+              </span>
+            )}
+          </div>
+
+          {project.timeline?.durationLabel && (
+            <span className="font-label text-micro text-fg-subtle">
+              {project.timeline.durationLabel}
+            </span>
+          )}
+        </div>
+
+        {/* Title and Summary */}
+        <div className="space-y-3">
+          <h3 className="font-display text-heading text-balance text-white transition-colors duration-200 group-hover:text-electric-300">
+            {project.title}
+          </h3>
+
+          {summaryText && (
+            <p className="font-body text-body text-pretty text-fg-muted leading-relaxed line-clamp-2">
+              {summaryText}
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* Bottom Area: Technology Chips & Action Link */}
+      <div className="mt-8 space-y-5">
+        {/* Up to 4 Tech Chips (+N overflow indicator) */}
+        {featuredTechs.length > 0 && (
+          <div className="relative z-10 flex flex-wrap items-center gap-2">
+            {featuredTechs.map((item) => {
+              const skillId = item.skill;
+              const skillInfo = skillMap?.[skillId];
+              const skillName = skillInfo?.name || skillId.replace(/-/g, " ");
+              const skillIcon = skillInfo?.icon;
+              return <TechChip key={skillId} name={skillName} icon={skillIcon} />;
+            })}
+
+            {remainingCount > 0 && (
+              <span
+                className="inline-flex h-8 items-center rounded-full border border-line/80 bg-surface-2 px-3 font-label text-micro text-fg-subtle select-none"
+                title={`${remainingCount} more technologies`}
+              >
+                +{remainingCount}
+              </span>
+            )}
+          </div>
+        )}
+
+        {/* Hairline Divider & Read More Stretched Link */}
+        <div className="flex items-center justify-between border-t border-line/60 pt-4">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="group/link inline-flex items-center gap-2 font-label text-label font-medium text-electric-300 transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300 after:absolute after:inset-0 after:content-['']"
+          >
+            <span>Read more</span>
+            <ArrowRight
+              className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover/link:translate-x-1 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
+      </div>
+    </Card>
+  );
+}

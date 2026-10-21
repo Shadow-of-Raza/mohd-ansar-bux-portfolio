@@ -72,4 +72,16 @@ export function hasEducationPage(): boolean {
   return getEducation() !== null;
 }
 
+/**
+ * Checks whether the Projects page/route should exist.
+ */
+export function hasProjectsPage(): boolean {
+  return getProjects() !== null;
+}
 
+/**
+ * Checks whether the Skills page/route should exist.
+ */
+export function hasSkillsPage(): boolean {
+  return getSkills() !== null;
+}

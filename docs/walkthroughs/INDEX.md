@@ -2,6 +2,9 @@
 
 | Date       | ID       | Type    | Summary                                                                         | Link                                                 |
 | ---------- | -------- | ------- | ------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| 2026-10-21 | Phase-04 | docs    | Close Phase 4: mark home sections static done, skip CTA bands, align placeholders | [Phase-04_2026-10-21.md](./Phase-04_2026-10-21.md)   |
+| 2026-10-21 | HOME-06  | build   | Skills Showcase section with authentic SVG logos, usage popovers, and editorial grid | [HOME-06_2026-10-21.md](./HOME-06_2026-10-21.md)     |
+| 2026-10-19 | HOME-05  | build   | Projects (preview) section with 16:10 covers, tech chips (+N), and stretched link | [HOME-05_2026-10-19.md](./HOME-05_2026-10-19.md)     |
 | 2026-10-19 | HOME-04  | fix     | Compact home mode, clean meta separators, and pursuing badge test               | [HOME-04_2026-10-19-2.md](./HOME-04_2026-10-19-2.md) |
 | 2026-10-19 | HOME-04  | build   | Education (timeline) section with track, 10px nodes, and alternating cards     | [HOME-04_2026-10-19.md](./HOME-04_2026-10-19.md)     |
 | 2026-10-19 | HOME-03  | fix     | ExperienceItem typography, +N chips, internship exclusion, multi-role promotion | [HOME-03_2026-10-19-2.md](./HOME-03_2026-10-19-2.md) |
