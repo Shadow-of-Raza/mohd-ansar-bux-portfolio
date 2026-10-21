@@ -22,3 +22,33 @@ export function renderAccent(text?: string | null): React.ReactNode {
     after,
   );
 }
+
+/**
+ * Highlights metrics, numbers, percentages, and multipliers in text
+ * with text-electric-300 font-semibold per docs/context/01 §5.4 and 03 §2-4.
+ */
+export function highlightNumbers(text?: string | null): React.ReactNode {
+  if (!text) return null;
+
+  // Matches numbers with optional commas, decimals, plus, percent, multiplier (e.g., 35%, 50,000+, 2.5x, 10+)
+  const regex = /(\b\d+(?:,\d+)*(?:\.\d+)?(?:%|\+|x)?\b)/g;
+  const parts = text.split(regex);
+
+  if (parts.length <= 1) return text;
+
+  return React.createElement(
+    React.Fragment,
+    null,
+    ...parts.map((part, i) => {
+      // Re-test because regex with 'g' can have stateful lastIndex; test a fresh regex
+      if (/^\d+(?:,\d+)*(?:\.\d+)?(?:%|\+|x)?$/.test(part)) {
+        return React.createElement(
+          "span",
+          { key: i, className: "font-semibold text-electric-300" },
+          part,
+        );
+      }
+      return part;
+    }),
+  );
+}
