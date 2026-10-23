@@ -307,6 +307,146 @@
           "Achieved 100 Lighthouse performance and accessibility scores with sub-second page loads."
         ]
       }
+    },
+    {
+      "id": "fintech-algorithmic-trading-engine",
+      "slug": "fintech-algorithmic-trading-engine",
+      "title": "High-Frequency Algorithmic Trading Execution Engine",
+      "tagline": "Sub-millisecond order matching and FIX protocol gateway.",
+      "summary": "Ultra-low latency algorithmic trading microservice processing concurrent FIX messages under strict SLA.",
+      "type": "freelance",
+      "organization": {
+        "name": "Confidential FinTech Client",
+        "url": null
+      },
+      "role": "Backend & Systems Architect",
+      "status": "completed",
+      "featured": false,
+      "order": 5,
+      "confidential": true,
+      "timeline": {
+        "start": "2024-03",
+        "end": "2024-07",
+        "durationLabel": "5 months"
+      },
+      "links": {
+        "github": null,
+        "live": null
+      },
+      "cover": {
+        "src": "/images/projects/fintech-algorithmic-trading-engine/cover.webp",
+        "alt": "Trading architecture topology diagram",
+        "width": 1600,
+        "height": 1000
+      },
+      "gallery": [],
+      "techStack": [
+        {
+          "skill": "java",
+          "reason": "Low-latency garbage collection tuning"
+        },
+        {
+          "skill": "spring-boot",
+          "reason": "Microservice configuration and metrics"
+        },
+        {
+          "skill": "postgresql",
+          "reason": "Audit trails and trade settlements"
+        },
+        {
+          "skill": "docker",
+          "reason": "Reproducible benchmark execution"
+        }
+      ],
+      "writeup": {
+        "overview": [
+          "Engineered a resilient electronic trading engine executing limit order book matches under sub-millisecond execution constraints.",
+          "Designed zero-allocation data structures to minimize garbage collection pauses during market open volatility."
+        ],
+        "purpose": [
+          "Replace legacy execution infrastructure with a high-throughput, deterministic microservice."
+        ],
+        "features": [
+          "In-memory price-time priority matching engine",
+          "Deterministic replay log for zero-data-loss crash recovery",
+          "FIX 4.4 protocol gateway supporting concurrent client connections"
+        ],
+        "challenges": [
+          "Eliminating intermittent GC spikes that pushed p99 latency beyond target bounds.",
+          "Overcame this by utilizing primitive object pools and memory-mapped ring buffers."
+        ],
+        "outcome": [
+          "Maintained p99 execution latency under 1.2 milliseconds across stress loads of 50,000 orders/sec."
+        ]
+      }
+    },
+    {
+      "id": "distributed-multi-region-observability-pipeline",
+      "slug": "distributed-multi-region-observability-pipeline",
+      "title": "Distributed Multi-Region Fault-Tolerant Observability & Event Streaming Architecture Pipeline",
+      "tagline": "Unified telemetry ingest, stream aggregation, and anomaly detection across hybrid clouds.",
+      "summary": "Scalable observability pipeline ingesting terabytes of distributed system logs and traces in real time.",
+      "type": "personal",
+      "role": "Sole Creator & Architect",
+      "status": "in-progress",
+      "featured": false,
+      "order": 6,
+      "confidential": false,
+      "timeline": {
+        "start": "2026-06",
+        "end": null,
+        "durationLabel": "Ongoing"
+      },
+      "links": {
+        "github": null,
+        "live": "https://example.com"
+      },
+      "cover": {
+        "src": "/images/projects/distributed-multi-region-observability-pipeline/cover.webp",
+        "alt": "Multi-region observability topology monitor",
+        "width": 1600,
+        "height": 1000
+      },
+      "gallery": [],
+      "techStack": [
+        {
+          "skill": "nodejs",
+          "reason": "Event-driven telemetry stream multiplexing"
+        },
+        {
+          "skill": "typescript",
+          "reason": "Strict schema contracts for event envelopes"
+        },
+        {
+          "skill": "aws",
+          "reason": "Kinesis data streams and ECS Fargate compute"
+        },
+        {
+          "skill": "docker",
+          "reason": "Containerized agent instrumentation"
+        }
+      ],
+      "writeup": {
+        "overview": [
+          "Architectural exploration of a globally distributed telemetry aggregator capable of deduplicating structured logs across disparate cloud zones.",
+          "Utilizes backpressure-aware event streaming pipelines to withstand transient network partitions."
+        ],
+        "purpose": [
+          "Provide actionable multi-cloud health insights without central bottleneck vulnerability."
+        ],
+        "features": [
+          "Distributed trace propagation across asynchronous boundaries",
+          "Real-time sliding-window anomaly detection alerts",
+          "Dynamic cardinality reduction to curb ingestion storage expenses"
+        ],
+        "challenges": [
+          "Handling stream reordering during out-of-order network arrival across global regions.",
+          "Resolved using watermarked event-time windows and monotonic sequence counters."
+        ],
+        "outcome": [
+          "Validated reliable stream ingest of 120,000 metrics per second in distributed synthetic benchmark tests."
+        ]
+      }
     }
   ]
 }

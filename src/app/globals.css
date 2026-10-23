@@ -199,3 +199,13 @@
     display: none;
   }
 }
+
+/* 10) Scrollbar hiding utility for horizontal chip/subnav rows */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
