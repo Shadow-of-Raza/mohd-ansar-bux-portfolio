@@ -4,6 +4,7 @@ import { ExternalLink, MapPin, Award } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { formatYearMonth } from "@/lib/utils/dates";
+import { highlightNumbers } from "@/lib/utils/format";
 import { cn } from "@/lib/utils/cn";
 import type { Education } from "@/lib/data/schemas";
 
@@ -164,7 +165,7 @@ export function TimelineItem({
                 className="mt-2 h-1 w-1 shrink-0 rounded-full bg-electric-300"
                 aria-hidden="true"
               />
-              <span>{highlight}</span>
+              <span>{highlightNumbers(highlight)}</span>
             </li>
           ))}
         </ul>
