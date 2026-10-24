@@ -11,7 +11,7 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 | 2     | Data layer + full validator + sitemap/robots           | ✅ Done                                | 2026-10-16 | Schemas for all 8 files (Zod 4), loaders, relations, availability, dates/hasContent utils, validate-data script with all 6 error + 4 warning checks, sitemap.xml and robots.txt                 |
 | 3     | Header, Footer, MobileMenu                             | 🟨 Done (static)                       | 2026-10-17 | Header, Footer, MobileMenu, NavLink, SkipLink, SocialLinks, BackToTop wired in layout.tsx. Verified keyboard navigation (skip link, Esc, focus trap) & responsive layout across 375/768/1440px. |
 | 4     | Home sections HOME-00 → HOME-06 (static; HOME-07 skipped) | 🟨 Done (static)                    | 2026-10-21 | HOME-00 through HOME-06 Skills built static; HOME-07 skipped (covered by global footer CTA). Passed data validation, lint, typecheck, build, presence tests, and browser verification across 375/768/1440px. |
-| 5     | Inner pages (About, Services, Experience, Education, Projects & Project Detail complete) | 🟨 In progress                         | 2026-10-24 | ABOUT-01–05, SERV-01–03, EXP-01–02, EDU-01–02, PROJ-01–02, and PD-01–06 built static with SSG routes, metadata OG image generation, NDA handling, GalleryGrid reuse, and cross-linking verified. |
+| 5     | Inner pages (About, Services, Experience, Education, Projects, Project Detail & Skills complete) | 🟨 In progress                         | 2026-10-24 | ABOUT-01–05, SERV-01–03, EXP-01–02, EDU-01–02, PROJ-01–02, PD-01–06, and SK-01–02 built static with SSG routes, deep-link anchors, unused skill empty-state handling, and cross-linking verified. |
 | 5b    | 404 page                                               | ⬜                                     |            | Standalone editorial 404 error page (Section 5.10)                                                                                                                                              |
 | 6     | Motion layer                                           | ⬜                                     |            |                                                                                                                                                                                                 |
 | 7     | 3D hero                                                | ⬜                                     |            |                                                                                                                                                                                                 |
@@ -39,7 +39,7 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 
 **Project detail:** 🟨 PD-01 · 🟨 PD-02 · 🟨 PD-03 · 🟨 PD-04 · 🟨 PD-05 · 🟨 PD-06
 
-**Skills:** ⬜ SK-01 · ⬜ SK-02 · ⏭ SK-03 (Skipped: covered by the global footer CTA)
+**Skills:** 🟨 SK-01 · 🟨 SK-02 · ⏭ SK-03 (Skipped: covered by the global footer CTA)
 
 **Contact:** ⬜ CON-01 · ⬜ CON-02 · ⬜ CON-03
 
@@ -57,11 +57,11 @@ All 8 data files in `src/data/` are populated with complete, valid mock/dummy in
 | `src/data/experience.json`                | 3 companies & engineering roles with skills and projects                                                               | Pending user confirmation            |
 | `src/data/education.json`                 | B.Tech CSE & Higher Secondary degrees with coursework                                                                  | Pending user confirmation            |
 | `src/data/projects.json`                  | 6 diverse projects across 4 types (professional, open-source, freelance, personal) including confidential NDA and long title | Pending user confirmation            |
-| `src/data/skills.json`                    | 12 categorized skills (100% referenced, 0 warnings)                                                                    | Pending user confirmation            |
+| `src/data/skills.json`                    | 14 categorized skills (including 2 unused placeholder skills GraphQL & Kubernetes for testing empty-state popovers)     | Pending user confirmation            |
 | `src/data/contact.json`                   | Email, phone, location, response time, CTA copy                                                                        | Pending user confirmation            |
 | `public/images/brand/logo.svg`            | Standalone 44×44 geometric MAB monogram badge (name rendered in text)                                                  | Done                                 |
 | `public/images/brand/monogram.svg`        | Standalone 44×44 geometric MAB monogram badge                                                                          | Done                                 |
-| `public/icons/skills/*.svg`               | 12 authentic vector brand SVG icons (Java, Spring, Node, TS, React, Next, Tailwind, MySQL, Postgres, AWS, Docker, Git) | Done                                 |
+| `public/icons/skills/*.svg`               | 14 authentic vector brand SVG icons (Java, Spring, Node, TS, React, Next, Tailwind, MySQL, Postgres, AWS, Docker, Git, Kubernetes, GraphQL) | Done                                 |
 | `public/images/companies/*.svg`           | 3 company SVG badges (Tech Innovators, Apex Systems, CodeCraft Labs)                                                   | Placeholder: replace in content step |
 | `public/images/institutions/*.svg`        | 2 academic institution SVG badges (IET engineering crest, St. Paul school)                                             | Placeholder: replace in content step |
 | `public/images/projects/**`               | 9 high-res WebP project covers & gallery screenshots across all 6 projects                                             | Placeholder: replace in content step |
@@ -70,7 +70,6 @@ All 8 data files in `src/data/` are populated with complete, valid mock/dummy in
 
 ## Deferred / known issues
 
-- Skills page: Tech chips in PD-04 link to `/skills#{skillId}` (`01 §6`). Those anchors will be added when the Skills page is built (SK-02 dependency).
 - Phase 6: Replace the `window` scroll listeners in `Header` and `ScrollCue` with Motion `useScroll` / Lenis (rule in `04 §8`).
 - Phase 6: `BackToTop` and the ScrollCue link should scroll through Lenis.
 - Phase 7: Replace `public/hero/hero-poster.webp` with a still render of the real 3D scene, so the poster→WebGL cross-fade matches.

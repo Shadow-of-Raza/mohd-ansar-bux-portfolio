@@ -2,6 +2,7 @@
 
 | Date       | ID          | Type    | Summary                                                                            | Link                                                       |
 | ---------- | ----------- | ------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| 2026-10-24 | SK-01–02    | build   | Skills page with hero, categorized groups, deep-link anchors & empty-state testing | [SK-01-02_2026-10-24.md](./SK-01-02_2026-10-24.md)         |
 | 2026-10-24 | PD-01–06    | build   | Project detail page with hero, meta rail, NDA handling, writeup, gallery & pager   | [PD-01-06_2026-10-24.md](./PD-01-06_2026-10-24.md)         |
 | 2026-10-23 | PROJ-01–02  | build   | Projects page with hero, URL-synced explorer, lean props & 6 projects across 4 types | [PROJ-01-02_2026-10-23.md](./PROJ-01-02_2026-10-23.md)     |
 | 2026-10-23 | EDU-01–02   | build   | Education page with hero, shared Timeline component, expanded cards & coursework   | [EDU-01-02_2026-10-23.md](./EDU-01-02_2026-10-23.md)       |

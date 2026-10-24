@@ -74,6 +74,14 @@
       "order": 3
     },
     {
+      "id": "graphql",
+      "name": "GraphQL",
+      "category": "backend",
+      "icon": "/icons/skills/graphql.svg",
+      "featured": false,
+      "order": 4
+    },
+    {
       "id": "typescript",
       "name": "TypeScript",
       "category": "frontend",
@@ -136,6 +144,14 @@
       "icon": "/icons/skills/docker.svg",
       "featured": false,
       "order": 2
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes",
+      "category": "cloud-devops",
+      "icon": "/icons/skills/kubernetes.svg",
+      "featured": false,
+      "order": 3
     },
     {
       "id": "git",

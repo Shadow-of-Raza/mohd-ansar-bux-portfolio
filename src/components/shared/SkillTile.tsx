@@ -16,6 +16,7 @@ export type SkillTileProps = {
     emptyLabel?: string;
     emptyCta?: { label: string; href: string };
   };
+  id?: string;
   className?: string;
 };
 
@@ -31,6 +32,7 @@ export function SkillTile({
   skill,
   usage,
   emptyUsageCopy,
+  id,
   className,
 }: SkillTileProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -123,7 +125,11 @@ export function SkillTile({
   return (
     <div
       ref={containerRef}
-      className={cn("relative inline-block w-full", className)}
+      id={id}
+      className={cn(
+        "relative inline-block w-full scroll-mt-28 rounded-md transition-all target:ring-2 target:ring-electric-300 target:ring-offset-2 target:ring-offset-navy",
+        className
+      )}
       onMouseEnter={openWithDelay}
       onMouseLeave={closeWithDelay}
     >
