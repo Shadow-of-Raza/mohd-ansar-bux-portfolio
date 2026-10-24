@@ -9,41 +9,50 @@ import type { Image as ImageType } from "@/lib/data/schemas";
 
 export type GalleryGridProps = {
   images: ImageType[];
+  layout?: "bento" | "grid";
   className?: string;
 };
 
 /**
- * GalleryGrid client leaf component for ABOUT-02.
- * Renders an asymmetric editorial bento grid of lazy-loaded images with captions,
- * hover contrast reveal, and click-to-open lightbox modal.
+ * GalleryGrid client leaf component for ABOUT-02 and PD-05.
+ * Renders an asymmetric editorial bento grid (default) or balanced 2-column grid
+ * of lazy-loaded images with captions, hover contrast reveal, and click-to-open lightbox modal.
  */
-export function GalleryGrid({ images, className }: GalleryGridProps) {
+export function GalleryGrid({ images, layout = "bento", className }: GalleryGridProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   if (!images || images.length === 0) {
     return null;
   }
 
+  const isBento = layout === "bento";
+
   return (
     <>
       <div
         className={cn(
-          "grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-12",
+          isBento
+            ? "grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-12"
+            : "grid grid-cols-1 gap-6 md:grid-cols-2",
           className,
         )}
       >
         {images.map((img, idx) => {
           // Asymmetric bento span rules based on index and item count
-          const isFeatured = idx === 0 && images.length >= 3;
-          const colSpanClass = isFeatured
-            ? "lg:col-span-8 lg:row-span-2"
-            : images.length === 2
-              ? "lg:col-span-6"
-              : "lg:col-span-4";
+          const isFeatured = isBento && idx === 0 && images.length >= 3;
+          const colSpanClass = isBento
+            ? isFeatured
+              ? "lg:col-span-8 lg:row-span-2"
+              : images.length === 2
+                ? "lg:col-span-6"
+                : "lg:col-span-4"
+            : "";
 
-          const aspectClass = isFeatured
-            ? "aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/11]"
-            : "aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/10]";
+          const aspectClass = isBento
+            ? isFeatured
+              ? "aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/11]"
+              : "aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/10]"
+            : "aspect-[16/10]";
 
           return (
             <button

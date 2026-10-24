@@ -11,7 +11,7 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 | 2     | Data layer + full validator + sitemap/robots           | ✅ Done                                | 2026-10-16 | Schemas for all 8 files (Zod 4), loaders, relations, availability, dates/hasContent utils, validate-data script with all 6 error + 4 warning checks, sitemap.xml and robots.txt                 |
 | 3     | Header, Footer, MobileMenu                             | 🟨 Done (static)                       | 2026-10-17 | Header, Footer, MobileMenu, NavLink, SkipLink, SocialLinks, BackToTop wired in layout.tsx. Verified keyboard navigation (skip link, Esc, focus trap) & responsive layout across 375/768/1440px. |
 | 4     | Home sections HOME-00 → HOME-06 (static; HOME-07 skipped) | 🟨 Done (static)                    | 2026-10-21 | HOME-00 through HOME-06 Skills built static; HOME-07 skipped (covered by global footer CTA). Passed data validation, lint, typecheck, build, presence tests, and browser verification across 375/768/1440px. |
-| 5     | Inner pages (About, Services, Experience, Education & Projects complete) | 🟨 In progress                         | 2026-10-23 | ABOUT-01–05, SERV-01–03, EXP-01–02, EDU-01–02, and PROJ-01–02 built static with URL-synced search/filters/sort, lean client props, 6 projects across 4 types, hidden mobile scrollbar, and HOME-05 visual parity confirmed. |
+| 5     | Inner pages (About, Services, Experience, Education, Projects & Project Detail complete) | 🟨 In progress                         | 2026-10-24 | ABOUT-01–05, SERV-01–03, EXP-01–02, EDU-01–02, PROJ-01–02, and PD-01–06 built static with SSG routes, metadata OG image generation, NDA handling, GalleryGrid reuse, and cross-linking verified. |
 | 5b    | 404 page                                               | ⬜                                     |            | Standalone editorial 404 error page (Section 5.10)                                                                                                                                              |
 | 6     | Motion layer                                           | ⬜                                     |            |                                                                                                                                                                                                 |
 | 7     | 3D hero                                                | ⬜                                     |            |                                                                                                                                                                                                 |
@@ -37,7 +37,7 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 
 **Projects:** 🟨 PROJ-01 · 🟨 PROJ-02 · ⏭ PROJ-03 (Skipped: covered by the global footer CTA)
 
-**Project detail:** ⬜ PD-01 · ⬜ PD-02 · ⬜ PD-03 · ⬜ PD-04 · ⬜ PD-05 · ⬜ PD-06
+**Project detail:** 🟨 PD-01 · 🟨 PD-02 · 🟨 PD-03 · 🟨 PD-04 · 🟨 PD-05 · 🟨 PD-06
 
 **Skills:** ⬜ SK-01 · ⬜ SK-02 · ⏭ SK-03 (Skipped: covered by the global footer CTA)
 
@@ -70,6 +70,7 @@ All 8 data files in `src/data/` are populated with complete, valid mock/dummy in
 
 ## Deferred / known issues
 
+- Skills page: Tech chips in PD-04 link to `/skills#{skillId}` (`01 §6`). Those anchors will be added when the Skills page is built (SK-02 dependency).
 - Phase 6: Replace the `window` scroll listeners in `Header` and `ScrollCue` with Motion `useScroll` / Lenis (rule in `04 §8`).
 - Phase 6: `BackToTop` and the ScrollCue link should scroll through Lenis.
 - Phase 7: Replace `public/hero/hero-poster.webp` with a still render of the real 3D scene, so the poster→WebGL cross-fade matches.
