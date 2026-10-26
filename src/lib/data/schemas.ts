@@ -121,6 +121,14 @@ export const SiteSchema = z.object({
       ctaTitle: optText,
     })
     .optional(),
+  notFound: z
+    .object({
+      title: optText,
+      message: optText,
+      homeLabel: optText,
+      projectsLabel: optText,
+    })
+    .optional(),
   seo: SeoSchema,
 });
 

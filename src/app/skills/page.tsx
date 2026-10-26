@@ -61,7 +61,7 @@ export default function SkillsPage() {
   const skillUsage = getSkillUsage();
 
   return (
-    <main id="main-content" className="relative min-h-screen bg-navy text-fg">
+    <div className="relative min-h-screen text-fg">
       {/* SK-01: Page Hero */}
       <SkillsHeroSection
         eyebrow={skillsData.page.eyebrow}
@@ -78,6 +78,6 @@ export default function SkillsPage() {
         skillUsage={skillUsage}
         usageCopy={skillsData.usage}
       />
-    </main>
+    </div>
   );
 }

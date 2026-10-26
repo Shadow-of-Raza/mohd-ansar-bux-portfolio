@@ -11,8 +11,8 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 | 2     | Data layer + full validator + sitemap/robots           | ✅ Done                                | 2026-10-16 | Schemas for all 8 files (Zod 4), loaders, relations, availability, dates/hasContent utils, validate-data script with all 6 error + 4 warning checks, sitemap.xml and robots.txt                 |
 | 3     | Header, Footer, MobileMenu                             | 🟨 Done (static)                       | 2026-10-17 | Header, Footer, MobileMenu, NavLink, SkipLink, SocialLinks, BackToTop wired in layout.tsx. Verified keyboard navigation (skip link, Esc, focus trap) & responsive layout across 375/768/1440px. |
 | 4     | Home sections HOME-00 → HOME-06 (static; HOME-07 skipped) | 🟨 Done (static)                    | 2026-10-21 | HOME-00 through HOME-06 Skills built static; HOME-07 skipped (covered by global footer CTA). Passed data validation, lint, typecheck, build, presence tests, and browser verification across 375/768/1440px. |
-| 5     | Inner pages (About, Services, Experience, Education, Projects, Project Detail & Skills complete) | 🟨 In progress                         | 2026-10-24 | ABOUT-01–05, SERV-01–03, EXP-01–02, EDU-01–02, PROJ-01–02, PD-01–06, and SK-01–02 built static with SSG routes, deep-link anchors, unused skill empty-state handling, and cross-linking verified. |
-| 5b    | 404 page                                               | ⬜                                     |            | Standalone editorial 404 error page (Section 5.10)                                                                                                                                              |
+| 5     | Inner pages (About, Services, Experience, Education, Projects, Project Detail, Skills & Contact complete) | 🟨 Done (static)                       | 2026-10-26 | ABOUT-01–05, SERV-01–03, EXP-01–02, EDU-01–02, PROJ-01–02, PD-01–06, SK-01–02, and CON-01–03 built static with SSG routes, deep-link anchors, unused skill empty-state handling, and cross-linking verified. |
+| 5b    | 404 page                                               | 🟨 Done (static)                       | 2026-10-26 | Standalone editorial 404 error page (Section 5.10) with fluid 404 text, accent headline, witty message, presence-guarded projects link, noindex metadata, and HTTP 404 confirmed on production server. |
 | 6     | Motion layer                                           | ⬜                                     |            |                                                                                                                                                                                                 |
 | 7     | 3D hero                                                | ⬜                                     |            |                                                                                                                                                                                                 |
 | 8     | Contact action + Resend                                | ⬜                                     |            |                                                                                                                                                                                                 |
@@ -23,7 +23,7 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 
 **Global:** 🟨 GLOBAL-HEADER · 🟨 GLOBAL-FOOTER
 
-**404:** ⬜ 404
+**404:** 🟨 404
 
 **Home:** 🟨 HOME-00 · 🟨 HOME-01 · 🟨 HOME-02 · 🟨 HOME-03 · 🟨 HOME-04 · 🟨 HOME-05 · 🟨 HOME-06 · ⏭ HOME-07 (Skipped: covered by the global footer CTA)
 

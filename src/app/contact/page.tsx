@@ -100,7 +100,7 @@ export default function ContactPage() {
   const formEnabled = Boolean(contactData.form?.enabled && hasServerEnv);
 
   return (
-    <main id="main-content" className="relative min-h-screen bg-navy text-fg">
+    <div className="relative min-h-screen text-fg">
       {/* CON-01: Page Hero */}
       <ContactHeroSection
         eyebrow={contactData.page?.eyebrow}
@@ -152,6 +152,6 @@ export default function ContactPage() {
           )}
         </Container>
       </section>
-    </main>
+    </div>
   );
 }

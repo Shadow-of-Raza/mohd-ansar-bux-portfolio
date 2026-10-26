@@ -10,6 +10,7 @@ import { PdWriteup } from "@/sections/project-detail/PdWriteup";
 import { PdGallery } from "@/sections/project-detail/PdGallery";
 import { PdPager, type PdPagerItem } from "@/sections/project-detail/PdPager";
 
+export const dynamicParams = false;
 
 /**
  * Pre-generate all static paths for visible projects at build time.
@@ -37,7 +38,9 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   const site = getSite();
 
-  if (!project) return {};
+  if (!project) {
+    notFound();
+  }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || site.url || "https://ansarbux.dev";
   const title = `${project.title} — ${site.name}`;

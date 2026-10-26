@@ -51,6 +51,12 @@
     "intro": "Full-stack engineer crafting dependable backend architectures, high-performance APIs, and cinematic web interfaces.",
     "ctaTitle": "Have a project *in mind?*"
   },
+  "notFound": {
+    "title": "Page not *found*",
+    "message": "The page you are looking for has been moved, removed, or never existed in this codebase.",
+    "homeLabel": "Back to home",
+    "projectsLabel": "Explore projects"
+  },
   "seo": {
     "title": "Mohd Ansar Bux — Full-Stack Software Engineer",
     "description": "Portfolio of Mohd Ansar Bux, full-stack engineer specializing in Java, Spring Boot, React, Next.js, and cloud systems.",
