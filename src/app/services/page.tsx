@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getServices, getSkills, getSite } from "@/lib/data/loaders";
+import { hasContactPage } from "@/lib/data/availability";
 import { ServicesHeroSection } from "@/sections/services/ServicesHeroSection";
 import { ServicesSubNav } from "@/sections/services/ServicesSubNav";
 import { ServiceDetailSection } from "@/sections/services/ServiceDetailSection";
@@ -53,6 +54,8 @@ export default function ServicesPage() {
     }
   }
 
+  const hasContact = hasContactPage();
+
   return (
     <div className="flex flex-col">
       <ServicesHeroSection
@@ -69,6 +72,7 @@ export default function ServicesPage() {
             service={service}
             index={idx}
             skillMap={skillMap}
+            hasContact={hasContact}
           />
         ))}
       </div>

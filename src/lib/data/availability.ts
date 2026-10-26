@@ -39,9 +39,22 @@ export function getNavItems(): NavItem[] {
 
 /**
  * Checks whether the Contact page/route should exist.
+ * One rule for the page (05 §4):
+ * contact.email exists OR (contact.form.enabled AND server env vars are set).
  */
 export function hasContactPage(): boolean {
-  return getContact() !== null;
+  const contact = getContact();
+  if (!contact) return false;
+
+  const hasEmail = Boolean(contact.email && contact.email.trim().length > 0);
+  const hasServerEnv = Boolean(
+    process.env.RESEND_API_KEY &&
+    process.env.CONTACT_TO_EMAIL &&
+    process.env.CONTACT_FROM_EMAIL
+  );
+  const hasForm = Boolean(contact.form?.enabled && hasServerEnv);
+
+  return hasEmail || hasForm;
 }
 
 /**

@@ -41,7 +41,7 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 
 **Skills:** 🟨 SK-01 · 🟨 SK-02 · ⏭ SK-03 (Skipped: covered by the global footer CTA)
 
-**Contact:** ⬜ CON-01 · ⬜ CON-02 · ⬜ CON-03
+**Contact:** 🟨 CON-01 · 🟨 CON-02 · 🟨 CON-03
 
 Legend: ⬜ not started · 🟨 static done (no motion) · ✅ complete (static + motion + review) · ⏭ skipped (covered by the global footer CTA)
 
@@ -73,6 +73,7 @@ All 8 data files in `src/data/` are populated with complete, valid mock/dummy in
 - Phase 6: Replace the `window` scroll listeners in `Header` and `ScrollCue` with Motion `useScroll` / Lenis (rule in `04 §8`).
 - Phase 6: `BackToTop` and the ScrollCue link should scroll through Lenis.
 - Phase 7: Replace `public/hero/hero-poster.webp` with a still render of the real 3D scene, so the poster→WebGL cross-fade matches.
+- Phase 8: Connect Resend SDK in `sendContactMessage` Server Action (`src/app/contact/actions.ts`). Note: `CONTACT_FROM_EMAIL` must be on a verified domain (or `onboarding@resend.dev` for testing), never a Gmail address.
 - Phase 9: Replace the scaffold `src/app/favicon.ico` with a brand icon.
 - Phase 10: Durations for "Present" roles are computed at build time (`DEFAULT_REFERENCE_DATE`). Set up an automatic weekly rebuild (Vercel Deploy Hook + scheduled trigger) so durations stay current.
 

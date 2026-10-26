@@ -13,6 +13,7 @@ export type ServiceDetailSectionProps = {
   service: Service;
   index: number;
   skillMap?: Record<string, { name: string; icon?: string }>;
+  hasContact?: boolean;
   className?: string;
 };
 
@@ -33,6 +34,7 @@ export function ServiceDetailSection({
   service,
   index,
   skillMap,
+  hasContact = true,
   className,
 }: ServiceDetailSectionProps) {
   const numberText = String(index + 1).padStart(2, "0");
@@ -120,17 +122,19 @@ export function ServiceDetailSection({
             )}
 
             {/* Desktop CTA Button */}
-            <div className="mt-8 hidden lg:block pt-6 border-t border-line">
-              <LinkButton
-                href={contactHref}
-                variant="primary"
-                size="md"
-                trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
-                className="w-full justify-center"
-              >
-                {ctaLabel}
-              </LinkButton>
-            </div>
+            {hasContact && (
+              <div className="mt-8 hidden lg:block pt-6 border-t border-line">
+                <LinkButton
+                  href={contactHref}
+                  variant="primary"
+                  size="md"
+                  trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
+                  className="w-full justify-center"
+                >
+                  {ctaLabel}
+                </LinkButton>
+              </div>
+            )}
           </div>
 
           {/* Right Column: Deep-dive Content Blocks (Cols 5-12 on lg) */}
@@ -242,17 +246,19 @@ export function ServiceDetailSection({
             )}
 
             {/* Mobile / Tablet CTA */}
-            <div className="pt-6 lg:hidden">
-              <LinkButton
-                href={contactHref}
-                variant="primary"
-                size="lg"
-                trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
-                className="w-full justify-center"
-              >
-                {ctaLabel}
-              </LinkButton>
-            </div>
+            {hasContact && (
+              <div className="pt-6 lg:hidden">
+                <LinkButton
+                  href={contactHref}
+                  variant="primary"
+                  size="lg"
+                  trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
+                  className="w-full justify-center"
+                >
+                  {ctaLabel}
+                </LinkButton>
+              </div>
+            )}
           </div>
         </div>
       </Container>
