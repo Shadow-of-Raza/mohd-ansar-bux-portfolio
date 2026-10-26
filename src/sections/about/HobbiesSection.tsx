@@ -71,13 +71,13 @@ export function HobbiesSection({
                     </span>
                   </div>
 
-                  {/* Title and Description column (Col 3-8 on desktop) */}
-                  <div className="sm:col-span-6 lg:col-span-7">
+                  {/* Title and Description column (Col 3-8 if image, Col 3-12 if no image) */}
+                  <div className={cn(image ? "sm:col-span-6 lg:col-span-7" : "sm:col-span-10 lg:col-span-11")}>
                     <h3 className="font-display text-heading sm:text-display-lg text-white transition-colors duration-300 group-hover:text-electric-200">
                       {item.title}
                     </h3>
                     {item.description && (
-                      <p className="mt-2 text-body font-body leading-relaxed text-fg-muted sm:mt-3 max-w-[56ch]">
+                      <p className="mt-2 text-body font-body leading-relaxed text-fg-muted sm:mt-3 max-w-[68ch]">
                         {item.description}
                       </p>
                     )}

@@ -47,11 +47,9 @@ export default function ExperiencePage() {
     notFound();
   }
 
-  // Compute total commercial experience across non-internship roles
+  // Compute total experience across all roles (including internships/training)
   const intervals = experienceData.items.flatMap((company) =>
-    company.roles
-      .filter((role) => role.employmentType?.toLowerCase() !== "internship")
-      .map((role) => ({ start: role.start, end: role.end })),
+    company.roles.map((role) => ({ start: role.start, end: role.end })),
   );
   const totalExperience = calculateTotalExperience(intervals);
 

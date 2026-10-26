@@ -2,117 +2,59 @@
   "page": {
     "eyebrow": "Education",
     "title": "What I've *studied*",
-    "intro": "Academic background, foundational computer science training, and software engineering credentials.",
+    "intro": "My degree and schooling, newest first.",
     "seo": {
-      "title": "Education — Mohd Ansar Bux",
-      "description": "Academic background and engineering qualifications of Mohd Ansar Bux."
+      "title": "Education",
+      "description": "Education of Mohd Ansar Bux: B.Tech in Computer Science & Engineering from RGPV (CGPA 8.26)."
     }
   },
   "home": {
     "eyebrow": "Education",
-    "title": "Learning *path*",
-    "intro": "Formal education in computer science, software systems, and data structures."
+    "title": "Learning *path*"
   },
   "items": [
     {
-      "id": "mtech-software-systems",
-      "degree": "Master of Technology (Part-Time)",
-      "field": "Software Systems & Cloud Architecture",
-      "institution": {
-        "name": "Institute of Engineering & Technology",
-        "logo": {
-          "src": "/images/institutions/engineering-institute.svg",
-          "alt": "Institute of Engineering & Technology logo",
-          "width": 64,
-          "height": 64
-        },
-        "url": "https://example.edu"
-      },
-      "board": "State Technical University",
-      "location": "Indore, India",
-      "start": "2024-08",
-      "end": null,
-      "status": "pursuing",
-      "highlights": [
-        "Specialization in distributed cloud systems, resilience patterns, and high-throughput architectures."
-      ],
-      "coursework": [
-        "Distributed Computing Systems",
-        "Cloud Native Architecture",
-        "Advanced Database Engineering"
-      ]
-    },
-    {
-      "id": "btech-cse",
-      "degree": "Bachelor of Technology",
+      "id": "btech",
+      "degree": "B.Tech",
       "field": "Computer Science & Engineering",
       "institution": {
-        "name": "Institute of Engineering & Technology",
-        "logo": {
-          "src": "/images/institutions/engineering-institute.svg",
-          "alt": "Institute of Engineering & Technology logo",
-          "width": 64,
-          "height": 64
-        },
-        "url": "https://example.edu"
+        "name": "Bansal Institute of Research Technology and Science (BIRTS)"
       },
-      "board": "State Technical University",
-      "location": "Indore, India",
-      "start": "2020-08",
-      "end": "2024-05",
+      "board": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)",
+      "location": "Bhopal, Madhya Pradesh",
+      "start": "2018-05",
+      "end": "2022-05",
       "status": "completed",
       "score": {
         "label": "CGPA",
-        "value": "8.4 / 10"
-      },
-      "highlights": [
-        "Capstone Project: Distributed task scheduling architecture with fault-tolerant workers and real-time telemetry.",
-        "Served as Student Technical Lead in the Computer Science Society organizing coding competitions and hackathons."
-      ],
-      "coursework": [
-        "Data Structures & Algorithms",
-        "Database Management Systems",
-        "Operating Systems",
-        "Object-Oriented Programming (Java)",
-        "Computer Networks",
-        "Software Engineering Principles",
-        "Cloud Computing Architecture",
-        "Compiler Design"
-      ]
+        "value": "8.26 / 10"
+      }
     },
     {
-      "id": "higher-secondary",
-      "degree": "Higher Secondary Certificate (12th Standard)",
-      "field": "Science & Mathematics (Physics, Chemistry, Math)",
+      "id": "class-12",
+      "degree": "12th",
+      "field": "PCM",
       "institution": {
-        "name": "St. Paul Higher Secondary School",
-        "logo": {
-          "src": "/images/institutions/school.svg",
-          "alt": "St. Paul School logo",
-          "width": 64,
-          "height": 64
-        },
-        "url": "https://example.edu"
+        "name": "Govt H. S. School Ajaigarh, Panna"
       },
-      "board": "Central Board of Secondary Education (CBSE)",
-      "location": "Indore, India",
-      "start": "2018-06",
-      "end": "2020-04",
-      "status": "completed",
-      "score": {
-        "label": "Percentage",
-        "value": "88.2%"
+      "board": "State Board",
+      "location": "Ajaigarh, Panna",
+      "start": "2017-04",
+      "end": "2018-03",
+      "status": "completed"
+    },
+    {
+      "id": "class-10",
+      "degree": "10th",
+      "field": "Science",
+      "institution": {
+        "name": "Saraswat H. S. School, Ajaigarh, Panna"
       },
-      "highlights": [
-        "Graduated with distinction in Mathematics and Computer Science.",
-        "Awarded First Prize in Inter-School Science & Technology Exhibition."
-      ],
-      "coursework": [
-        "Advanced Mathematics & Calculus",
-        "Physics & Electronics",
-        "Computer Science (Python & C++)",
-        "Chemistry"
-      ]
+      "board": "State Board",
+      "location": "Ajaigarh, Panna",
+      "start": "2015-04",
+      "end": "2016-03",
+      "status": "completed"
     }
   ]
 }

@@ -131,10 +131,9 @@ export function calculateTotalExperience(
   // Sum total inclusive months
   const totalMonths = merged.reduce((acc, [s, e]) => acc + (e - s + 1), 0);
   const years = Math.floor(totalMonths / 12);
-  const remMonths = totalMonths % 12;
 
   if (years >= 1) {
-    return remMonths > 0 ? `${years}+ years` : `${years} ${years === 1 ? "year" : "years"}`;
+    return `${years}+ years`;
   }
   return `${totalMonths} ${totalMonths === 1 ? "mo" : "mos"}`;
 }

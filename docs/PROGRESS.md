@@ -13,11 +13,12 @@ The agent updates this file at the end of every task (see `/build` step 6). Sect
 | 4     | Home sections HOME-00 → HOME-06 (static; HOME-07 skipped) | 🟨 Done (static)                    | 2026-10-21 | HOME-00 through HOME-06 Skills built static; HOME-07 skipped (covered by global footer CTA). Passed data validation, lint, typecheck, build, presence tests, and browser verification across 375/768/1440px. |
 | 5     | Inner pages (About, Services, Experience, Education, Projects, Project Detail, Skills & Contact complete) | 🟨 Done (static)                       | 2026-10-26 | ABOUT-01–05, SERV-01–03, EXP-01–02, EDU-01–02, PROJ-01–02, PD-01–06, SK-01–02, and CON-01–03 built static with SSG routes, deep-link anchors, unused skill empty-state handling, and cross-linking verified. |
 | 5b    | 404 page                                               | 🟨 Done (static)                       | 2026-10-26 | Standalone editorial 404 error page (Section 5.10) with fluid 404 text, accent headline, witty message, presence-guarded projects link, noindex metadata, and HTTP 404 confirmed on production server. |
+| —     | Content step (real data & asset migration)             | ✅ Done                                | 2026-10-26 | Replaced all 8 data files with Mohd Ansar Bux's real content from `portfolio-content/`. Copied real resume PDF, added 16 skill SVGs, generated/downloaded company logos and neutral monograms, captured 1600×1000 project screenshots (with fake Jane Doe data for Resume Shapeshifter), dynamic ~2+ years career experience across all roles, hobbies rendered without image placeholders, interests omitted cleanly. |
 | 6     | Motion layer                                           | ⬜                                     |            |                                                                                                                                                                                                 |
 | 7     | 3D hero                                                | ⬜                                     |            |                                                                                                                                                                                                 |
 | 8     | Contact action + Resend                                | ⬜                                     |            |                                                                                                                                                                                                 |
 | 9     | SEO, a11y, performance                                 | ⬜                                     |            |                                                                                                                                                                                                 |
-| 10    | Deploy                                                 | ⬜                                     |            |                                                                                                                                                                                                 |
+| 10    | Deploy                                                 | ⬜                                     |            | Set site.url and NEXT_PUBLIC_SITE_URL to real domain before deploy.                                                                                                                             |
 
 ## Sections
 
@@ -47,26 +48,25 @@ Legend: ⬜ not started · 🟨 static done (no motion) · ✅ complete (static 
 
 ## Placeholders to replace
 
-All 8 data files in `src/data/` are populated with complete, valid mock/dummy information for comprehensive UI testing. They will be replaced with real user data when ready:
+All 8 data files in `src/data/` have been replaced with real content from `portfolio-content/`. Retained placeholders are explicitly marked:
 
-| File                                      | Content Populated                                                                                                      | Replaced with Real Data              |
+| File / Asset                              | Content Populated                                                                                                      | Status / Source                      |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| `src/data/site.json`                      | Name, role, hero copy, availability, socials, SEO                                                                      | Pending user confirmation            |
-| `src/data/profile.json`                   | Bio, summary, quick facts, gallery, interests, hobbies, basic info                                                     | Pending user confirmation            |
-| `src/data/services.json`                  | 3 full services (Web Dev, Backend, Cloud & DevOps)                                                                     | Pending user confirmation            |
-| `src/data/experience.json`                | 3 companies & engineering roles with skills and projects                                                               | Pending user confirmation            |
-| `src/data/education.json`                 | B.Tech CSE & Higher Secondary degrees with coursework                                                                  | Pending user confirmation            |
-| `src/data/projects.json`                  | 6 diverse projects across 4 types (professional, open-source, freelance, personal) including confidential NDA and long title | Pending user confirmation            |
-| `src/data/skills.json`                    | 14 categorized skills (including 2 unused placeholder skills GraphQL & Kubernetes for testing empty-state popovers)     | Pending user confirmation            |
-| `src/data/contact.json`                   | Email, phone, location, response time, CTA copy                                                                        | Pending user confirmation            |
-| `public/images/brand/logo.svg`            | Standalone 44×44 geometric MAB monogram badge (name rendered in text)                                                  | Done                                 |
-| `public/images/brand/monogram.svg`        | Standalone 44×44 geometric MAB monogram badge                                                                          | Done                                 |
-| `public/icons/skills/*.svg`               | 14 authentic vector brand SVG icons (Java, Spring, Node, TS, React, Next, Tailwind, MySQL, Postgres, AWS, Docker, Git, Kubernetes, GraphQL) | Done                                 |
-| `public/images/companies/*.svg`           | 3 company SVG badges (Tech Innovators, Apex Systems, CodeCraft Labs)                                                   | Placeholder: replace in content step |
-| `public/images/institutions/*.svg`        | 2 academic institution SVG badges (IET engineering crest, St. Paul school)                                             | Placeholder: replace in content step |
-| `public/images/projects/**`               | 9 high-res WebP project covers & gallery screenshots across all 6 projects                                             | Placeholder: replace in content step |
-| `public/images/gallery/**`                | 6 high-res WebP workspace & hobby images (reading, chess, coffee)                                                      | Placeholder: replace in content step |
-| `public/resume/mohd-ansar-bux-resume.pdf` | Formatted 1-page professional PDF resume                                                                               | Placeholder: replace in content step |
+| `src/data/site.json`                      | Real name, role, hero copy, availability, socials (including globe & instagram), placeholder URL `ansarbux.dev`        | Replaced with real data              |
+| `src/data/profile.json`                   | Real bio, summary, dynamic quick facts ("2+ years"), 3 hobbies (no images), interests omitted cleanly                  | Replaced with real data              |
+| `src/data/services.json`                  | 3 real services (Full-Stack Web Development, Backend Architecture & APIs, Frontend Engineering & UI)                    | Replaced with real data              |
+| `src/data/experience.json`                | 4 real roles (Apex Structure, Jaitrrrm, EduBridge, Pentagon Space) with exact dates and accomplishments                 | Replaced with real data              |
+| `src/data/education.json`                 | 3 real academic qualifications (B.Tech, Intermediate, High School) with monogram fallbacks                             | Replaced with real data              |
+| `src/data/projects.json`                  | 3 real projects (Apex Structure, Resume Shapeshifter, Alpha Way V1) across Professional and Open-Source types          | Replaced with real data              |
+| `src/data/skills.json`                    | 26 real skills across 5 categories matching resume and experience                                                      | Replaced with real data              |
+| `src/data/contact.json`                   | Real contact info (email, phone, location, availability, direct channels)                                              | Replaced with real data              |
+| `public/resume/mohd-ansar-bux-resume.pdf` | Real 1-page PDF resume (166 KB)                                                                                        | Replaced with real file              |
+| `public/icons/skills/*.svg`               | 26 authentic vector brand SVGs (removed postgresql/docker/graphql/kubernetes; added 16 new SVGs)                       | Replaced with real icons             |
+| `public/images/companies/*`               | Real logos for Apex Structure, Jaitrrrm, EduBridge; neutral monogram for Pentagon Space                                | Replaced with real / neutral badges  |
+| `public/images/projects/**`               | 9 crisp 1600×1000 WebP screenshots (Resume Shapeshifter captured with fake "Jane Doe" sample data & zero popups)     | Replaced with real screenshots       |
+| `public/images/profile/portrait.webp`     | Editorial monochrome portrait placeholder                                                                              | Retained placeholder (@keep-current) |
+| `public/images/gallery/01–03.webp`        | 3 editorial workspace gallery photos                                                                                   | Retained placeholder (@keep-current) |
+| `public/hero/hero-poster.webp`            | Visual fallback poster for hero section                                                                                | Retained placeholder (@keep-current) |
 
 ## Deferred / known issues
 
@@ -76,4 +76,6 @@ All 8 data files in `src/data/` are populated with complete, valid mock/dummy in
 - Phase 8: Connect Resend SDK in `sendContactMessage` Server Action (`src/app/contact/actions.ts`). Note: `CONTACT_FROM_EMAIL` must be on a verified domain (or `onboarding@resend.dev` for testing), never a Gmail address.
 - Phase 9: Replace the scaffold `src/app/favicon.ico` with a brand icon.
 - Phase 10: Durations for "Present" roles are computed at build time (`DEFAULT_REFERENCE_DATE`). Set up an automatic weekly rebuild (Vercel Deploy Hook + scheduled trigger) so durations stay current.
+- Phase 10: Set site.url and NEXT_PUBLIC_SITE_URL to the real domain (or the Vercel URL) before deploy (currently placeholder `https://ansarbux.dev`).
+
 

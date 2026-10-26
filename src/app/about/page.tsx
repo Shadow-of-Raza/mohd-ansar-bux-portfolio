@@ -48,13 +48,21 @@ export default function AboutPage() {
     notFound();
   }
 
+  const hasInterests = Boolean(profile.interests?.items?.length);
+
   return (
     <div className="flex flex-col">
       <AboutIntroSection profile={profile} siteName={site.name} />
       <GallerySection gallery={profile.gallery} />
       <InterestsSection interests={profile.interests} />
-      <HobbiesSection hobbies={profile.hobbies} />
-      <PersonalInfoSection basicInfo={profile.basicInfo} />
+      <HobbiesSection
+        hobbies={profile.hobbies}
+        eyebrow={hasInterests ? "04 — Personal" : "03 — Personal"}
+      />
+      <PersonalInfoSection
+        basicInfo={profile.basicInfo}
+        eyebrow={hasInterests ? "05 — Details" : "04 — Details"}
+      />
     </div>
   );
 }

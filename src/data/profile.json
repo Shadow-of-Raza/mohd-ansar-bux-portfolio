@@ -1,20 +1,19 @@
 {
   "page": {
     "eyebrow": "About",
-    "title": "The engineer *behind* the code",
-    "intro": "Full-stack software engineer based in Indore, India, focused on shipping dependable, scalable digital products.",
+    "title": "The person *behind* the code",
+    "intro": "How I got into software, what I work on now and what I do away from the screen.",
     "seo": {
-      "title": "About — Mohd Ansar Bux",
-      "description": "Background, technical philosophy, and engineering toolkit of Mohd Ansar Bux."
+      "title": "About",
+      "description": "About Mohd Ansar Bux, a software engineer in Indore building web platforms with Java, Spring Boot, Node.js and Next.js."
     }
   },
   "home": {
     "eyebrow": "About me",
     "title": "Engineer, builder, *problem-solver*",
     "summary": [
-      "I design and build production web applications from database architecture to smooth, accessible user interfaces.",
-      "With expertise spanning Java, Spring Boot, React, and Next.js, I focus on dependable systems that ship reliably on time.",
-      "Whether designing resilient microservices or optimizing core web vitals, I write clean, maintainable code built for scale."
+      "I'm a software engineer in Indore who builds web platforms end to end: Java and Spring Boot or Node.js on the backend, React and Next.js on the front, MySQL underneath and AWS to run it.",
+      "Today I own the full web platform at Apex Structure — the main website, backend and admin CMS. Before that, I led a team of 8+ engineers to deliver Alpha-Way v1, a B2B SaaS platform, at Jaitrrrm."
     ],
     "facts": [
       {
@@ -22,34 +21,33 @@
         "value": "2+ years"
       },
       {
-        "label": "Based in",
-        "value": "Indore, India"
+        "label": "Available to work",
+        "value": "Pan India"
       },
       {
-        "label": "Primary Focus",
-        "value": "Full-Stack Web Systems"
+        "label": "Graduation year",
+        "value": "2022"
       },
       {
-        "label": "Core Stack",
-        "value": "Java, Spring Boot, React, Next.js"
+        "label": "Total real-world projects",
+        "value": "6+"
       }
     ]
   },
   "portrait": {
     "src": "/images/profile/portrait.webp",
-    "alt": "Portrait of Mohd Ansar Bux",
+    "alt": "Mohd Ansar Bux portrait",
     "width": 1200,
     "height": 1500
   },
   "bio": [
-    "I am a full-stack engineer who loves building clean, resilient web software that creates genuine business value.",
-    "My technical journey began with foundational computer science principles and deep exploration of object-oriented architecture in Java. Over the past several years, I have architected high-throughput Spring Boot microservices, designed normalized relational databases in MySQL and PostgreSQL, and built intuitive frontends with React and Next.js.",
-    "I believe that great software balances technical rigor with pragmatic execution. Every abstraction must earn its place, and performance is a feature that should be measured from day one.",
-    "When I'm not writing code or analyzing query execution plans, I contribute to developer communities, read technical whitepapers, and experiment with modern web motion and typography."
+    "I started with Java. After a B.Tech in Computer Science from RGPV, I trained as a Java full-stack developer at Pentagon Space and EduBridge, finishing with Grade A while building Spring Boot REST APIs and frontend integrations.",
+    "In 2025 I joined Jaitrrrm as a software engineer and team lead. I led 8+ engineers to ship Alpha-Way v1 on time and designed its layered Spring Boot backend: 50+ REST APIs with JWT authentication and role-based access.",
+    "Since December 2025 I've owned the web platform at Apex Structure: 150+ pages on Next.js and Node.js, 180+ secured APIs, and AWS infrastructure with CI/CD that brought deployments down to about 15 minutes. I care about secure APIs, clear contracts between frontend and backend, and systems the next developer can pick up easily."
   ],
   "resume": {
     "file": "/resume/mohd-ansar-bux-resume.pdf",
-    "label": "Download Resume",
+    "label": "Download resume",
     "updated": "2026-10"
   },
   "gallery": [
@@ -75,70 +73,28 @@
       "height": 1067
     }
   ],
-  "interests": {
-    "title": "What I'm *into*",
-    "items": [
-      {
-        "id": "distributed-systems",
-        "title": "Distributed Systems",
-        "description": "Designing resilient microservices, asynchronous messaging pipelines, and fault-tolerant background queues.",
-        "icon": "server"
-      },
-      {
-        "id": "frontend-craft",
-        "title": "Frontend Craft",
-        "description": "Building fluid, accessible, and typographic web experiences with Next.js, React, and strict design systems.",
-        "icon": "layout"
-      },
-      {
-        "id": "database-architecture",
-        "title": "Database Architecture",
-        "description": "Optimizing relational schema design, indexing strategies, and transactional consistency in high-load scenarios.",
-        "icon": "database"
-      },
-      {
-        "id": "cloud-infrastructure",
-        "title": "Cloud Infrastructure",
-        "description": "Deploying containerized environments, setting up CI/CD automation, and monitoring telemetry on AWS.",
-        "icon": "cpu"
-      }
-    ]
-  },
   "hobbies": {
     "title": "Away from the *keyboard*",
     "items": [
       {
-        "id": "technical-reading",
-        "title": "Technical Reading",
-        "description": "Diving into system design literature, software engineering history, and database internals.",
-        "image": {
-          "src": "/images/gallery/hobby-reading.webp",
-          "alt": "Books and technical notes on engineering desk",
-          "width": 800,
-          "height": 1000
-        }
+        "id": "chess",
+        "title": "Chess",
+        "description": "Thinking a few moves ahead, on and off the board."
       },
       {
-        "id": "strategy-games",
-        "title": "Chess & Strategy",
-        "description": "Engaging in rapid and classical chess tactics to sharpen spatial reasoning and anticipation.",
-        "image": {
-          "src": "/images/gallery/hobby-chess.webp",
-          "alt": "Chess board with pieces in mid-game position",
-          "width": 800,
-          "height": 1000
-        }
+        "id": "rubiks-cube",
+        "title": "Rubik's Cube",
+        "description": "Breaking a messy problem into small, repeatable steps."
       },
       {
-        "id": "coffee-keyboards",
-        "title": "Coffee & Keyboards",
-        "description": "Brewing single-origin pour-overs and customizing mechanical keyboards with lubricated linear switches.",
-        "image": {
-          "src": "/images/gallery/hobby-coffee.webp",
-          "alt": "Artisanal pour over coffee maker on wooden tabletop",
-          "width": 800,
-          "height": 1000
-        }
+        "id": "painting-sketching",
+        "title": "Painting & sketching",
+        "description": "Working with my hands after a day of screens."
+      },
+      {
+        "id": "urdu-calligraphy",
+        "title": "Urdu calligraphy",
+        "description": "Patience, precision and a steady hand."
       }
     ]
   },
@@ -150,32 +106,16 @@
         "value": "Mohd Ansar Bux"
       },
       {
-        "label": "Role",
-        "value": "Full-Stack Software Engineer"
-      },
-      {
-        "label": "Location",
-        "value": "Indore, India"
-      },
-      {
         "label": "Nationality",
         "value": "Indian"
       },
       {
         "label": "Languages",
-        "value": "English (Professional), Hindi (Native)"
+        "value": "English, Hindi, Urdu"
       },
       {
-        "label": "Education",
-        "value": "B.Tech in Computer Science & Engineering"
-      },
-      {
-        "label": "Availability",
-        "value": "Full-time roles & contract consultations"
-      },
-      {
-        "label": "Timezone",
-        "value": "IST (UTC+5:30)"
+        "label": "Location",
+        "value": "Indore, India"
       }
     ]
   }

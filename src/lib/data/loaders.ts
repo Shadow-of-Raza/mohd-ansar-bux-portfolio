@@ -28,7 +28,7 @@ import {
   type Skill,
   type SkillCategory,
 } from "./schemas";
-import { compareDatesDesc } from "@/lib/utils/dates";
+import { compareDatesDesc, calculateTotalExperience } from "@/lib/utils/dates";
 import { hasContent } from "@/lib/utils/has-content";
 
 /* ---------------- Module-Level Schema Parsing (Throws at build) ----------- */
@@ -82,7 +82,23 @@ export function getProfile(): Profile | null {
   if (!hasBio && !hasSummary && !hasBasic && !hasPortrait) {
     return null;
   }
-  return profileFile;
+
+  // Dynamically update the "Experience" quick fact so it updates on its own
+  const totalExp = calculateTotalExperience(
+    experienceFile.items.flatMap((c) => c.roles.map((r) => ({ start: r.start, end: r.end }))),
+  );
+
+  const updatedFacts = (profileFile.home.facts ?? []).map((f) =>
+    f.label.toLowerCase() === "experience" ? { ...f, value: totalExp } : f,
+  );
+
+  return {
+    ...profileFile,
+    home: {
+      ...profileFile.home,
+      facts: updatedFacts,
+    },
+  };
 }
 
 export interface ServicesData {

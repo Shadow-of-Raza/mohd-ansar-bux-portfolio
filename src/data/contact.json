@@ -2,16 +2,16 @@
   "page": {
     "eyebrow": "Contact",
     "title": "Let's build something *together*",
-    "intro": "Have an engineering role, technical consultation, or web project in mind? Reach out below.",
+    "intro": "Have a role, a project or a technical question? Send a message or reach me directly.",
     "seo": {
-      "title": "Contact — Mohd Ansar Bux",
-      "description": "Get in touch with Mohd Ansar Bux for full-stack engineering roles and consultations."
+      "title": "Contact",
+      "description": "Contact Mohd Ansar Bux, software engineer in Indore, for full-time roles and freelance web projects."
     }
   },
-  "email": "ansarbux.dev@gmail.com",
-  "phone": "+91 98765 43210",
-  "location": "Indore, Madhya Pradesh, India",
-  "responseTime": "Usually responds within 24 hours",
+  "email": "anshuagh@gmail.com",
+  "phone": "+91 9144272136",
+  "location": "Indore, India",
+  "responseTime": "Usually replies within 24 hours",
   "cta": {
     "title": "Have an idea? Let's *talk*.",
     "label": "Start a conversation"
@@ -20,6 +20,6 @@
     "enabled": true,
     "otherOptionLabel": "Something else",
     "successTitle": "Message sent",
-    "successMessage": "Thanks for getting in touch — I will review your message and reply promptly."
+    "successMessage": "Thanks — I'll get back to you soon."
   }
 }

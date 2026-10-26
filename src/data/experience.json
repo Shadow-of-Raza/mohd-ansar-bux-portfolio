@@ -2,167 +2,192 @@
   "page": {
     "eyebrow": "Experience",
     "title": "Where I've *worked*",
-    "intro": "Career trajectory, software engineering roles, and technical contributions to production platforms.",
+    "intro": "Full-time roles and the training that led to them, newest first.",
     "seo": {
-      "title": "Experience — Mohd Ansar Bux",
-      "description": "Professional engineering experience of Mohd Ansar Bux across enterprise platforms and software teams."
+      "title": "Experience",
+      "description": "Work experience of Mohd Ansar Bux: software engineer at Apex Structure and software engineer & team lead at Jaitrrrm."
     }
   },
   "home": {
     "eyebrow": "Experience",
     "title": "Recent *roles*",
-    "intro": "Engineering positions where I designed, built, and shipped production web software.",
-    "limit": 3,
-    "statLabel": "Total Commercial Experience",
-    "statDescription": "Designing and shipping full-stack systems across enterprise platforms"
+    "limit": 3
   },
   "items": [
     {
-      "id": "tech-innovators",
+      "id": "apex-structure",
       "featured": true,
       "order": 1,
       "company": {
-        "name": "Tech Innovators Pvt. Ltd.",
+        "name": "Apex Structure Pvt. Ltd.",
         "logo": {
-          "src": "/images/companies/tech-innovators.svg",
-          "alt": "Tech Innovators logo",
-          "width": 64,
-          "height": 64
+          "src": "/images/companies/apex-structure.png",
+          "alt": "Apex Structure Pvt. Ltd. logo",
+          "width": 48,
+          "height": 48
         },
-        "url": "https://example.com",
-        "location": "Indore, India"
+        "url": "https://www.apexstructure.in",
+        "location": "Indore, Madhya Pradesh"
       },
       "roles": [
         {
-          "id": "tech-innovators-fse",
-          "title": "Full-Stack Software Engineer",
+          "id": "apex-structure-se",
+          "title": "Software Engineer",
           "employmentType": "Full-time",
           "mode": "On-site",
-          "start": "2024-06",
+          "start": "2025-12",
           "end": null,
-          "summary": "Building enterprise microservices with Java Spring Boot and responsive Next.js web applications.",
-          "description": [
-            "Architecting core backend services, relational database schemas, and interactive web client applications for enterprise clients.",
-            "Collaborating with cross-functional product teams to deliver telemetry dashboards and automated reporting on schedule."
-          ],
+          "summary": "I own the company's full web platform — main website, backend and admin CMS — from design to deployment.",
           "responsibilities": [
-            "Architect and develop RESTful microservices using Spring Boot, Hibernate, and PostgreSQL",
-            "Build reactive web interfaces using Next.js, React, and Tailwind CSS",
-            "Optimize complex SQL queries and manage database schema migrations with Flyway",
-            "Establish automated CI/CD pipelines on AWS for zero-downtime containerized deployments"
+            "Built the full web platform (main website, backend and admin CMS) with Next.js, TypeScript, Tailwind CSS, Node.js, Express.js and MySQL, and handle it from design to maintenance.",
+            "Set up and manage AWS infrastructure (EC2, RDS, S3, CloudFront, SES, Route 53, CloudWatch) and built CI/CD pipelines.",
+            "Developed and secured REST APIs with JWT, CSRF protection and role-based access for super admins and HR users.",
+            "Built the CMS dashboard in React.js with TanStack Query to manage all site data in real time."
           ],
           "achievements": [
-            "Reduced critical API response times by 35% through query optimization and caching strategies",
-            "Engineered an automated data export pipeline handling high-volume reporting across 50,000+ daily records"
+            "150+ pages managed through the CMS",
+            "180+ secured REST APIs",
+            "Deployment time cut by about 40%, to around 15 minutes per release"
           ],
-          "skills": ["java", "spring-boot", "react", "nextjs", "mysql", "aws"],
-          "projects": ["enterprise-analytics-platform"]
-        },
-        {
-          "id": "tech-innovators-ase",
-          "title": "Associate Software Engineer",
-          "employmentType": "Full-time",
-          "mode": "On-site",
-          "start": "2023-08",
-          "end": "2024-05",
-          "summary": "Developed backend REST endpoints and relational database schemas with Spring Boot and PostgreSQL.",
-          "description": [
-            "Engineered high-throughput relational data access layers and automated integration test suites for core enterprise services."
+          "skills": [
+            "nextjs",
+            "react",
+            "typescript",
+            "tailwindcss",
+            "nodejs",
+            "expressjs",
+            "mysql",
+            "aws",
+            "tanstack-query",
+            "git"
           ],
-          "responsibilities": [
-            "Developed RESTful service endpoints using Spring Boot, Java, and Hibernate",
-            "Designed PostgreSQL database migrations and automated unit tests with JUnit"
-          ],
-          "achievements": [
-            "Accelerated backend integration testing cycle by 25% with reusable test fixtures"
-          ],
-          "skills": ["java", "spring-boot", "mysql", "git"],
-          "projects": ["enterprise-analytics-platform"]
+          "projects": [
+            "apex-structure-platform"
+          ]
         }
       ]
     },
     {
-      "id": "apex-systems",
+      "id": "jaitrrrm",
       "featured": true,
       "order": 2,
       "company": {
-        "name": "Apex Software Solutions",
+        "name": "Jaitrrrm Private Limited",
         "logo": {
-          "src": "/images/companies/apex-systems.svg",
-          "alt": "Apex Software Solutions logo",
-          "width": 64,
-          "height": 64
+          "src": "/images/companies/jaitrrrm.png",
+          "alt": "Jaitrrrm Private Limited logo",
+          "width": 48,
+          "height": 48
         },
-        "url": "https://example.com",
-        "location": "Indore, India"
+        "url": "https://jplitsolution.com/",
+        "location": "Delhi"
       },
       "roles": [
         {
-          "id": "apex-systems-dev",
-          "title": "Full-Stack Developer",
+          "id": "jaitrrrm-se-lead",
+          "title": "Software Engineer & Team Leader",
           "employmentType": "Full-time",
-          "mode": "Hybrid",
-          "start": "2023-01",
-          "end": "2024-05",
-          "summary": "Developed scalable inventory services and REST APIs with Node.js, TypeScript, and PostgreSQL.",
-          "description": [
-            "Engineered high-concurrency inventory microservices and warehouse management portals.",
-            "Integrated real-time barcode processing and third-party logistics tracking webhooks."
-          ],
+          "mode": "Remote",
+          "start": "2025-05",
+          "end": "2025-11",
+          "summary": "Led 8+ engineers to deliver Alpha-Way v1, a B2B SaaS platform, and built its Spring Boot backend.",
           "responsibilities": [
-            "Designed and implemented RESTful microservices using Node.js and TypeScript",
-            "Modeled and maintained normalized PostgreSQL database schemas with connection pooling",
-            "Built responsive admin dashboards using React, TypeScript, and modern component libraries",
-            "Containerized development and staging environments using Docker and Docker Compose"
+            "Led a team of 8+ engineers: sprint planning, task assignment and code reviews in an Agile setup.",
+            "Designed and built a layered Java Spring Boot backend with 50+ REST APIs for the client dashboard and admin modules.",
+            "Documented APIs in Postman and managed code with Git and GitHub.",
+            "Implemented JWT authentication and role-based access for admin and operator users, and defined API contracts with the Next.js/TypeScript frontend team."
           ],
           "achievements": [
-            "Improved inventory sync throughput by 40% with asynchronous batch queue processing",
-            "Refactored legacy REST endpoints to typed OpenAPI contracts with automated client generation"
+            "Delivered Alpha-Way v1 on time",
+            "Led 8+ engineers",
+            "50+ REST APIs"
           ],
-          "skills": ["nodejs", "typescript", "react", "postgresql", "docker", "git"],
-          "projects": ["cloud-inventory-service"]
+          "skills": [
+            "java",
+            "spring-boot",
+            "mysql",
+            "nextjs",
+            "typescript",
+            "postman",
+            "git",
+            "github"
+          ],
+          "projects": [
+            "alpha-way-v1"
+          ]
         }
       ]
     },
     {
-      "id": "codecraft-labs",
+      "id": "edubridge",
       "featured": true,
       "order": 3,
       "company": {
-        "name": "CodeCraft Digital Labs",
+        "name": "EduBridge Learning Pvt. Ltd.",
         "logo": {
-          "src": "/images/companies/codecraft-labs.svg",
-          "alt": "CodeCraft Digital Labs logo",
-          "width": 64,
-          "height": 64
+          "src": "/images/companies/edubridge.png",
+          "alt": "EduBridge Learning Pvt. Ltd. logo",
+          "width": 48,
+          "height": 48
         },
-        "url": "https://example.com",
-        "location": "Indore, India"
+        "url": "https://www.edubridgeindia.com/",
+        "location": "Bengaluru, Karnataka"
       },
       "roles": [
         {
-          "id": "codecraft-intern",
-          "title": "Associate Web Engineer",
+          "id": "edubridge-trainee",
+          "title": "Java Full Stack Trainee",
           "employmentType": "Internship",
           "mode": "Remote",
-          "start": "2022-06",
-          "end": "2022-12",
-          "summary": "Built full-stack web prototypes and internal CRUD tools using Java and React.",
-          "description": [
-            "Developed customer-facing landing pages, web applications, and internal admin tooling.",
-            "Wrote unit tests and assisted senior engineers with API contract documentation."
-          ],
+          "start": "2023-05",
+          "end": "2023-10",
+          "summary": "Industry-grade Java full-stack programme, completed with Grade A (79%).",
           "responsibilities": [
-            "Developed responsive user interface components using React, Tailwind CSS, and HTML5",
-            "Implemented backend CRUD endpoints using Java and Spring Boot with MySQL",
-            "Wrote automated unit test suites using JUnit and Mockito"
+            "Covered Java, Spring Boot, RESTful API design and frontend integration workflows."
           ],
           "achievements": [
-            "Delivered internal staff directory portal 2 weeks ahead of target launch date",
-            "Automated test coverage reporting across the team repository"
+            "Grade A (79%)"
           ],
-          "skills": ["java", "mysql", "react", "tailwindcss", "git"],
-          "projects": ["cinematic-portfolio-engine"]
+          "skills": [
+            "java",
+            "spring-boot"
+          ],
+          "projects": []
+        }
+      ]
+    },
+    {
+      "id": "pentagon-space",
+      "featured": false,
+      "order": 4,
+      "company": {
+        "name": "Pentagon Space Private Limited",
+        "logo": {
+          "src": "/images/companies/pentagon-space.svg",
+          "alt": "Pentagon Space Private Limited logo",
+          "width": 48,
+          "height": 48
+        },
+        "url": "https://pentagonspace.in/",
+        "location": "Bengaluru, Karnataka"
+      },
+      "roles": [
+        {
+          "id": "pentagon-space-intern",
+          "title": "Java Full Stack Intern",
+          "employmentType": "Internship",
+          "mode": "Remote",
+          "start": "2022-03",
+          "end": "2022-11",
+          "summary": "Structured Java full-stack training through batch-based practical projects.",
+          "responsibilities": [
+            "Covered core Java, OOP principles, backend development and web application fundamentals."
+          ],
+          "achievements": [],
+          "skills": [
+            "java"
+          ],
+          "projects": []
         }
       ]
     }

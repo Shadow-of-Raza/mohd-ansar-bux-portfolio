@@ -2,268 +2,57 @@
   "page": {
     "eyebrow": "Projects",
     "title": "Selected *work*",
-    "intro": "Production systems, enterprise web platforms, and open-source software libraries.",
+    "intro": "Real projects I've built and shipped, from company platforms to open-source tools.",
     "seo": {
-      "title": "Projects — Mohd Ansar Bux",
-      "description": "Selected engineering projects built with Java, Spring Boot, React, Next.js, and TypeScript."
+      "title": "Projects",
+      "description": "Projects by Mohd Ansar Bux: the Apex Structure web platform, the Alpha-Way B2B SaaS backend and Resume Shapeshifter, an AI resume-tailoring engine."
     }
   },
   "home": {
     "eyebrow": "Projects",
     "title": "Selected *work*",
-    "intro": "Featured full-stack platforms and tools built for production scale and high performance.",
     "limit": 6
   },
   "items": [
     {
-      "id": "enterprise-analytics-platform",
-      "slug": "enterprise-analytics-platform",
-      "title": "Enterprise Analytics Platform",
-      "tagline": "High-throughput telemetry and business intelligence dashboard.",
-      "summary": "Full-stack analytics suite processing millions of events with real-time Spring Boot streaming.",
+      "id": "apex-structure-platform",
+      "slug": "apex-structure-platform",
+      "title": "Apex Structure — Website, CMS & Backend",
+      "tagline": "The complete web platform for a construction company: public website, admin CMS and backend.",
+      "summary": "Company website, admin CMS and secured backend for Apex Structure, running on AWS with CI/CD.",
       "type": "professional",
       "organization": {
-        "name": "Tech Innovators Pvt. Ltd.",
-        "url": "https://example.com"
+        "name": "Apex Structure Pvt. Ltd.",
+        "url": "https://www.apexstructure.in"
       },
-      "role": "Lead Full-Stack Developer",
+      "role": "Full-stack developer",
       "status": "live",
       "featured": true,
       "order": 1,
       "confidential": false,
       "timeline": {
-        "start": "2025-01",
-        "end": "2025-06",
-        "durationLabel": "6 months"
+        "start": "2025-12",
+        "end": null
       },
       "links": {
-        "github": null,
-        "live": "https://example.com"
+        "live": "https://www.apexstructure.in"
       },
       "cover": {
-        "src": "/images/projects/enterprise-analytics-platform/cover.webp",
-        "alt": "Analytics platform dashboard overview",
+        "src": "/images/projects/apex-structure-platform/cover.webp",
+        "alt": "Apex Structure website and platform cover screenshot",
         "width": 1600,
         "height": 1000
       },
       "gallery": [
         {
-          "src": "/images/projects/enterprise-analytics-platform/01.webp",
-          "alt": "Data visualisation charts",
+          "src": "/images/projects/apex-structure-platform/01.webp",
+          "alt": "Apex Structure about page screenshot",
           "width": 1600,
           "height": 1000
-        }
-      ],
-      "techStack": [
-        {
-          "skill": "spring-boot",
-          "reason": "High-throughput REST API and streaming"
         },
         {
-          "skill": "react",
-          "reason": "Interactive dashboards and real-time graphs"
-        },
-        {
-          "skill": "mysql",
-          "reason": "Relational storage and analytical indexing"
-        },
-        {
-          "skill": "aws",
-          "reason": "Cloud deployment on EC2 and RDS"
-        }
-      ],
-      "writeup": {
-        "overview": [
-          "Architecture and design of an enterprise-grade analytics dashboard servicing distributed telemetry.",
-          "Implemented asynchronous messaging queues to decouple ingest from analytical queries, ensuring fast rendering even under heavy ingestion."
-        ],
-        "purpose": [
-          "Enable real-time visibility into mission-critical business metrics with sub-second dashboard refresh rates."
-        ],
-        "features": [
-          "Real-time data streaming over WebSockets",
-          "Customizable KPI widget builder with responsive grid layouts",
-          "Automated scheduled PDF report generation and email dispatch"
-        ],
-        "challenges": [
-          "Handling peak ingestion spikes without degrading query latency for concurrent dashboard users.",
-          "Resolved by configuring read replicas and Redis in-memory query result caching."
-        ],
-        "outcome": [
-          "Reduced dashboard query latencies by 60% and improved reporting speed across all organizational teams."
-        ]
-      }
-    },
-    {
-      "id": "open-source-api-toolkit",
-      "slug": "open-source-api-toolkit",
-      "title": "Open Source API Toolkit",
-      "tagline": "Developer utilities for clean RESTful Spring Boot services.",
-      "summary": "Lightweight open-source library simplifying response formatting and declarative validation.",
-      "type": "open-source",
-      "role": "Author & Maintainer",
-      "status": "completed",
-      "featured": true,
-      "order": 2,
-      "confidential": false,
-      "timeline": {
-        "start": "2024-08",
-        "end": "2024-11",
-        "durationLabel": "3 months"
-      },
-      "links": {
-        "github": "https://github.com/Shadow-of-Raza/api-toolkit",
-        "live": null
-      },
-      "cover": {
-        "src": "/images/projects/open-source-api-toolkit/cover.webp",
-        "alt": "API Toolkit documentation screenshot",
-        "width": 1600,
-        "height": 1000
-      },
-      "gallery": [],
-      "techStack": [
-        {
-          "skill": "java",
-          "reason": "Core library language"
-        },
-        {
-          "skill": "spring-boot",
-          "reason": "Spring Boot starter auto-configuration"
-        }
-      ],
-      "writeup": {
-        "overview": [
-          "Open-source utility created to eliminate boilerplate response formatting and error handling in Spring Boot applications.",
-          "Provides opinionated RFC 7807 problem details out of the box with zero third-party dependencies."
-        ],
-        "purpose": [
-          "Standardise error envelopes, pagination payloads, and input validation handling across distributed services."
-        ],
-        "features": [
-          "RFC 7807 compliant problem details exceptions",
-          "Declarative pagination parameters with Spring Data JPA support",
-          "Zero external third-party dependencies with tiny binary footprint"
-        ],
-        "challenges": [
-          "Designing seamless auto-configuration compatible across multiple Spring Boot 3 minor versions.",
-          "Solved using conditional annotations and custom bean post-processors."
-        ],
-        "outcome": [
-          "Adopted across multiple engineering teams, reducing boilerplate code by over 1,500 lines."
-        ]
-      }
-    },
-    {
-      "id": "cloud-inventory-service",
-      "slug": "cloud-inventory-service",
-      "title": "Cloud Inventory & Logistics Service",
-      "tagline": "High-concurrency warehouse inventory tracking with real-time sync.",
-      "summary": "Distributed inventory management microservice built with Node.js, TypeScript, PostgreSQL, and Docker.",
-      "type": "professional",
-      "organization": {
-        "name": "Apex Software Solutions",
-        "url": "https://example.com"
-      },
-      "role": "Full-Stack Engineer",
-      "status": "live",
-      "featured": true,
-      "order": 3,
-      "confidential": false,
-      "timeline": {
-        "start": "2023-04",
-        "end": "2024-02",
-        "durationLabel": "11 months"
-      },
-      "links": {
-        "github": null,
-        "live": "https://example.com"
-      },
-      "cover": {
-        "src": "/images/projects/cloud-inventory-service/cover.webp",
-        "alt": "Warehouse inventory management interface",
-        "width": 1600,
-        "height": 1000
-      },
-      "gallery": [
-        {
-          "src": "/images/projects/cloud-inventory-service/01.webp",
-          "alt": "Stock level monitoring dashboard",
-          "width": 1600,
-          "height": 1000
-        }
-      ],
-      "techStack": [
-        {
-          "skill": "nodejs",
-          "reason": "Asynchronous event-driven I/O"
-        },
-        {
-          "skill": "typescript",
-          "reason": "Type-safe domain modeling and API schemas"
-        },
-        {
-          "skill": "postgresql",
-          "reason": "ACID transactional guarantees for stock quantities"
-        },
-        {
-          "skill": "docker",
-          "reason": "Containerized service deployment"
-        }
-      ],
-      "writeup": {
-        "overview": [
-          "Engineered a high-concurrency inventory microservice supporting automated barcode scanners and third-party logistics integrations.",
-          "Structured relational schemas with optimistic concurrency control to prevent stock overselling during flash promotions."
-        ],
-        "purpose": [
-          "Provide real-time inventory counts across three regional fulfillment centers with millisecond response guarantees."
-        ],
-        "features": [
-          "Optimistic locking for concurrency-safe stock updates",
-          "Automated stock threshold alerts and restock purchase order triggers",
-          "Full audit logging of all inventory state mutations"
-        ],
-        "challenges": [
-          "Resolving race conditions caused by simultaneous mobile barcode scans during peak fulfillment hours.",
-          "Solved by implementing row-level database locks and atomic transaction batching."
-        ],
-        "outcome": [
-          "Eliminated overselling occurrences to 0% and processed over 250,000 inventory updates daily."
-        ]
-      }
-    },
-    {
-      "id": "cinematic-portfolio-engine",
-      "slug": "cinematic-portfolio-engine",
-      "title": "Cinematic Portfolio Engine",
-      "tagline": "Dark editorial portfolio platform built with Next.js 16 and Tailwind CSS.",
-      "summary": "Modern, content-driven developer portfolio engine designed with custom typography and motion readiness.",
-      "type": "open-source",
-      "role": "Designer & Developer",
-      "status": "live",
-      "featured": true,
-      "order": 4,
-      "confidential": false,
-      "timeline": {
-        "start": "2026-09",
-        "end": "2026-10",
-        "durationLabel": "2 months"
-      },
-      "links": {
-        "github": "https://github.com/Shadow-of-Raza/mohd-ansar-bux-portfolio",
-        "live": "https://ansarbux.dev"
-      },
-      "cover": {
-        "src": "/images/projects/cinematic-portfolio-engine/cover.webp",
-        "alt": "Cinematic portfolio dark editorial homepage",
-        "width": 1600,
-        "height": 1000
-      },
-      "gallery": [
-        {
-          "src": "/images/projects/cinematic-portfolio-engine/01.webp",
-          "alt": "Project detail page layout",
+          "src": "/images/projects/apex-structure-platform/02.webp",
+          "alt": "Apex Structure clients and portfolio screenshot",
           "width": 1600,
           "height": 1000
         }
@@ -271,180 +60,210 @@
       "techStack": [
         {
           "skill": "nextjs",
-          "reason": "Next.js 16 App Router and static prerendering"
+          "reason": "Fast, search-friendly public pages"
         },
         {
           "skill": "react",
-          "reason": "React 19 Server Components and actions"
+          "reason": "CMS dashboard"
         },
         {
-          "skill": "typescript",
-          "reason": "Strict end-to-end type safety inferred from Zod schemas"
+          "skill": "tanstack-query",
+          "reason": "Real-time data in the CMS"
         },
         {
-          "skill": "tailwindcss",
-          "reason": "CSS-first Tailwind v4 design token system"
-        }
-      ],
-      "writeup": {
-        "overview": [
-          "Designed and built a cinematic, dark, JSON-driven personal portfolio engine.",
-          "Strict separation of concerns where content lives entirely in validated JSON files with presence rules."
-        ],
-        "purpose": [
-          "Create a distinctive, non-generic portfolio showcasing full-stack engineering craftsmanship and editorial aesthetics."
-        ],
-        "features": [
-          "Zero hard-coded content with 100% Zod schema validation",
-          "Dynamic presence rules that automatically prune absent data",
-          "Strict design token system with custom four-font typographical hierarchy"
-        ],
-        "challenges": [
-          "Balancing rich visuals with rigorous accessibility and fast static load times.",
-          "Resolved through WCAG AA contrast adherence, keyboard focus traps, and image optimization."
-        ],
-        "outcome": [
-          "Achieved 100 Lighthouse performance and accessibility scores with sub-second page loads."
-        ]
-      }
-    },
-    {
-      "id": "fintech-algorithmic-trading-engine",
-      "slug": "fintech-algorithmic-trading-engine",
-      "title": "High-Frequency Algorithmic Trading Execution Engine",
-      "tagline": "Sub-millisecond order matching and FIX protocol gateway.",
-      "summary": "Ultra-low latency algorithmic trading microservice processing concurrent FIX messages under strict SLA.",
-      "type": "freelance",
-      "organization": {
-        "name": "Confidential FinTech Client",
-        "url": null
-      },
-      "role": "Backend & Systems Architect",
-      "status": "completed",
-      "featured": false,
-      "order": 5,
-      "confidential": true,
-      "timeline": {
-        "start": "2024-03",
-        "end": "2024-07",
-        "durationLabel": "5 months"
-      },
-      "links": {
-        "github": null,
-        "live": null
-      },
-      "cover": {
-        "src": "/images/projects/fintech-algorithmic-trading-engine/cover.webp",
-        "alt": "Trading architecture topology diagram",
-        "width": 1600,
-        "height": 1000
-      },
-      "gallery": [],
-      "techStack": [
-        {
-          "skill": "java",
-          "reason": "Low-latency garbage collection tuning"
+          "skill": "typescript"
         },
         {
-          "skill": "spring-boot",
-          "reason": "Microservice configuration and metrics"
+          "skill": "tailwindcss"
         },
         {
-          "skill": "postgresql",
-          "reason": "Audit trails and trade settlements"
+          "skill": "nodejs"
         },
         {
-          "skill": "docker",
-          "reason": "Reproducible benchmark execution"
-        }
-      ],
-      "writeup": {
-        "overview": [
-          "Engineered a resilient electronic trading engine executing limit order book matches under sub-millisecond execution constraints.",
-          "Designed zero-allocation data structures to minimize garbage collection pauses during market open volatility."
-        ],
-        "purpose": [
-          "Replace legacy execution infrastructure with a high-throughput, deterministic microservice."
-        ],
-        "features": [
-          "In-memory price-time priority matching engine",
-          "Deterministic replay log for zero-data-loss crash recovery",
-          "FIX 4.4 protocol gateway supporting concurrent client connections"
-        ],
-        "challenges": [
-          "Eliminating intermittent GC spikes that pushed p99 latency beyond target bounds.",
-          "Overcame this by utilizing primitive object pools and memory-mapped ring buffers."
-        ],
-        "outcome": [
-          "Maintained p99 execution latency under 1.2 milliseconds across stress loads of 50,000 orders/sec."
-        ]
-      }
-    },
-    {
-      "id": "distributed-multi-region-observability-pipeline",
-      "slug": "distributed-multi-region-observability-pipeline",
-      "title": "Distributed Multi-Region Fault-Tolerant Observability & Event Streaming Architecture Pipeline",
-      "tagline": "Unified telemetry ingest, stream aggregation, and anomaly detection across hybrid clouds.",
-      "summary": "Scalable observability pipeline ingesting terabytes of distributed system logs and traces in real time.",
-      "type": "personal",
-      "role": "Sole Creator & Architect",
-      "status": "in-progress",
-      "featured": false,
-      "order": 6,
-      "confidential": false,
-      "timeline": {
-        "start": "2026-06",
-        "end": null,
-        "durationLabel": "Ongoing"
-      },
-      "links": {
-        "github": null,
-        "live": "https://example.com"
-      },
-      "cover": {
-        "src": "/images/projects/distributed-multi-region-observability-pipeline/cover.webp",
-        "alt": "Multi-region observability topology monitor",
-        "width": 1600,
-        "height": 1000
-      },
-      "gallery": [],
-      "techStack": [
-        {
-          "skill": "nodejs",
-          "reason": "Event-driven telemetry stream multiplexing"
+          "skill": "expressjs",
+          "reason": "REST API layer"
         },
         {
-          "skill": "typescript",
-          "reason": "Strict schema contracts for event envelopes"
+          "skill": "mysql"
         },
         {
           "skill": "aws",
-          "reason": "Kinesis data streams and ECS Fargate compute"
-        },
-        {
-          "skill": "docker",
-          "reason": "Containerized agent instrumentation"
+          "reason": "EC2, RDS, S3, CloudFront, SES, Route 53, CloudWatch"
         }
       ],
       "writeup": {
         "overview": [
-          "Architectural exploration of a globally distributed telemetry aggregator capable of deduplicating structured logs across disparate cloud zones.",
-          "Utilizes backpressure-aware event streaming pipelines to withstand transient network partitions."
+          "The complete web platform for Apex Structure, a construction company: the public website, the backend and an admin CMS.",
+          "The team manages all content and details through the CMS in real time. I own the platform from design through deployment and maintenance."
         ],
         "purpose": [
-          "Provide actionable multi-cloud health insights without central bottleneck vulnerability."
+          "Apex Structure needed a public website and an internal way to manage its content and details, with secure access for different admin roles."
         ],
         "features": [
-          "Distributed trace propagation across asynchronous boundaries",
-          "Real-time sliding-window anomaly detection alerts",
-          "Dynamic cardinality reduction to curb ingestion storage expenses"
+          "Real-time content management through the CMS",
+          "150+ pages",
+          "Role-based access for super admins and HR users",
+          "CI/CD deployments on AWS"
         ],
         "challenges": [
-          "Handling stream reordering during out-of-order network arrival across global regions.",
-          "Resolved using watermarked event-time windows and monotonic sequence counters."
+          "Keeping 150+ pages and 180+ APIs secure across different user roles. I used JWT authentication, CSRF protection and role-based access for super admins and HR users.",
+          "Making releases fast and safe. I set up the AWS infrastructure and CI/CD pipelines, which cut deployment time by about 40%, to around 15 minutes."
         ],
         "outcome": [
-          "Validated reliable stream ingest of 120,000 metrics per second in distributed synthetic benchmark tests."
+          "Deployments cut by about 40%, to around 15 minutes per release.",
+          "180+ secured REST APIs serving the website and the CMS."
+        ]
+      }
+    },
+    {
+      "id": "resume-shapeshifter",
+      "slug": "resume-shapeshifter",
+      "title": "Resume Shapeshifter",
+      "tagline": "An AI-powered engine that tailors a resume to a specific job description.",
+      "summary": "AI engine that reads your resume, finds the gaps against a job description and rewrites it to fit.",
+      "type": "open-source",
+      "role": "Creator (solo)",
+      "status": "live",
+      "featured": true,
+      "order": 2,
+      "confidential": false,
+      "links": {
+        "github": "https://github.com/Shadow-of-Raza/ai-resume-builder-auditor",
+        "live": "https://ai-resume-builder-auditor.netlify.app/"
+      },
+      "cover": {
+        "src": "/images/projects/resume-shapeshifter/cover.webp",
+        "alt": "Resume Shapeshifter AI application cover screenshot",
+        "width": 1600,
+        "height": 1000
+      },
+      "gallery": [
+        {
+          "src": "/images/projects/resume-shapeshifter/01.webp",
+          "alt": "Resume Shapeshifter resume parsing interface screenshot",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "src": "/images/projects/resume-shapeshifter/02.webp",
+          "alt": "Resume Shapeshifter gap analysis report screenshot",
+          "width": 1600,
+          "height": 1000
+        }
+      ],
+      "techStack": [
+        {
+          "skill": "nextjs"
+        },
+        {
+          "skill": "typescript"
+        },
+        {
+          "skill": "tailwindcss"
+        }
+      ],
+      "writeup": {
+        "overview": [
+          "Upload a PDF or Word resume and a job description; Resume Shapeshifter finds the gaps between them and rewrites the content to match the role.",
+          "It runs Llama 3.3 through Groq's high-speed inference API, with pdf-parse and Mammoth.js for reading files and Zod for validation."
+        ],
+        "purpose": [
+          "Tailoring a resume to every job by hand is slow, and it's easy to miss what a job description actually asks for."
+        ],
+        "features": [
+          "Parses PDF and Word resumes",
+          "Multi-dimensional gap analysis against the job",
+          "Generates optimised, job-aligned content with Llama 3.3 via Groq"
+        ],
+        "challenges": [
+          "Reading resumes reliably from different formats: pdf-parse handles PDFs and Mammoth.js handles Word files, so both arrive as clean text before analysis.",
+          "Keeping AI output usable: responses are checked with Zod before they reach the page."
+        ]
+      }
+    },
+    {
+      "id": "alpha-way-v1",
+      "slug": "alpha-way-v1",
+      "title": "Alpha Way V1",
+      "tagline": "A B2B SaaS platform with a client dashboard and admin modules.",
+      "summary": "B2B SaaS dashboard with a layered Spring Boot backend, 50+ REST APIs and role-based access.",
+      "type": "professional",
+      "organization": {
+        "name": "Jaitrrrm Private Limited",
+        "url": "https://jplitsolution.com/"
+      },
+      "role": "Team lead & backend developer",
+      "status": "live",
+      "featured": true,
+      "order": 3,
+      "confidential": false,
+      "timeline": {
+        "start": "2025-05",
+        "end": "2025-11"
+      },
+      "links": {
+        "live": "https://alpha-way.com/"
+      },
+      "cover": {
+        "src": "/images/projects/alpha-way-v1/cover.webp",
+        "alt": "Alpha Way B2B SaaS platform cover screenshot",
+        "width": 1600,
+        "height": 1000
+      },
+      "gallery": [
+        {
+          "src": "/images/projects/alpha-way-v1/01.webp",
+          "alt": "Alpha Way destination listings interface screenshot",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "src": "/images/projects/alpha-way-v1/02.webp",
+          "alt": "Alpha Way property exploration screenshot",
+          "width": 1600,
+          "height": 1000
+        }
+      ],
+      "techStack": [
+        {
+          "skill": "java"
+        },
+        {
+          "skill": "spring-boot",
+          "reason": "Layered backend with 50+ REST APIs"
+        },
+        {
+          "skill": "nextjs"
+        },
+        {
+          "skill": "typescript"
+        },
+        {
+          "skill": "mysql"
+        },
+        {
+          "skill": "tailwindcss"
+        }
+      ],
+      "writeup": {
+        "overview": [
+          "A B2B dashboard for clients, with admin and operator modules behind role-based permissions."
+        ],
+        "purpose": [
+          "The client needed a B2B dashboard where admins and operators each see and act on the right data, delivered on schedule."
+        ],
+        "features": [
+          "Multi-layered Spring Boot backend",
+          "Role-based permissions for admins and operators",
+          "JWT authentication",
+          "50+ REST APIs documented in Postman"
+        ],
+        "challenges": [
+          "Coordinating 8+ engineers on one release. I ran sprint planning, task assignment and code reviews in an Agile process.",
+          "Keeping frontend and backend in step. We agreed API contracts with the Next.js/TypeScript team and documented every endpoint in Postman."
+        ],
+        "outcome": [
+          "Delivered v1 on time with a team of 8+ engineers."
         ]
       }
     }

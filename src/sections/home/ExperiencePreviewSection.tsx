@@ -42,11 +42,9 @@ export function ExperiencePreviewSection({
   const title = home.title?.trim() || "Recent *roles*";
   const intro = home.intro?.trim();
 
-  // Compute total commercial experience across non-internship featured roles
-  const intervals = items.flatMap((company) =>
-    company.roles
-      .filter((role) => role.employmentType?.toLowerCase() !== "internship")
-      .map((role) => ({ start: role.start, end: role.end })),
+  // Compute total experience across all roles (including internships/training)
+  const intervals = experience.items.flatMap((company) =>
+    company.roles.map((role) => ({ start: role.start, end: role.end })),
   );
   const totalExperience = calculateTotalExperience(intervals);
   const statLabel = home.statLabel?.trim();

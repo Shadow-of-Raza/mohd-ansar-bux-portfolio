@@ -2,16 +2,16 @@
   "page": {
     "eyebrow": "Services",
     "title": "What I can *build* for you",
-    "intro": "End-to-end full-stack engineering tailored for scalable web products, resilient APIs, and cloud deployments.",
+    "intro": "Three ways I can help: a complete website or web app, the backend and APIs behind it, and the cloud setup that keeps it running.",
     "seo": {
-      "title": "Services — Mohd Ansar Bux",
-      "description": "Full-stack web application development, backend API engineering, and cloud deployment services."
+      "title": "Services",
+      "description": "Full-stack web development, backend and API development, and AWS cloud deployment with CI/CD by Mohd Ansar Bux, software engineer in Indore."
     }
   },
   "home": {
     "eyebrow": "Services",
     "title": "How I can *help*",
-    "intro": "Custom engineering solutions from database schema design to interactive web interfaces.",
+    "intro": "",
     "limit": 3
   },
   "items": [
@@ -19,63 +19,84 @@
       "id": "full-stack-web-development",
       "slug": "full-stack-web-development",
       "title": "Full-Stack Web Development",
-      "tagline": "Fast, responsive web applications built for scale and high conversion.",
-      "summary": "Modern web products built with Next.js, React, and TypeScript — fast loading, accessible, and maintainable.",
+      "tagline": "A fast, secure website or web app with an admin panel you can update yourself.",
+      "summary": "Company websites and web apps built with Next.js and React, backed by Node.js or Spring Boot, with a CMS for your content.",
       "icon": "monitor",
       "featured": true,
       "order": 1,
       "definition": [
-        "Full-stack development brings together frontend craftsmanship and robust backend architecture into a cohesive web product.",
-        "From state management and accessibility to server-side rendering and database integration, every layer is built for longevity."
+        "Full-stack web development means building the whole product: the pages people see, the server and database behind them, and an admin panel so your team can change content without a developer.",
+        "I build the front with Next.js and React and the back with Node.js or Spring Boot, then deploy it so it loads fast and is easy to find on Google."
       ],
       "whyNeeded": [
         {
-          "title": "Speed & Performance",
-          "description": "Optimized Core Web Vitals keep visitors engaged, reduce bounce rates, and improve search visibility."
+          "title": "Be found",
+          "description": "Most customers search online before they call. A fast, search-friendly site gets you into those searches."
         },
         {
-          "title": "Reliable Architecture",
-          "description": "Type-safe engineering across client and server reduces regressions and maintenance cost over time."
+          "title": "Update it yourself",
+          "description": "A built-in CMS lets your team change text, images and pages in minutes, without waiting on a developer."
+        },
+        {
+          "title": "Look credible",
+          "description": "A clean, quick site on your own domain tells clients you're a serious business."
+        },
+        {
+          "title": "Grow without rebuilding",
+          "description": "A modern stack takes on new pages and features as your business grows."
         }
       ],
       "deliverables": [
-        "Responsive, mobile-first design with fluid typography",
-        "SEO and metadata optimization with JSON-LD schemas",
-        "Server-rendered and static page generation via Next.js",
-        "CI/CD pipeline and automated cloud deployment"
+        "Static & dynamic pages",
+        "Responsive design",
+        "Admin CMS",
+        "SEO setup",
+        "Contact forms",
+        "Deployment & domain"
       ],
       "process": [
         {
-          "title": "Discovery",
-          "description": "Understanding user journeys, technical constraints, and product requirements."
+          "title": "Discover",
+          "description": "Goals, audience, pages and the content you'll manage."
         },
         {
-          "title": "Architecture",
-          "description": "Component structure, state management, and API contracts."
+          "title": "Design",
+          "description": "Page layouts and the admin structure, agreed before any code."
         },
         {
-          "title": "Implementation",
-          "description": "Incremental development with continuous testing and review."
+          "title": "Build",
+          "description": "Frontend, backend, CMS and forms, shared with you as it takes shape."
         },
         {
-          "title": "Launch",
-          "description": "Production deployment, performance audits, and monitoring."
+          "title": "Launch & support",
+          "description": "Deployment, domain and SEO setup, then fixes and updates after go-live."
         }
       ],
-      "technologies": ["nextjs", "react", "typescript", "tailwindcss", "aws"],
+      "technologies": [
+        "nextjs",
+        "react",
+        "typescript",
+        "tailwindcss",
+        "nodejs",
+        "mysql"
+      ],
       "idealFor": [
-        "SaaS startups launching MVPs",
-        "Businesses upgrading legacy web frontends",
-        "Product teams needing full-stack support"
+        "Local businesses",
+        "Companies",
+        "Startups"
       ],
       "faqs": [
         {
-          "question": "What is the typical timeline for a web project?",
-          "answer": "Timelines vary by scope. A focused product MVP typically takes 3 to 6 weeks from kickoff to deployment."
+          "question": "Can I update the website myself?",
+          "answer": "Yes. Every site comes with an admin CMS, so you can edit pages, text and images without touching code."
         },
         {
-          "question": "How do you ensure accessibility compliance?",
-          "answer": "Every interactive control is keyboard-accessible, passes WCAG AA contrast ratios, and supports assistive screen readers."
+          "question": "Will it work on phones?",
+          "answer": "Yes. Every page is responsive and tested on mobile, tablet and desktop."
+        },
+        {
+          "question": "Do you handle hosting and the domain?",
+          "answer": "Yes. I deploy the site, connect your domain and set up SSL, so it's live and secure from day one."
         }
       ],
       "cta": {
@@ -83,66 +104,81 @@
       }
     },
     {
-      "id": "api-backend-engineering",
-      "slug": "api-backend-engineering",
-      "title": "API & Backend Engineering",
-      "tagline": "Resilient, high-throughput backend services and microservices.",
-      "summary": "Dependable RESTful APIs and microservices engineered with Java, Spring Boot, and relational databases.",
+      "id": "backend-api-development",
+      "slug": "backend-api-development",
+      "title": "Backend & API Development",
+      "tagline": "Secure REST APIs with login, roles and permissions, ready to grow with your product.",
+      "summary": "Java/Spring Boot or Node.js backends with JWT authentication, role-based access and documented APIs your frontend team can rely on.",
       "icon": "server",
       "featured": true,
       "order": 2,
       "definition": [
-        "Backend engineering provides the secure foundation, data storage, and business logic that powers modern applications.",
-        "Engineered with strict validation, connection pooling, and transactional boundaries to ensure flawless uptime."
+        "The backend is the part of your product users never see: the server, the database and the APIs your website or app talks to.",
+        "I design and build secure REST APIs in Java with Spring Boot or in Node.js with Express, with login, roles and permissions built in from the start."
       ],
       "whyNeeded": [
         {
-          "title": "Scalable Throughput",
-          "description": "Handle thousands of concurrent requests with efficient connection pooling and asynchronous processing."
+          "title": "Secure from day one",
+          "description": "JWT authentication, role-based access and CSRF protection keep each piece of data visible only to the right people."
         },
         {
-          "title": "Data Integrity",
-          "description": "Strict transactional guarantees and schema validation prevent corruption and data loss."
+          "title": "Clear contracts",
+          "description": "APIs documented in Postman let your frontend team build without guessing."
+        },
+        {
+          "title": "Room to grow",
+          "description": "A layered architecture keeps the code easy to extend as features and users are added."
         }
       ],
       "deliverables": [
-        "RESTful API design and OpenAPI documentation",
-        "Relational database schema modeling and indexing",
-        "Authentication, authorization, and rate limiting",
-        "Automated unit and integration test suites"
+        "API design",
+        "Authentication (JWT)",
+        "Role-based access control",
+        "Database design",
+        "API documentation (Postman)"
       ],
       "process": [
         {
-          "title": "Domain Modeling",
-          "description": "Entity relationships, business constraints, and data flows."
+          "title": "Model",
+          "description": "Map users, roles and data, and agree the API contract."
         },
         {
-          "title": "API Specification",
-          "description": "Contract-first endpoint definitions and validation rules."
+          "title": "Build",
+          "description": "Endpoints, database and security, in small reviewed steps."
         },
         {
-          "title": "Service Implementation",
-          "description": "Robust Spring Boot services with connection pooling and caching."
+          "title": "Document & test",
+          "description": "A Postman collection and tests for every endpoint."
         },
         {
-          "title": "Hardening",
-          "description": "Load testing, error handling verification, and security audits."
+          "title": "Hand over",
+          "description": "Deployment and a walkthrough, so your team can own it."
         }
       ],
-      "technologies": ["java", "spring-boot", "mysql", "postgresql", "docker"],
+      "technologies": [
+        "java",
+        "spring-boot",
+        "nodejs",
+        "expressjs",
+        "mysql"
+      ],
       "idealFor": [
-        "Enterprise platforms needing high-throughput APIs",
-        "Applications transitioning from monolithic to microservices",
-        "Teams needing secure third-party integrations"
+        "Startups",
+        "SaaS products",
+        "Frontend teams that need a backend"
       ],
       "faqs": [
         {
-          "question": "Do you handle database migrations?",
-          "answer": "Yes, all schema evolutions are scripted with versioned migration tools like Flyway or Liquibase."
+          "question": "Spring Boot or Node.js: which should I choose?",
+          "answer": "Spring Boot suits large, structured systems with complex business rules; Node.js suits fast-moving products and real-time features. I'll recommend one based on your project and team."
         },
         {
-          "question": "How do you secure API endpoints?",
-          "answer": "Using industry standards including JWT authentication, role-based access control, rate limiting, and encrypted payloads."
+          "question": "Can you work with my existing frontend team?",
+          "answer": "Yes. I agree the API contract with the frontend team up front and document every endpoint in Postman."
+        },
+        {
+          "question": "How do you handle different user roles?",
+          "answer": "With role-based access control: each user gets a role, such as admin or operator, and every endpoint checks it before returning data."
         }
       ],
       "cta": {
@@ -150,66 +186,76 @@
       }
     },
     {
-      "id": "cloud-devops-deployment",
-      "slug": "cloud-devops-deployment",
-      "title": "Cloud & DevOps Architecture",
-      "tagline": "Automated CI/CD pipelines, container orchestration, and cloud hosting.",
-      "summary": "Scalable deployment automation and infrastructure on AWS and Docker, ensuring zero-downtime releases.",
+      "id": "cloud-deployment-ci-cd",
+      "slug": "cloud-deployment-ci-cd",
+      "title": "Cloud Deployment & CI/CD",
+      "tagline": "Your app running on AWS with automatic, repeatable deployments.",
+      "summary": "AWS setup (EC2, RDS, S3, CloudFront) with CI/CD pipelines, so every release is quick and predictable.",
       "icon": "cloud",
       "featured": true,
       "order": 3,
       "definition": [
-        "DevOps bridges development and operations through automation, infrastructure as code, and continuous delivery.",
-        "Ensures your application scales effortlessly under load and recovers automatically from server disruptions."
+        "Cloud deployment puts your application on reliable servers, with the database, file storage, email and monitoring set up properly. I usually use AWS.",
+        "CI/CD adds an automatic pipeline: every approved change is built, checked and released the same way, without manual steps."
       ],
       "whyNeeded": [
         {
-          "title": "Zero-Downtime Releases",
-          "description": "Continuous integration pipelines run automated tests and deploy updates seamlessly without service interruption."
+          "title": "Faster releases",
+          "description": "An automated pipeline makes releases quick and routine. On my current platform it cut deployment time by about 40%."
         },
         {
-          "title": "Predictable Costs",
-          "description": "Right-sized container orchestration and cloud resource management minimize hosting expenditures."
+          "title": "Fewer mistakes",
+          "description": "The same steps run every time, so a release never depends on someone remembering them."
+        },
+        {
+          "title": "Spot problems early",
+          "description": "CloudWatch monitoring and logs show issues before your users report them."
         }
       ],
       "deliverables": [
-        "Containerized Docker configurations for dev and production",
-        "Automated GitHub Actions workflows for lint, test, and build",
-        "Cloud provisioning on AWS (EC2, ECS, S3, RDS)",
-        "Logging, monitoring, and automated alerts setup"
+        "AWS infrastructure setup",
+        "CI/CD pipeline",
+        "Domain & SSL",
+        "Email (SES)",
+        "Monitoring (CloudWatch)"
       ],
       "process": [
         {
-          "title": "Audit",
-          "description": "Evaluating existing infrastructure, bottlenecks, and hosting requirements."
+          "title": "Review",
+          "description": "Look at your app, traffic and current hosting."
         },
         {
-          "title": "Containerization",
-          "description": "Crafting lightweight, secure multi-stage Docker images."
+          "title": "Set up",
+          "description": "AWS services, domain, SSL and email configured."
         },
         {
-          "title": "Pipeline Automation",
-          "description": "Configuring automated test runners and deployment webhooks."
+          "title": "Automate",
+          "description": "A CI/CD pipeline from your Git repository to production."
         },
         {
-          "title": "Monitoring",
-          "description": "Implementing health checks, log aggregation, and error tracking."
+          "title": "Monitor & hand over",
+          "description": "Monitoring, alerts and a short guide for your team."
         }
       ],
-      "technologies": ["aws", "docker", "git", "nodejs"],
+      "technologies": [
+        "aws",
+        "vercel",
+        "netlify",
+        "cloudflare",
+        "git"
+      ],
       "idealFor": [
-        "Teams looking to modernize their deployment pipeline",
-        "Startups setting up production cloud environments",
-        "Companies moving applications from VPS to containerized clouds"
+        "Small teams",
+        "Existing apps moving to the cloud"
       ],
       "faqs": [
         {
-          "question": "Which cloud provider do you recommend?",
-          "answer": "AWS is typically best for complex enterprise architectures, while platforms like Vercel or Railway excel for rapid product launches."
+          "question": "Do I have to use AWS?",
+          "answer": "No. For smaller sites, Vercel or Netlify is often simpler and cheaper. I use AWS when you need more control."
         },
         {
-          "question": "Can you containerize legacy applications?",
-          "answer": "Yes, I containerize existing Spring Boot, Node.js, and multi-service systems into standard Docker Compose workflows."
+          "question": "Can you move my existing app?",
+          "answer": "Yes. I set up the new environment, move the app and data, and switch the domain over once everything checks out."
         }
       ],
       "cta": {

@@ -1,7 +1,7 @@
 {
   "name": "Mohd Ansar Bux",
-  "role": "Full-Stack Software Engineer",
-  "location": "Indore, India",
+  "role": "Software Engineer & Full Stack Developer",
+  "location": "Indore, Madhya Pradesh, India",
   "url": "https://ansarbux.dev",
   "logo": {
     "text": "MAB",
@@ -12,19 +12,19 @@
   },
   "availability": {
     "open": true,
-    "label": "Open to freelance & full-time roles"
+    "label": "Open to full-time roles & freelance"
   },
   "hero": {
-    "eyebrow": "Full-Stack Software Engineer — Indore, India",
-    "headline": "Architecting digital products that *ship*",
-    "intro": "Engineering robust Java & Spring Boot microservices and fast, accessible React/Next.js interfaces from concept to production.",
+    "eyebrow": "Software Engineer — Indore, India",
+    "headline": "Transforming ideas *into reliable* digital solutions",
+    "intro": "Java, Spring Boot, Node.js and React/Next.js — from database to deploy.",
     "primaryCta": {
       "label": "View projects",
       "href": "/projects"
     },
     "secondaryCta": {
-      "label": "Contact me",
-      "href": "/contact"
+      "label": "Download resume",
+      "href": "/resume/mohd-ansar-bux-resume.pdf"
     },
     "poster": {
       "src": "/hero/hero-poster.webp",
@@ -43,12 +43,24 @@
     {
       "id": "linkedin",
       "label": "LinkedIn",
-      "url": "https://linkedin.com/in/mohdansarbux",
+      "url": "https://www.linkedin.com/in/mohd-ansar-bux",
       "icon": "linkedin"
+    },
+    {
+      "id": "startup",
+      "label": "ISRA Tech Solutions",
+      "url": "https://isra-site.vercel.app/",
+      "icon": "globe"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": "https://www.instagram.com/shadow.of.raza/",
+      "icon": "instagram"
     }
   ],
   "footer": {
-    "intro": "Full-stack engineer crafting dependable backend architectures, high-performance APIs, and cinematic web interfaces.",
+    "intro": "Software engineer building secure, scalable web platforms with Java, Spring Boot, Node.js and Next.js — from database to deployment.",
     "ctaTitle": "Have a project *in mind?*"
   },
   "notFound": {
@@ -58,8 +70,8 @@
     "projectsLabel": "Explore projects"
   },
   "seo": {
-    "title": "Mohd Ansar Bux — Full-Stack Software Engineer",
-    "description": "Portfolio of Mohd Ansar Bux, full-stack engineer specializing in Java, Spring Boot, React, Next.js, and cloud systems.",
+    "title": "Mohd Ansar Bux — Software Engineer & Full Stack Developer",
+    "description": "Mohd Ansar Bux — Software Engineer and Full-Stack Developer in Indore, India, building secure web platforms with Java, Spring Boot, Node.js, Next.js and AWS.",
     "ogImage": {
       "src": "/images/og/default.jpg",
       "alt": "Mohd Ansar Bux portfolio",
@@ -67,13 +79,12 @@
       "height": 630
     },
     "keywords": [
-      "full-stack developer",
-      "Next.js developer",
+      "Software Engineer Indore",
+      "Java full-stack developer",
       "Spring Boot developer",
-      "Java engineer",
-      "React developer",
-      "Indore software engineer",
-      "TypeScript developer"
+      "Next.js developer",
+      "Node.js developer",
+      "React developer"
     ]
   }
 }
