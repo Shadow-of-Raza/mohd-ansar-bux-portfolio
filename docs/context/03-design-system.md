@@ -6,7 +6,7 @@
 
 Three words to check every screen against: **dark, precise, human.**
 
-- _Dark_ — the page is `night`, not grey. Colour is rare and therefore meaningful.
+- _Dark_ — the page canvas is the **space background** (`space` base + nebula + starfield), not grey. Colour is rare and therefore meaningful.
 - _Precise_ — strict grid, consistent spacing, hairline borders, aligned baselines.
 - _Human_ — editorial serif accents, real photos, asymmetric layouts, specific copy.
 
@@ -21,11 +21,23 @@ Three words to check every screen against: **dark, precise, human.**
 | Token      | Hex       | Role                                                                          |
 | ---------- | --------- | ----------------------------------------------------------------------------- |
 | `void`     | `#000000` | Deepest layer: footer base, image letterboxing, 3D background fade            |
-| `night`    | `#080616` | **Page background** — the default canvas                                      |
+| `night`    | `#080616` | Legacy canvas token (kept for backward compatibility with derived surfaces)   |
 | `navy`     | `#1A1953` | Raised surfaces at full strength, popovers, active states, strong borders     |
 | `royal`    | `#162E93` | Secondary accent: glows, gradients, pressed states, timeline track            |
 | `electric` | `#2F2FE4` | **Primary accent**: primary buttons, active indicators, focus, key highlights |
 | `white`    | `#FFFFFF` | Primary text and icons                                                        |
+
+### Space background
+
+| Token | Value | Role |
+|---|---|---|
+| `--color-space` | `#030010` | Deep-space base (replaces `night` as the page canvas) |
+| `--color-nebula-solar` | `rgb(255 68 0 / 0.28)` | Orange solar corona — left edge, `0% 50%`, fades out at 45 % |
+| `--color-nebula-cyan` | `rgb(0 180 160 / 0.20)` | Teal gas cloud — centre-right, `60% 55%`, fades out at 55 % |
+| `--color-nebula-blue` | `rgb(0 102 255 / 0.22)` | Deep cosmic blue — top-right, `100% 20%`, fades out at 50 % |
+| `--color-nebula-violet` | `rgb(130 30 180 / 0.15)` | Galactic violet dust — lower-left, `30% 85%`, fades out at 45 % |
+| `--color-star` | `#ffffff` | Star dots |
+| `--color-star-glow` | `#b4dcff` | Soft halo around the largest near stars (drawn at 30 % of the star's alpha) |
 
 ### Derived shades (only these — nothing else)
 
@@ -77,6 +89,15 @@ If a screen looks "blue", there is too much accent. The accent should feel like 
   --color-electric-300: #8f8ff1;
   --color-electric-200: #c1c1f7;
 
+  /* space background (see docs/context/03 §2) */
+  --color-space: #030010;
+  --color-nebula-solar: rgb(255 68 0 / 0.28);
+  --color-nebula-cyan: rgb(0 180 160 / 0.2);
+  --color-nebula-blue: rgb(0 102 255 / 0.22);
+  --color-nebula-violet: rgb(130 30 180 / 0.15);
+  --color-star: #ffffff;
+  --color-star-glow: #b4dcff;
+
   /* semantic text & lines (white with alpha) */
   --color-fg: #ffffff;
   --color-fg-muted: rgb(255 255 255 / 0.68);
@@ -107,10 +128,10 @@ If a screen looks "blue", there is too much accent. The accent should feel like 
 @layer base {
   html {
     color-scheme: dark;
-    background: var(--color-night);
+    background-color: var(--color-space);
   }
   body {
-    background: var(--color-night);
+    background: transparent; /* must be transparent so fixed -z-50 background shows through */
     color: var(--color-fg);
     font-family: var(--font-body);
     font-size: 1.125rem;
@@ -126,6 +147,32 @@ If a screen looks "blue", there is too much accent. The accent should feel like 
     outline: 2px solid var(--color-electric-300);
     outline-offset: 3px;
     border-radius: var(--radius-xs);
+  }
+}
+
+/* 4) Nebula and drift */
+@layer components {
+  .space-nebula {
+    background-color: var(--color-space);
+    background-image:
+      radial-gradient(circle at 0% 50%, var(--color-nebula-solar) 0%, transparent 45%),
+      radial-gradient(circle at 60% 55%, var(--color-nebula-cyan) 0%, transparent 55%),
+      radial-gradient(circle at 100% 20%, var(--color-nebula-blue) 0%, transparent 50%),
+      radial-gradient(circle at 30% 85%, var(--color-nebula-violet) 0%, transparent 45%);
+  }
+}
+
+@keyframes nebula-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, -6%, 0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .nebula-drift {
+      animation: nebula-drift linear both;
+      animation-timeline: scroll(root block);
+    }
   }
 }
 ```
@@ -266,7 +313,7 @@ Define these as utilities in `globals.css` with `@utility text-display-2xl { …
 ## 8. Texture, light & imagery
 
 - **Grain overlay:** fixed full-screen SVG noise, `opacity 0.035`, `mix-blend-mode: overlay`, `pointer-events: none`. This single detail removes the flat "generated" look.
-- **Ambient glow:** soft radial `royal` → transparent behind the hero object and occasionally behind a section heading. Max opacity 35 %. Never more than one glow in view.
+- **Ambient glow:** the multi-point nebula gradient in `SpaceBackground` serves as the single global ambient layer. Section-level glows are allowed only as already built and are reviewed in the polish pass. Max opacity 35 %.
 - **Photography:** real photos only (no stock/AI people). Portrait 4:5. Treat with slight desaturation (`saturate(0.85) contrast(1.05)`) so they sit in the palette; full colour on hover is allowed.
 - **Project covers:** screenshots on a `navy`/`surface-2` plate with generous padding, or full-bleed 16:10. Consistent treatment across all projects.
 - **Image reveals:** clip-path masks (see 04), never plain fade-ins for large media.
@@ -291,8 +338,9 @@ Define these as utilities in `globals.css` with `@utility text-display-2xl { …
 | **Input / textarea / select** | `bg-surface-1 border border-line rounded-sm h-12 px-4`, label above in `font-label text-label text-fg-subtle`. Focus: `border-electric` + focus ring. Error: message in `electric-200` with an icon (don't introduce red) |
 | **Popover (skill usage)**     | `bg-navy border border-line-strong rounded-md p-4 w-64`, arrow, max 5 items then "+N more"                                                                                                                                |
 | **Timeline**                  | Track 1 px `royal`; progress line 2 px `electric` (scroll-scrubbed); nodes 10 px rings that fill `electric` when active                                                                                                   |
-| **Header**                    | 72 px tall (64 mobile). Scrolled: `bg-night/70 backdrop-blur-md border-b border-line`                                                                                                                                     |
-
+| **Header**                    | 72 px tall (64 mobile). Scrolled: `bg-space/30 backdrop-blur-md border-b border-line`                                                                                                    |
+| **Footer**                    | Transparent root, hairline borders only (`border-line`), wordmark & links float over space background                                                                                     |
+| **Sticky bars**               | Translucent `bg-space/50 backdrop-blur-md border-line` (Services sub-nav & Experience mobile rail)                                                                                        |
 > **Error colour note:** the palette has no red. Errors use `electric-200` text + an alert icon + clear wording. If you want a dedicated error colour later, add it to §2 deliberately.
 
 ## 11. "Not AI-generated" checklist
@@ -300,7 +348,7 @@ Define these as utilities in `globals.css` with `@utility text-display-2xl { …
 Before accepting any screen, it must pass all of these:
 
 - [ ] No centred-everything layout; at least one asymmetric composition per page.
-- [ ] No purple/blue gradient blobs floating in the background; one ambient glow max.
+- [ ] Only the global space nebula; no additional gradient blobs in sections.
 - [ ] No glassmorphism stacks (blur is for the header only).
 - [ ] No three identical cards with an icon-in-a-circle on top as the only idea — vary scale, numbering, or layout.
 - [ ] No gradient text on headings; accent comes from the Averia italic word.

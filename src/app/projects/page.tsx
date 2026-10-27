@@ -149,7 +149,7 @@ export default function ProjectsPage() {
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
   return (
-    <main className="min-h-screen bg-night text-fg">
+    <main className="min-h-screen text-fg">
       {/* PROJ-01: Page Hero */}
       <ProjectsHeroSection
         eyebrow={page?.eyebrow}

@@ -83,7 +83,10 @@ export function ScrollSpyNav({ services, className }: ScrollSpyNavProps) {
   return (
     <nav
       aria-label="Services in-page navigation"
-      className={cn("no-scrollbar flex items-center gap-2 overflow-x-auto py-1 sm:gap-3", className)}
+      className={cn(
+        "no-scrollbar flex items-center gap-2 overflow-x-auto py-1 sm:gap-3 [mask-image:linear-gradient(to_right,transparent,black_16px,black_calc(100%-16px),transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_16px,black_calc(100%-16px),transparent)]",
+        className,
+      )}
     >
       <span className="hidden pr-2 text-micro font-label tracking-wider text-fg-subtle uppercase lg:inline-block">
         Jump to:

@@ -139,7 +139,7 @@ export function SkillTile({
       ref={containerRef}
       id={id}
       className={cn(
-        "relative inline-block w-full scroll-mt-28 rounded-md transition-all target:ring-2 target:ring-electric-300 target:ring-offset-2 target:ring-offset-night",
+        "relative inline-block w-full scroll-mt-28 rounded-md transition-all target:ring-2 target:ring-electric-300 target:ring-offset-2 target:ring-offset-space",
         className
       )}
       onMouseEnter={openWithDelay}

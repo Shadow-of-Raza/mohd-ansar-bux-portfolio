@@ -19,7 +19,7 @@ This folder is the single source of truth for **what** we are building, **how** 
 1. **Next.js 16 (App Router) + React 19 + TypeScript (strict) + Tailwind CSS v4.** Fully static output except the contact form action.
 2. **All content lives in `src/data/*.json`.** Components never hard-code copy that belongs to the person.
 3. **Presence-driven rendering.** If data for a page, section, subsection or field is missing or empty, that UI is not rendered — and links to it (nav, footer, sitemap, buttons) disappear too.
-4. **One dark theme only.** Palette: `#000000`, `#FFFFFF`, `#2F2FE4`, `#162E93`, `#1A1953`, `#080616` plus the derived shades defined in `03`. Tailwind's default colour palette is disabled.
+4. **One dark theme only.** Page canvas is the persistent space background (`space` `#030010` + 4-point nebula + starfield). Palette: `#030010`, `#000000`, `#FFFFFF`, `#2F2FE4`, `#162E93`, `#1A1953`, `#080616` plus the space background and derived shades defined in `03`. Tailwind's default colour palette is disabled.
 5. **Four fonts, each with one job:** Archivo Black (display), Abhaya Libre (body), Alegreya SC (labels/UI), Averia Serif Libre (italic accent words only).
 6. **Motion stack:** Lenis (smooth scroll) + GSAP/ScrollTrigger (scroll-driven, cinematic) + Motion (component state, hover, presence) + React Three Fiber (one hero 3D scene). Every effect has a `prefers-reduced-motion` fallback.
 7. **Server Components by default.** `"use client"` only on interactive/animated leaf components.

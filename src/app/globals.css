@@ -20,6 +20,15 @@
   --color-electric-300: #8f8ff1;
   --color-electric-200: #c1c1f7;
 
+  /* space background (see docs/context/03 §2) */
+  --color-space: #030010;
+  --color-nebula-solar: rgb(255 68 0 / 0.28);
+  --color-nebula-cyan: rgb(0 180 160 / 0.2);
+  --color-nebula-blue: rgb(0 102 255 / 0.22);
+  --color-nebula-violet: rgb(130 30 180 / 0.15);
+  --color-star: #ffffff;
+  --color-star-glow: #b4dcff;
+
   /* semantic text & lines (white with alpha) */
   --color-fg: #ffffff;
   --color-fg-muted: rgb(255 255 255 / 0.68);
@@ -50,10 +59,10 @@
 @layer base {
   html {
     color-scheme: dark;
-    background: var(--color-night);
+    background-color: var(--color-space);
   }
   body {
-    background: var(--color-night);
+    background: transparent;
     color: var(--color-fg);
     font-family: var(--font-body);
     font-size: 1.125rem;
@@ -206,6 +215,32 @@
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+/* 11) Space nebula & scroll drift */
+@layer components {
+  .space-nebula {
+    background-color: var(--color-space);
+    background-image:
+      radial-gradient(circle at 0% 50%, var(--color-nebula-solar) 0%, transparent 45%),
+      radial-gradient(circle at 60% 55%, var(--color-nebula-cyan) 0%, transparent 55%),
+      radial-gradient(circle at 100% 20%, var(--color-nebula-blue) 0%, transparent 50%),
+      radial-gradient(circle at 30% 85%, var(--color-nebula-violet) 0%, transparent 45%);
+  }
+}
+
+@keyframes nebula-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, -6%, 0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .nebula-drift {
+      animation: nebula-drift linear both;
+      animation-timeline: scroll(root block);
+    }
   }
 }
 

@@ -31,7 +31,7 @@ export function ServicesSubNav({ services, className }: ServicesSubNavProps) {
   return (
     <div
       className={cn(
-        "sticky top-16 md:top-[72px] z-30 w-full border-b border-line bg-night/85 backdrop-blur-md py-3 transition-colors",
+        "sticky top-16 md:top-[72px] z-30 w-full border-b border-line bg-space/50 backdrop-blur-md py-3 transition-colors",
         className,
       )}
     >

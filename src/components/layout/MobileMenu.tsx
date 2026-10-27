@@ -96,7 +96,7 @@ export function MobileMenu({ isOpen, onClose, navItems, hasContact, site, contac
       aria-modal="true"
       aria-label="Navigation menu"
       className={cn(
-        "fixed inset-0 z-50 flex flex-col justify-between overflow-y-auto bg-night/95 p-6 backdrop-blur-2xl sm:p-8 xl:hidden",
+        "fixed inset-0 z-50 flex flex-col justify-between overflow-y-auto bg-space/85 p-6 backdrop-blur-xl sm:p-8 xl:hidden",
         "animate-in fade-in duration-200",
       )}
     >

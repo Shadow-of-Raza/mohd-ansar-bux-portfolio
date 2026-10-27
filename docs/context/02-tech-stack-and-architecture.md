@@ -106,7 +106,7 @@ portfolio/
 │  └─ validate-data.ts             # schema + reference + file-exists checks (prebuild)
 ├─ src/
 │  ├─ app/
-│  │  ├─ layout.tsx                # fonts, <SmoothScroll>, Header, Footer, Grain, Cursor
+│  │  ├─ layout.tsx                # fonts, SpaceBackground, <SmoothScroll>, Header, Footer, Grain, Cursor
 │  │  ├─ template.tsx              # page-enter transition (client)
 │  │  ├─ page.tsx                  # Home — composes home sections
 │  │  ├─ not-found.tsx
@@ -125,11 +125,11 @@ portfolio/
 │  │     ├─ page.tsx
 │  │     └─ actions.ts             # "use server" — sendContactMessage()
 │  ├─ components/                  # reusable, data-agnostic building blocks
-│  │  ├─ layout/                   # Header, Footer, MobileMenu, NavLink, SkipLink
+│  │  ├─ layout/                   # Header, Footer, MobileMenu, NavLink, SkipLink, SpaceBackground
 │  │  ├─ ui/                       # Button, LinkButton, Badge, Chip, Card, Container,
 │  │  │                            # Section, SectionHeading, Eyebrow, Popover, Accordion,
 │  │  │                            # Input, Textarea, Select, Lightbox, CopyButton
-│  │  ├─ motion/                   # SmoothScroll, Reveal, SplitHeading, Parallax,
+│  │  ├─ motion/                   # Starfield, SmoothScroll, Reveal, SplitHeading, Parallax,
 │  │  │                            # Magnetic, TiltCard, Spotlight, Marquee, Cursor,
 │  │  │                            # Preloader, PageCurtain, ScrollProgress
 │  │  ├─ three/                    # HeroCanvas (client, lazy), HeroObject, Particles, Rig

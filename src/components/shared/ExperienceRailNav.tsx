@@ -130,19 +130,8 @@ export function ExperienceRailNav({ companies, className }: ExperienceRailNavPro
       </ul>
 
       {/* Mobile / Tablet horizontal scroll tabs */}
-      <div className="relative w-full lg:hidden">
-        {/* Left edge fade */}
-        <div
-          className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-6 bg-gradient-to-r from-night to-transparent"
-          aria-hidden="true"
-        />
-        {/* Right edge fade */}
-        <div
-          className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-6 bg-gradient-to-l from-night to-transparent"
-          aria-hidden="true"
-        />
-
-        <div className="no-scrollbar flex items-center gap-2 overflow-x-auto px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="relative w-full rounded-lg border border-line bg-space/50 p-1.5 backdrop-blur-md lg:hidden">
+        <div className="no-scrollbar flex items-center gap-2 overflow-x-auto px-1 py-1 [mask-image:linear-gradient(to_right,transparent,black_20px,black_calc(100%-20px),transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_20px,black_calc(100%-20px),transparent)] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {companies.map((comp, idx) => {
             const isActive = activeId === comp.id;
             const numberText = String(idx + 1).padStart(2, "0");

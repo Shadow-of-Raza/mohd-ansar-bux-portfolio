@@ -4,6 +4,7 @@ import { Grain } from "@/components/ui/Grain";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SpaceBackground } from "@/components/layout/SpaceBackground";
 import { getSite, getContact, getServices } from "@/lib/data/loaders";
 import { getNavItems, hasContactPage } from "@/lib/data/availability";
 import "./globals.css";
@@ -59,8 +60,9 @@ export default function RootLayout({
     <html lang="en" className={fontVariables} suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className="min-h-screen bg-night font-body text-fg antialiased selection:bg-electric selection:text-white"
+        className="min-h-screen font-body text-fg antialiased selection:bg-electric selection:text-white"
       >
+        <SpaceBackground />
         <SkipLink />
         <Grain />
         <Header

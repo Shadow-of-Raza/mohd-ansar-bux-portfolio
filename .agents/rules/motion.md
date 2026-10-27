@@ -10,6 +10,7 @@ Full spec: @docs/context/04-motion-and-effects.md. The per-section animation spe
 ## Phase gate
 
 - Motion is **Phase 6** and the 3D hero is **Phase 7** (`02 §9`).
+- **Approved exception:** the global `Starfield` (Canvas 2D) and `nebula-drift` (scroll-driven CSS animation) in `SpaceBackground` are live now; all other motion still waits for Phase 6.
 - Before those phases, build sections **static**: no imports from `motion/react`, `gsap`, `lenis` or `@react-three/*`, unless I explicitly ask.
 - Keep markup motion-ready so effects can be added later without layout changes: stable wrapper elements, `overflow-hidden` masks around headings and media, final image dimensions reserved.
 
@@ -20,8 +21,9 @@ Full spec: @docs/context/04-motion-and-effects.md. The per-section animation spe
 | Lenis                            | Smooth scroll and programmatic `scrollTo` only. Use it via the `SmoothScroll` provider and `useLenis()`                    |
 | GSAP + ScrollTrigger + SplitText | Scroll-linked motion: scrub, pin, parallax, line drawing, text splitting, preloader timeline                               |
 | Motion (`motion/react`)          | State and interaction: hover, tap, `AnimatePresence`, `layout`, header show/hide, page enter, simple `whileInView` reveals |
-| R3F / drei                       | The hero 3D scene only                                                                                                     |
-| CSS                              | Underlines, colour/border transitions, grain, marquee loop, logo colour fade                                               |
+| Canvas 2D (Starfield)            | The global starfield canvas: frame-rate independent rAF loop, scroll-sampled velocity, 3 depth layers                      |
+| R3F / drei                       | The hero 3D scene only (rendered with `alpha: true` over space background)                                                 |
+| CSS                              | Underlines, colour/border transitions, grain, marquee loop, logo colour fade, nebula drift (scroll-driven animation)       |
 
 Never animate the same element with two libraries.
 
@@ -55,6 +57,7 @@ With reduced motion, these are **off** or static:
 
 - Lenis, preloader, splits, scrub, pinning, parallax;
 - tilt, magnetic, spotlight, cursor, marquee movement;
+- Starfield (renders single static frame without animation loop), nebula drift (off);
 - WebGL (the poster image shows instead).
 
 These change form instead:

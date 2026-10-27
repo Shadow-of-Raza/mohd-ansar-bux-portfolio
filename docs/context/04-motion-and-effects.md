@@ -24,8 +24,9 @@ Each library has a clear job. **Never animate the same element with two librarie
 | **GSAP + ScrollTrigger**     | Scroll-_linked_ motion: scrubbed timelines, pinning, parallax, timeline line drawing, horizontal scroll, preloader timeline                                                      | Hover/state animations              |
 | **GSAP SplitText**           | Splitting headings into lines/words/chars for masked reveals                                                                                                                     | —                                   |
 | **Motion** (`motion/react`)  | State & interaction: hover, tap, `AnimatePresence` (menus, popovers, filters), `layout` animations, header show/hide, page-enter in `template.tsx`, simple `whileInView` reveals | Scrubbed or pinned scroll sequences |
-| **React Three Fiber / drei** | The hero 3D scene only                                                                                                                                                           | DOM animation                       |
-| **CSS**                      | Underline draws, colour/border transitions, grain, marquee loop, skill-logo colour fade                                                                                          | Anything needing JS timing          |
+| **Canvas 2D (Starfield)**    | Global starfield canvas: frame-rate independent rAF loop, scroll sampled once per frame, 3 depth layers, 30 fps cap on light devices                                            | 3D mesh rendering                   |
+| **React Three Fiber / drei** | The hero 3D scene only (rendered with `alpha: true` over the space background)                                                                                                   | DOM animation                       |
+| **CSS**                      | Underline draws, colour/border transitions, grain, marquee loop, skill-logo colour fade, nebula drift (scroll-driven CSS animation)                                              | Anything needing JS timing          |
 
 ---
 
@@ -113,6 +114,15 @@ The same easings exist as CSS variables in `globals.css` (`--ease-out-expo`, `--
 | **Chip / tile hover**                        | Border to `electric/60`, logo colour fades in (0.3 s)                                                                                     |
 | **Copy email**                               | Click → label morphs to "Copied ✓" for 1.5 s (Motion `AnimatePresence` mode `wait`)                                                       |
 
+### 4.8 Space background (nebula + starfield)
+
+- **Nebula drift:** multi-point CSS radial gradient nebula with scroll-driven upward drift (up to 6 % over document height via CSS `animation-timeline: scroll(root block)`).
+- **Starfield (Canvas 2D):** 600–1400 stars across 3 depth layers with independent sine-wave twinkling.
+- **Scroll parallax & boost:** scroll velocity sampled once per frame (`window.scrollY`) without event listeners; drives depth-proportional star drift and accelerates twinkle speed up to 4×, easing back via friction decay.
+- **Tab pause:** loop cancels on `document.hidden` and resumes on visibility change with route-jump guard (discontinuities > height ignored).
+- **Device gating:** capped at 30 fps and DPR 1 on low-end hardware or viewport width `< 768px`.
+- **Reduced motion:** renders a single static frame; zero continuous animation and nebula drift disabled.
+
 ---
 
 ## 5. Per-section specification
@@ -192,11 +202,11 @@ The same easings exist as CSS variables in `globals.css` (`--ease-out-expo`, `--
 | Geometry      | Built in code (no model download). ≤ 20k triangles                                                                                                                                                                                          |
 | Material      | Desktop: `MeshTransmissionMaterial` (drei) with low samples/resolution. Fallback: `MeshPhysicalMaterial` (transmission, roughness 0.15)                                                                                                     |
 | Lighting      | Ambient low + 2 coloured point/rect lights (`#2F2FE4`, `#162E93`) + drei `Lightformer`s. **No remote HDRI** (drei `Environment` presets fetch from a CDN)                                                                                   |
-| Particles     | 300–600 points, size attenuation, white at 40 %, slow drift                                                                                                                                                                                 |
+| Particles     | 100–300 points max (sparse or off, since global starfield exists underneath), size attenuation, white at 30 %, slow drift                                                                                                  |
 | Idle motion   | Slow rotation + vertex noise "breathing" (drei `MeshDistortMaterial`-style or a custom shader), 8–12 s cycle                                                                                                                                |
 | Pointer       | Camera rig parallax: up to ±0.3 units, damped (`easing.damp3`)                                                                                                                                                                              |
 | Scroll        | Object rotation and camera z driven by hero ScrollTrigger progress                                                                                                                                                                          |
-| Canvas        | `dpr={[1, 1.5]}`, `gl={{ antialias: true, powerPreference: "high-performance" }}`, transparent background over the `night` page                                                                                                             |
+| Canvas        | `dpr={[1, 1.5]}`, `gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}`, transparent background (`alpha: true`) so the space background and stars show through                         |
 | Loading       | Client component loaded with `next/dynamic(() => import(...), { ssr: false })` **from inside a client component** (Next doesn't allow `ssr:false` in Server Components). Poster image shows until the first frame renders, then cross-fades |
 | Pausing       | `frameloop` set to `"never"` when the hero is off-screen or the tab is hidden                                                                                                                                                               |
 | Device gating | Render the poster instead of WebGL if: reduced motion, no WebGL2, `navigator.hardwareConcurrency <= 4`, or `deviceMemory <= 4`, or `saveData` is on                                                                                         |
@@ -219,6 +229,8 @@ The same easings exist as CSS variables in `globals.css` (`--ease-out-expo`, `--
 | Tilt, magnetic, spotlight, custom cursor | On                       | Off                              |
 | Marquee                                  | Moving                   | Static wrapped grid              |
 | 3D hero                                  | WebGL                    | Static poster image              |
+| Starfield                                | Twinkle + parallax       | Static single frame              |
+| Nebula drift                             | Scroll-driven drift      | Off (static background)          |
 | Hover colour/border feedback             | On                       | On (not motion)                  |
 
 ---

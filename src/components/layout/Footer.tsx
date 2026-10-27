@@ -35,7 +35,7 @@ export function Footer({ site, navItems, hasContact, contact, services, classNam
 
   return (
     <footer
-      className={cn("relative overflow-hidden border-t border-line bg-night pt-20 md:pt-28", className)}
+      className={cn("relative overflow-hidden border-t border-line pt-20 md:pt-28", className)}
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">

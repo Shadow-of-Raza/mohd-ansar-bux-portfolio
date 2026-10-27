@@ -104,7 +104,7 @@ export default function StyleGuidePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-night py-16 text-fg">
+    <div className="min-h-screen py-16 text-fg">
       <Container>
         {/* Header */}
         <header className="mb-16 border-b border-line pb-10">

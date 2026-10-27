@@ -10,8 +10,10 @@ Full spec: @docs/context/03-design-system.md. Read the relevant section before s
 
 ## Colour
 
+- Page canvas is the persistent **space background** (`space` `#030010` + 4-point nebula + starfield); `body` is transparent.
 - Allowed colour utilities come only from tokens in `src/app/globals.css`:
-  - base: `void`, `night`, `navy`, `royal`, `electric`, `white`;
+  - base: `space`, `void`, `night`, `navy`, `royal`, `electric`, `white`;
+  - space: `nebula-solar`, `nebula-cyan`, `nebula-blue`, `nebula-violet`, `star`, `star-glow`;
   - derived: `surface-1`, `surface-2`, `electric-hover`, `electric-400`, `electric-300`, `electric-200`;
   - semantic: `fg`, `fg-muted`, `fg-subtle`, `line`, `line-strong`;
   - also `transparent` and `current`.
@@ -19,10 +21,10 @@ Full spec: @docs/context/03-design-system.md. Read the relevant section before s
 - Text hierarchy:
   - `text-fg` for headings;
   - `text-fg-muted` for body;
-  - `text-fg-subtle` for meta (the lowest allowed for text).
+  - `text-fg-subtle` for meta (the lowest allowed for text). Contrast is measured against the brightest nebula areas.
 - Accent text uses `text-electric-300`. `electric` is only for fills, lines, focus rings and glows, never for text on dark.
 - `electric-400` is for large text (≥ 24 px) only.
-- Proportion per screen: about 75 % night/void, 15 % surfaces/lines, 8 % white, 2 % accent. If it looks "blue", remove accent.
+- Header scrolled: `bg-space/30 backdrop-blur-md border-b border-line`. Footer: transparent root. Sticky bars: `bg-space/50 backdrop-blur-md border-line`.
 - Errors use `electric-200` plus an alert icon. There is no red.
 
 ## Typography

@@ -45,7 +45,7 @@ export function Header({ site, navItems, hasContact, contactEmail, className }: 
         className={cn(
           "fixed top-0 right-0 left-0 z-40 h-16 transition-all duration-300 xl:h-[72px]",
           scrolled
-            ? "border-b border-line bg-night/70 backdrop-blur-md"
+            ? "border-b border-line bg-space/30 backdrop-blur-md"
             : "border-b border-transparent bg-transparent",
           className,
         )}

@@ -122,7 +122,7 @@ export default async function ProjectDetailPage({
     : null;
 
   return (
-    <article className="min-h-screen bg-night text-fg">
+    <article className="min-h-screen text-fg">
       {/* PD-01: Hero */}
       <PdHero
         title={project.title}
