@@ -205,7 +205,7 @@ export function ContactFormSection({
         </div>
       ) : (
         /* Contact Form */
-        <form onSubmit={handleSubmit} noValidate className="space-y-6">
+        <form id="contact-form" onSubmit={handleSubmit} noValidate className="space-y-6">
           <div className="space-y-1">
             <h2 className="font-display text-display-xs text-white sm:text-display-sm">
               Send an enquiry

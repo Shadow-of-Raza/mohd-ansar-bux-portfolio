@@ -65,7 +65,7 @@ export function SkillGroupsSection({
       className={cn("relative w-full py-12 md:py-16 lg:py-20", className)}
     >
       <Container>
-        <div className="space-y-16 md:space-y-20 lg:space-y-24">
+        <div className="space-y-12 md:space-y-14 lg:space-y-16">
           {activeCategories.map((category, index) => {
             const catSkills = (skillsByCategory.get(category.id) ?? []).sort(
               (a, b) => (a.order ?? Infinity) - (b.order ?? Infinity),
@@ -110,7 +110,7 @@ export function SkillGroupsSection({
                 {/* Hairline Divider between categories, except last */}
                 {index < activeCategories.length - 1 && (
                   <div
-                    className="mt-16 h-px w-full bg-line md:mt-20 lg:mt-24"
+                    className="mt-12 h-px w-full bg-line md:mt-14 lg:mt-16"
                     aria-hidden="true"
                   />
                 )}

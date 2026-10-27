@@ -63,28 +63,26 @@ export function HobbiesSection({
                 key={item.id || idx}
                 className="group relative py-8 transition-colors duration-300 hover:bg-surface-1/40 sm:py-10 lg:py-12"
               >
-                <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-12 md:gap-8 lg:gap-12">
-                  {/* Number column (Col 1-2 on desktop) */}
-                  <div className="sm:col-span-2 lg:col-span-1">
-                    <span className="font-label text-label tracking-wider text-electric-300">
-                      {numberText}
-                    </span>
-                  </div>
+                {image ? (
+                  /* 3-Column Layout with Preview Image */
+                  <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-12 md:gap-8 lg:gap-12">
+                    <div className="sm:col-span-2 lg:col-span-1">
+                      <span className="font-label text-label tracking-wider text-electric-300">
+                        {numberText}
+                      </span>
+                    </div>
 
-                  {/* Title and Description column (Col 3-8 if image, Col 3-12 if no image) */}
-                  <div className={cn(image ? "sm:col-span-6 lg:col-span-7" : "sm:col-span-10 lg:col-span-11")}>
-                    <h3 className="font-display text-heading sm:text-display-lg text-white transition-colors duration-300 group-hover:text-electric-200">
-                      {item.title}
-                    </h3>
-                    {item.description && (
-                      <p className="mt-2 text-body font-body leading-relaxed text-fg-muted sm:mt-3 max-w-[68ch]">
-                        {item.description}
-                      </p>
-                    )}
-                  </div>
+                    <div className="sm:col-span-6 lg:col-span-7">
+                      <h3 className="font-display text-heading sm:text-display-lg text-white transition-colors duration-300 group-hover:text-electric-200">
+                        {item.title}
+                      </h3>
+                      {item.description && (
+                        <p className="mt-2 text-body font-body leading-relaxed text-fg-muted sm:mt-3 max-w-[68ch]">
+                          {item.description}
+                        </p>
+                      )}
+                    </div>
 
-                  {/* Preview Image Plate (Col 9-12 on desktop) */}
-                  {image && (
                     <div className="sm:col-span-4 lg:col-span-4">
                       <div className="relative aspect-[16/10] w-full max-w-[320px] overflow-hidden rounded-md border border-line bg-surface-2 shadow-card transition-all duration-300 group-hover:border-line-strong sm:max-w-none">
                         <Image
@@ -102,8 +100,30 @@ export function HobbiesSection({
                         />
                       </div>
                     </div>
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  /* Intentional 2-Column Editorial Split Row (No Image) */
+                  <div className="grid grid-cols-1 items-baseline gap-4 sm:grid-cols-12 sm:gap-8 lg:gap-12">
+                    {/* Left side: Number + Title (4 cols) */}
+                    <div className="sm:col-span-5 lg:col-span-4 flex items-baseline gap-3 sm:gap-4">
+                      <span className="font-label text-label tracking-wider text-electric-300 shrink-0">
+                        {numberText}
+                      </span>
+                      <h3 className="font-display text-heading sm:text-display-xs lg:text-display-sm text-white transition-colors duration-300 group-hover:text-electric-200">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    {/* Right side: Narrative description (8 cols) */}
+                    <div className="sm:col-span-7 lg:col-span-8">
+                      {item.description && (
+                        <p className="font-body text-body sm:text-lead text-fg-muted leading-relaxed max-w-[65ch]">
+                          {item.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })}

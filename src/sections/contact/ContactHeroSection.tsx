@@ -49,7 +49,7 @@ export function ContactHeroSection({
       />
 
       <Container>
-        <div className="max-w-4xl">
+        <div className="max-w-5xl lg:max-w-6xl">
           <div className="mb-3 sm:mb-4">
             <Eyebrow>{eyebrowText}</Eyebrow>
           </div>

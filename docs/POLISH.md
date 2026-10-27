@@ -27,11 +27,11 @@ Implementation follows structured groups with before/after screenshots at 375px 
 ---
 
 ## Pages (A1, S1, E1, K1, C1–C3, P1)
-- [ ] **A1**: **About**: hobby rows without images must look intentional (no empty column; clean editorial split row).
-- [ ] **S1**: **Services**: on mobile each service is very long. Collapse Process and FAQ behind toggles on mobile only. Make "Ideal for" tags readable (not tiny small caps; `text-small`).
-- [ ] **E1**: **Experience**: hide the native scrollbar on the mobile/tablet company rail (no-scrollbar + edge fade, like the Services sub-nav), and stop truncating company names (let pills size to content and scroll).
-- [ ] **K1**: **Skills**: target highlight ring-offset must match the tile's surface (night). Reduce the big vertical gaps between one-row categories at 1440. Test the deep link by clicking a tech chip on a project page.
-- [ ] **C1**: **Contact**: widen the hero text column so the h1 doesn't wrap onto 3 lines at 1440.
-- [ ] **C2**: **Contact**: screenshot the inline errors, the loading state and keyboard focus-to-first-error.
-- [ ] **C3**: **Contact**: in `contact.json` change `cta.title` to `"Have an idea? Let's talk."` (no accent), so it doesn't compete with the hero accent.
-- [ ] **P1**: **Project detail**: check long titles at 375/768 and the status badge dot.
+- [x] **A1**: **About**: hobby rows without images must look intentional (no empty column; clean editorial split row).
+- [x] **S1**: **Services**: on mobile each service is very long. Collapse Process and FAQ behind toggles on mobile only. Make "Ideal for" tags readable (not tiny small caps; `text-small`).
+- [x] **E1**: **Experience**: hide the native scrollbar on the mobile/tablet company rail (no-scrollbar + edge fade, like the Services sub-nav), and stop truncating company names (let pills size to content and scroll).
+- [x] **K1**: **Skills**: target highlight ring-offset must match the tile's surface (night). Reduce the big vertical gaps between one-row categories at 1440. Test the deep link by clicking a tech chip on a project page.
+- [x] **C1**: **Contact**: widen the hero text column so the h1 doesn't wrap onto 3 lines at 1440.
+- [x] **C2**: **Contact**: screenshot the inline errors, the loading state and keyboard focus-to-first-error.
+- [x] **C3**: **Contact**: in `contact.json` change `cta.title` to `"Have an idea? Let's talk."` (no accent), so it doesn't compete with the hero accent.
+- [x] **P1**: **Project detail**: check long titles at 375/768 and the status badge dot.

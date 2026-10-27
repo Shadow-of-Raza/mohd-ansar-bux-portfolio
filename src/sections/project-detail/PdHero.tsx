@@ -103,7 +103,7 @@ export function PdHero({
         {/* Project Title */}
         <h1
           id="project-title"
-          className="font-display text-display-xl text-balance text-white"
+          className="font-display text-display-xl break-words text-balance text-white"
         >
           {title}
         </h1>

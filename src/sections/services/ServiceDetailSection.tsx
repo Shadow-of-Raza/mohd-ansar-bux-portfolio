@@ -5,6 +5,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { TechChip } from "@/components/shared/TechChip";
+import { MobileCollapsibleSection } from "@/components/shared/MobileCollapsibleSection";
 import { Accordion } from "@/components/ui/Accordion";
 import { cn } from "@/lib/utils/cn";
 import type { Service } from "@/lib/data/schemas";
@@ -112,7 +113,7 @@ export function ServiceDetailSection({
                   {idealFor.map((item, idx) => (
                     <span
                       key={idx}
-                      className="rounded-full border border-line bg-surface-2 px-3 py-1 text-micro font-label text-fg-muted"
+                      className="rounded-full border border-line bg-surface-2 px-3.5 py-1 text-small font-body text-fg-muted"
                     >
                       {item}
                     </span>
@@ -201,13 +202,13 @@ export function ServiceDetailSection({
               </div>
             )}
 
-            {/* 4. How I work (Process steps) */}
+            {/* 4. How I work (Process steps) - Collapsible on mobile only per S1 */}
             {processSteps.length > 0 && (
-              <div className="pt-6 border-t border-line">
-                <span className="block text-micro font-label tracking-wider text-electric-300 uppercase">
-                  How I work
-                </span>
-                <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <MobileCollapsibleSection
+                title="How I work"
+                count={processSteps.length}
+              >
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {processSteps.map((step, idx) => {
                     const stepNumber = String(idx + 1).padStart(2, "0");
                     return (
@@ -230,19 +231,17 @@ export function ServiceDetailSection({
                     );
                   })}
                 </div>
-              </div>
+              </MobileCollapsibleSection>
             )}
 
-            {/* 5. FAQs (Accordion) */}
+            {/* 5. FAQs (Accordion) - Collapsible on mobile only per S1 */}
             {faqItems.length > 0 && (
-              <div className="pt-6 border-t border-line">
-                <span className="block text-micro font-label tracking-wider text-electric-300 uppercase">
-                  Frequently Asked Questions
-                </span>
-                <div className="mt-4">
-                  <Accordion items={faqItems} />
-                </div>
-              </div>
+              <MobileCollapsibleSection
+                title="Frequently Asked Questions"
+                count={faqItems.length}
+              >
+                <Accordion items={faqItems} />
+              </MobileCollapsibleSection>
             )}
 
             {/* Mobile / Tablet CTA */}
