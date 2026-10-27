@@ -2,6 +2,7 @@
 
 | Date       | ID          | Type    | Summary                                                                            | Link                                                       |
 | ---------- | ----------- | ------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| 2026-10-26 | CONTENT     | content | Real portfolio content migration, verbatim text verification, 26 skills, project & company assets | [CONTENT_2026-10-26.md](./CONTENT_2026-10-26.md) |
 | 2026-10-26 | 404         | build   | Standalone 404 error page, presence-guarded CTAs & global night background fix     | [404_2026-10-26.md](./404_2026-10-26.md)                  |
 | 2026-10-26 | CON-01–03   | build   | Contact page with hero, form preselection, action validation, direct channels & presence rules | [CON-01-03_2026-10-26.md](./CON-01-03_2026-10-26.md)      |
 | 2026-10-24 | SK-01–02    | build   | Skills page with hero, categorized groups, deep-link anchors & empty-state testing | [SK-01-02_2026-10-24.md](./SK-01-02_2026-10-24.md)         |

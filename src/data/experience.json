@@ -21,7 +21,7 @@
       "company": {
         "name": "Apex Structure Pvt. Ltd.",
         "logo": {
-          "src": "/images/companies/apex-structure.png",
+          "src": "/images/companies/apex-structure.svg",
           "alt": "Apex Structure Pvt. Ltd. logo",
           "width": 48,
           "height": 48
@@ -125,7 +125,7 @@
       "company": {
         "name": "EduBridge Learning Pvt. Ltd.",
         "logo": {
-          "src": "/images/companies/edubridge.png",
+          "src": "/images/companies/edubridge.svg",
           "alt": "EduBridge Learning Pvt. Ltd. logo",
           "width": 48,
           "height": 48

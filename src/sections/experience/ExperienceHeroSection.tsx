@@ -63,7 +63,7 @@ export function ExperienceHeroSection({
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-electric-900/60 text-electric-300">
                   <Briefcase className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
-                <span>~{totalExperience} Experience</span>
+                <span>{totalExperience} Experience</span>
               </div>
             </div>
           )}
