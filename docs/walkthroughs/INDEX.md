@@ -2,6 +2,7 @@
 
 | Date       | ID          | Type    | Summary                                                                            | Link                                                       |
 | ---------- | ----------- | ------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| 2026-10-27 | POLISH      | polish  | Static UI polish pass across Global (G1–G7), Home (H1–H6), and Pages (A1, S1, E1, K1, C1–C3, P1) with before/after screenshots | [POLISH_2026-10-27.md](./POLISH_2026-10-27.md) |
 | 2026-10-26 | CONTENT     | content | Real portfolio content migration, verbatim text verification, 26 skills, project & company assets | [CONTENT_2026-10-26.md](./CONTENT_2026-10-26.md) |
 | 2026-10-26 | 404         | build   | Standalone 404 error page, presence-guarded CTAs & global night background fix     | [404_2026-10-26.md](./404_2026-10-26.md)                  |
 | 2026-10-26 | CON-01–03   | build   | Contact page with hero, form preselection, action validation, direct channels & presence rules | [CON-01-03_2026-10-26.md](./CON-01-03_2026-10-26.md)      |
