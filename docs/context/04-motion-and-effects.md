@@ -117,9 +117,9 @@ The same easings exist as CSS variables in `globals.css` (`--ease-out-expo`, `--
 ### 4.8 Space background (nebula + starfield)
 
 - **Nebula drift:** multi-point CSS radial gradient nebula with scroll-driven upward drift (up to 6 % over document height via CSS `animation-timeline: scroll(root block)`).
-- **Starfield (Canvas 2D):** 600–1400 stars across 3 depth layers with independent sine-wave twinkling.
-- **Scroll parallax & boost:** scroll velocity sampled once per frame (`window.scrollY`) without event listeners; drives depth-proportional star drift and accelerates twinkle speed up to 4×, easing back via friction decay.
-- **Tab pause:** loop cancels on `document.hidden` and resumes on visibility change with route-jump guard (discontinuities > height ignored).
+- **Starfield (Canvas 2D):** 900–2000 delicate, crisp stars across 3 small depth layers (radii 0.35–1.15 px; no oversized discs or halos) with independent sine-wave twinkling.
+- **Automatic drift:** continuous, serene bottom-to-top drift at ~4.5–7 px/sec (`0.075` px/frame base, reduced by 70% for calm ambience); star positions and twinkle are decoupled from page scroll (stars do not move on scroll).
+- **Tab pause:** loop cancels on `document.hidden` and resumes on visibility change.
 - **Device gating:** capped at 30 fps and DPR 1 on low-end hardware or viewport width `< 768px`.
 - **Reduced motion:** renders a single static frame; zero continuous animation and nebula drift disabled.
 

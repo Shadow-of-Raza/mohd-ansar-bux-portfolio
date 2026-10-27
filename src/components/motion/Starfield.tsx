@@ -15,22 +15,20 @@ type Star = {
 };
 
 // Space background tuning (docs/context/03 §2, 04 §4.8). Values are per 60fps frame.
-const AREA_PER_STAR = 2200;        // 1 star per 2200 CSS px² of viewport
-const MAX_STARS = 1400;            // desktop cap
-const MAX_STARS_LIGHT = 600;       // mobile (< 768px) and low-end devices
-const LAYER_SPLIT = [0.65, 0.9] as const;
-const SIZE: Record<Layer, readonly [number, number]> = { 1: [0.5, 0.9], 2: [0.8, 1.3], 3: [1.2, 1.8] }; // [min, range]
+const AREA_PER_STAR = 1400;        // 1 star per 1400 CSS px² of viewport (increased density for small stars)
+const MAX_STARS = 2000;            // desktop cap
+const MAX_STARS_LIGHT = 900;       // mobile (< 768px) and low-end devices
+const LAYER_SPLIT = [0.70, 0.92] as const; // 70% micro · 22% small · 8% crisp
+const SIZE: Record<Layer, readonly [number, number]> = {
+  1: [0.35, 0.4], // radius 0.35 - 0.75 px
+  2: [0.6, 0.4],  // radius 0.60 - 1.00 px
+  3: [0.85, 0.3], // radius 0.85 - 1.15 px
+}; // [min, range] — big sizes removed; small crisp stars only
 const BASE_ALPHA = [0.3, 0.7] as const;
 const TWINKLE_SPEED = [0.01, 0.03] as const;
 const TWINKLE_AMP = 0.35;
 const MIN_ALPHA = 0.1;
-const DRIFT = 0.25;                // ambient upward drift, px per frame × layer
-const SCROLL_GAIN = 0.15;          // scrolled px → velocity
-const FRICTION = 0.92;             // velocity decay per frame
-const PARALLAX = 0.5;              // velocity × layer × this = px per frame (raise for a stronger 3D feel)
-const MAX_VELOCITY = 40;
-const TWINKLE_SCROLL_BOOST = 0.15; // twinkle runs up to 4× faster while scrolling
-const GLOW = { minRadius: 1.4, scale: 2.2, alpha: 0.3 };
+const DRIFT = 0.075;               // ambient bottom-to-top drift (speed reduced by 70% from 0.25), px per frame
 const LIGHT_FPS = 30;              // fps cap on mobile / low-end devices
 
 const rand = ([min, range]: readonly [number, number] | [number, number]) => min + Math.random() * range;
@@ -47,7 +45,6 @@ export function Starfield() {
     // Colours come from the @theme tokens — no hex in components.
     const css = getComputedStyle(document.documentElement);
     const starColor = css.getPropertyValue("--color-star").trim() || "white";
-    const glowColor = css.getPropertyValue("--color-star-glow").trim() || starColor;
 
     const nav = navigator as Navigator & {
       deviceMemory?: number;
@@ -67,8 +64,6 @@ export function Starfield() {
     const stars: Star[] = [];
     let raf = 0;
     let last = 0;
-    let lastScroll = window.scrollY;
-    let velocity = 0;
 
     const makeStar = (x: number, y: number): Star => {
       const roll = Math.random();
@@ -113,15 +108,6 @@ export function Starfield() {
         ctx.fill();
       }
 
-      ctx.fillStyle = glowColor;
-      for (const s of stars) {
-        if (s.z !== 3 || s.r <= GLOW.minRadius) continue;
-        ctx.globalAlpha = s.a * GLOW.alpha;
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r * GLOW.scale, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
       ctx.globalAlpha = 1;
     };
 
@@ -135,26 +121,14 @@ export function Starfield() {
       const f = Math.min((now - last) / (1000 / 60), 3); // frames elapsed at 60fps, capped after tab switches
       last = now;
 
-      // Sample scroll once per frame — no scroll listeners.
-      const scrollY = window.scrollY;
-      const delta = scrollY - lastScroll;
-      lastScroll = scrollY;
-      if (Math.abs(delta) < height) velocity += delta * SCROLL_GAIN; // ignore route-change jumps to top
-      velocity = clamp(velocity, -MAX_VELOCITY, MAX_VELOCITY) * Math.pow(FRICTION, f);
-
-      const twinkleBoost = 1 + Math.min(Math.abs(velocity), 20) * TWINKLE_SCROLL_BOOST;
-
       for (const s of stars) {
-        // Scrolling down moves stars up; near stars move faster (parallax). Constant slow upward drift.
-        s.y += (-velocity * s.z * PARALLAX - DRIFT * s.z) * f;
+        // Automatic upward drift (bottom-to-top), reduced by 70%. No scroll displacement.
+        s.y -= DRIFT * (0.7 + s.z * 0.3) * f;
         if (s.y < 0) {
           s.y += height;
           s.x = Math.random() * width;
-        } else if (s.y > height) {
-          s.y -= height;
-          s.x = Math.random() * width;
         }
-        s.phase += s.speed * twinkleBoost * f;
+        s.phase += s.speed * f;
       }
 
       draw();
@@ -169,7 +143,6 @@ export function Starfield() {
         return;
       }
       last = performance.now();
-      lastScroll = window.scrollY;
       raf = requestAnimationFrame(step);
     };
 
