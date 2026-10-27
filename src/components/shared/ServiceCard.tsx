@@ -63,11 +63,11 @@ export function ServiceCard({ service, index, skillMap, className }: ServiceCard
       as="article"
       interactive
       className={cn(
-        "group flex h-full flex-col justify-between overflow-hidden p-6 sm:p-8",
+        "group flex h-full flex-col overflow-hidden p-6 sm:p-8",
         className,
       )}
     >
-      <div>
+      <div className="flex flex-1 flex-col">
         {/* Top Header: Number Anchor and Plain 20px Lucide Icon */}
         <div className="flex items-center justify-between gap-4 border-b border-line/60 pb-6">
           <div className="flex items-center gap-4">
@@ -96,8 +96,8 @@ export function ServiceCard({ service, index, skillMap, className }: ServiceCard
         </div>
       </div>
 
-      {/* Bottom Section: Technologies & Action Link */}
-      <div className="mt-8 space-y-5">
+      {/* Bottom Section: Technologies & Action Link (aligned at bottom across cards per H2) */}
+      <div className="mt-auto pt-8 space-y-5">
         {/* Technology Chips (up to 3) */}
         {featuredTechs.length > 0 && (
           <div className="relative z-10 flex flex-wrap gap-2">

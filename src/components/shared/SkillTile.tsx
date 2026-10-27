@@ -50,15 +50,27 @@ export function SkillTile({
     };
   }, []);
 
-  // Compute position (flip if insufficient room above)
+  // Compute position (H6: on mobile, open downwards by default so popover doesn't cover headings above)
   const calculatePosition = useCallback(() => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
-    // Estimated popover height ≈ 220px; if less than 240px from top of viewport, flip to bottom
-    if (rect.top < 240) {
-      setOpenSide("bottom");
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+
+    if (isMobile) {
+      // On mobile, default to bottom so it doesn't cover the heading above
+      const roomBelow = window.innerHeight - rect.bottom;
+      if (roomBelow < 180 && rect.top > 240) {
+        setOpenSide("top");
+      } else {
+        setOpenSide("bottom");
+      }
     } else {
-      setOpenSide("top");
+      // Desktop: flip to bottom if less than 240px from top of viewport
+      if (rect.top < 240) {
+        setOpenSide("bottom");
+      } else {
+        setOpenSide("top");
+      }
     }
   }, []);
 
@@ -127,7 +139,7 @@ export function SkillTile({
       ref={containerRef}
       id={id}
       className={cn(
-        "relative inline-block w-full scroll-mt-28 rounded-md transition-all target:ring-2 target:ring-electric-300 target:ring-offset-2 target:ring-offset-navy",
+        "relative inline-block w-full scroll-mt-28 rounded-md transition-all target:ring-2 target:ring-electric-300 target:ring-offset-2 target:ring-offset-night",
         className
       )}
       onMouseEnter={openWithDelay}
@@ -201,7 +213,7 @@ export function SkillTile({
           }}
           onMouseLeave={closeWithDelay}
           className={cn(
-            "absolute z-50 w-64 rounded-md border border-line-strong bg-navy p-4 shadow-xl",
+            "absolute z-50 w-64 max-w-[calc(100vw-2rem)] rounded-md border border-line-strong bg-navy p-4 shadow-xl",
             "animate-in fade-in-0 zoom-in-95 duration-150",
             openSide === "top"
               ? "bottom-full left-1/2 -translate-x-1/2 mb-2.5 before:absolute before:-bottom-2.5 before:left-0 before:h-2.5 before:w-full"

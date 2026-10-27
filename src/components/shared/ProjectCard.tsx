@@ -43,6 +43,7 @@ export type ProjectCardItem = {
 export type ProjectCardProps = {
   project: ProjectCardItem;
   skillMap?: Record<string, { name: string; icon?: string }>;
+  featured?: boolean;
   className?: string;
 };
 
@@ -87,10 +88,149 @@ function formatTypeLabel(type: string): string {
  * - Up to 4 tech chips with authentic logos, plus "+N" overflow pill.
  * - Stretched link on "Read more" to /projects/[slug] for full-card clickability.
  */
-export function ProjectCard({ project, skillMap, className }: ProjectCardProps) {
+export function ProjectCard({ project, skillMap, featured = false, className }: ProjectCardProps) {
   const summaryText = project.summary?.trim() || project.tagline?.trim();
-  const featuredTechs = project.techStack ? project.techStack.slice(0, 4) : [];
-  const remainingCount = project.techStack ? Math.max(0, project.techStack.length - 4) : 0;
+  const featuredTechs = project.techStack ? project.techStack.slice(0, featured ? 6 : 4) : [];
+  const remainingCount = project.techStack ? Math.max(0, project.techStack.length - (featured ? 6 : 4)) : 0;
+
+  if (featured) {
+    return (
+      <Card
+        as="article"
+        interactive
+        className={cn(
+          "group flex flex-col md:flex-row overflow-hidden p-6 sm:p-8 md:gap-8 items-stretch",
+          className,
+        )}
+      >
+        {/* Project Cover: 16:10 Plate with Subtle Hover Zoom (Desktop: Left 7 cols / 58%) */}
+        {project.cover && (
+          <div className="relative mb-6 md:mb-0 aspect-[16/10] w-full md:w-[56%] shrink-0 overflow-hidden rounded-sm border border-line/60 bg-surface-2">
+            <Image
+              src={project.cover.src}
+              alt={project.cover.alt || project.title}
+              width={project.cover.width || 1600}
+              height={project.cover.height || 1000}
+              priority
+              sizes="(min-width: 1440px) 760px, (min-width: 768px) 60vw, 100vw"
+              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+          </div>
+        )}
+
+        {/* Content Column (Desktop: Right) */}
+        <div className="flex flex-1 flex-col justify-between">
+          <div>
+            {/* Meta Bar: Type Badge, Organization, and Timeline Duration */}
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <Badge variant={project.type === "open-source" ? "open-source" : "default"}>
+                  {formatTypeLabel(project.type)}
+                </Badge>
+
+                {project.organization?.name && (
+                  <span className="font-label text-micro tracking-wider text-fg-subtle">
+                    {project.organization.name}
+                  </span>
+                )}
+              </div>
+
+              {project.timeline?.durationLabel && (
+                <span className="font-label text-micro text-fg-subtle">
+                  {project.timeline.durationLabel}
+                </span>
+              )}
+            </div>
+
+            {/* Title and Summary */}
+            <div className="space-y-3">
+              <h3 className="font-display text-heading text-balance text-white transition-colors duration-200 group-hover:text-electric-300">
+                {project.title}
+              </h3>
+
+              {summaryText && (
+                <p className="font-body text-body text-pretty text-fg-muted leading-relaxed line-clamp-3 md:line-clamp-4">
+                  {summaryText}
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Bottom Area: Technology Chips & Action Link */}
+          <div className="mt-8 space-y-5">
+            {/* Tech Chips */}
+            {featuredTechs.length > 0 && (
+              <div className="relative z-10 flex flex-wrap items-center gap-2">
+                {featuredTechs.map((item) => {
+                  const skillId = item.skill;
+                  const skillInfo = skillMap?.[skillId];
+                  const skillName = skillInfo?.name || skillId.replace(/-/g, " ");
+                  const skillIcon = skillInfo?.icon;
+                  return <TechChip key={skillId} name={skillName} icon={skillIcon} />;
+                })}
+
+                {remainingCount > 0 && (
+                  <span
+                    className="inline-flex h-8 items-center rounded-full border border-line/80 bg-surface-2 px-3 font-label text-micro text-fg-subtle select-none"
+                    title={`${remainingCount} more technologies`}
+                  >
+                    +{remainingCount}
+                  </span>
+                )}
+              </div>
+            )}
+
+            {/* Hairline Divider & Read More Stretched Link */}
+            <div className="flex items-center justify-between border-t border-line/60 pt-4">
+              <Link
+                href={`/projects/${project.slug}`}
+                className="group/link inline-flex items-center gap-2 font-label text-label font-medium text-electric-300 transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300 after:absolute after:inset-0 after:content-['']"
+              >
+                <span>Read case study</span>
+                <ArrowRight
+                  className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover/link:translate-x-1 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </Link>
+
+              {/* External / GitHub Links */}
+              <div className="relative z-10 flex items-center gap-2">
+                {project.confidential && !project.links?.github && !project.links?.live && (
+                  <span className="font-label text-micro text-fg-subtle italic">
+                    Private / under NDA
+                  </span>
+                )}
+
+                {project.type === "open-source" && project.links?.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} on GitHub`}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-sm border border-line bg-surface-2 text-fg-muted transition-colors duration-200 hover:border-electric hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
+                  >
+                    <GithubIcon className="h-4 w-4" />
+                  </a>
+                )}
+
+                {project.links?.live && (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit live demo for ${project.title}`}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-sm border border-line bg-surface-2 text-fg-muted transition-colors duration-200 hover:border-electric hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300"
+                  >
+                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Card>
+    );
+  }
 
   return (
     <Card

@@ -17,12 +17,12 @@ Implementation follows structured groups with before/after screenshots at 375px 
 ---
 
 ## Home (H1–H6)
-- [ ] **H1**: Hero name wraps to 3 lines at 1440 and pushes the CTAs below a 1440×900 screen. Tune the size/column so the CTAs are visible without scrolling at 1440×900.
-- [ ] **H2**: Services cards: tech-chip rows align at the bottom across cards even when one wraps (`flex-1` top block, `mt-auto` tech row).
-- [ ] **H3**: Experience preview: show full-time roles only (internships/training only on `/experience`). The total stays "2+ years".
-- [ ] **H4**: Education timeline (desktop): reduce the large empty areas beside the cards (tighten width and balance metadata).
-- [ ] **H5**: Projects (3 cards): no lonely last card; make the first featured card larger (bento) so it differs from the Services grid.
-- [ ] **H6**: Skills popover on mobile opens over the heading. Fix placement/flipping on small screens (`/skills` too).
+- [x] **H1**: Hero name wraps to 3 lines at 1440 and pushes the CTAs below a 1440×900 screen. Tune the size/column so the CTAs are visible without scrolling at 1440×900.
+- [x] **H2**: Services cards: tech-chip rows align at the bottom across cards even when one wraps (`flex-1` top block, `mt-auto` tech row).
+- [x] **H3**: Experience preview: show full-time roles only (internships/training only on `/experience`). The total stays "2+ years".
+- [x] **H4**: Education timeline (desktop): reduce the large empty areas beside the cards (tighten width and balance metadata).
+- [x] **H5**: Projects (3 cards): no lonely last card; make the first featured card larger (bento) so it differs from the Services grid.
+- [x] **H6**: Skills popover on mobile opens over the heading. Fix placement/flipping on small screens (`/skills` too).
 
 ---
 

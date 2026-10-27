@@ -1,5 +1,6 @@
 import React from "react";
 import { TimelineItem } from "@/components/shared/TimelineItem";
+import { formatYearMonth } from "@/lib/utils/dates";
 import { cn } from "@/lib/utils/cn";
 import type { Education } from "@/lib/data/schemas";
 
@@ -15,7 +16,7 @@ export type TimelineProps = {
  * Shared Timeline component for HOME-04 and EDU-02.
  * Renders the vertical 1px royal track, 2px electric data-progress line,
  * 10px node rings, and alternating left/right layout on desktop.
- * Keeps data-progress markup in one shared place for Phase 6 scroll animations.
+ * Moves period/date to the opposite side of the node on desktop (H4, feedback #5).
  */
 export function Timeline({
   items,
@@ -25,7 +26,7 @@ export function Timeline({
   if (!items || items.length === 0) return null;
 
   return (
-    <div className={cn("relative mx-auto max-w-5xl", className)}>
+    <div className={cn("relative mx-auto max-w-4xl", className)}>
       {/* Static Track (1px royal) */}
       <span
         aria-hidden="true"
@@ -43,6 +44,9 @@ export function Timeline({
       <div className="space-y-10 sm:space-y-12 md:space-y-16">
         {items.map((item, index) => {
           const isEven = index % 2 === 0;
+          const startStr = formatYearMonth(item.start);
+          const endStr = item.end ? formatYearMonth(item.end) : "Present";
+          const yearsString = `${startStr} – ${endStr}`;
 
           return (
             <div
@@ -61,6 +65,15 @@ export function Timeline({
                 <span className="h-2.5 w-2.5 rounded-full border-2 border-electric bg-electric ring-4 ring-royal/40" />
               </div>
 
+              {/* Opposite Date Callout (Desktop) when card is on right */}
+              {!isEven && (
+                <div className="hidden md:flex md:w-[calc(50%-2rem)] md:items-center md:justify-end md:pr-8 pt-6">
+                  <span className="font-label text-small font-semibold tracking-wider text-electric-300">
+                    {yearsString}
+                  </span>
+                </div>
+              )}
+
               {/* Timeline Card */}
               <div
                 className={cn(
@@ -70,6 +83,15 @@ export function Timeline({
               >
                 <TimelineItem item={item} index={index} variant={variant} />
               </div>
+
+              {/* Opposite Date Callout (Desktop) when card is on left */}
+              {isEven && (
+                <div className="hidden md:flex md:w-[calc(50%-2rem)] md:items-center md:pl-8 pt-6">
+                  <span className="font-label text-small font-semibold tracking-wider text-electric-300">
+                    {yearsString}
+                  </span>
+                </div>
+              )}
             </div>
           );
         })}

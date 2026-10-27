@@ -33,7 +33,18 @@ export function ExperiencePreviewSection({
   if (!experience || experience.featured.length === 0) return null;
 
   const home = experience.home;
-  const items = experience.featured;
+
+  // Filter to full-time roles only on home preview (internships/training only on /experience per H3)
+  const fullTimeCompanies = experience.featured
+    .map((company) => ({
+      ...company,
+      roles: company.roles.filter(
+        (role) => role.employmentType?.toLowerCase() === "full-time",
+      ),
+    }))
+    .filter((company) => company.roles.length > 0);
+
+  const items = fullTimeCompanies.length > 0 ? fullTimeCompanies : experience.featured;
 
   // Format section eyebrow with signature "03 — " number prefix if not already present
   const rawEyebrow = home.eyebrow?.trim() || "Experience";
@@ -42,7 +53,7 @@ export function ExperiencePreviewSection({
   const title = home.title?.trim() || "Recent *roles*";
   const intro = home.intro?.trim();
 
-  // Compute total experience across all roles (including internships/training)
+  // Compute total experience across all roles (including internships/training: stays "2+ years" per H3)
   const intervals = experience.items.flatMap((company) =>
     company.roles.map((role) => ({ start: role.start, end: role.end })),
   );

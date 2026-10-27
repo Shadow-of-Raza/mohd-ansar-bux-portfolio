@@ -121,17 +121,17 @@ export function TimelineItem({
         </div>
       </div>
 
-      {/* Compact Variant: Years Only */}
+      {/* Compact Variant: Years Only (shown on mobile, opposite node on desktop per H4) */}
       {isCompact && (
-        <div className="mt-3.5 border-t border-line/50 pt-2.5 font-label text-micro text-fg-subtle">
+        <div className="mt-3.5 border-t border-line/50 pt-2.5 font-label text-micro text-fg-subtle md:hidden">
           <span className="font-medium text-fg-muted">{yearsString}</span>
         </div>
       )}
 
-      {/* Full Variant: Years, Board, Location, and Score without dangling dot separators */}
+      {/* Full Variant: Years (mobile only), Board, Location, and Score without dangling dot separators */}
       {!isCompact && (
         <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-line/60 pt-3 font-label text-micro text-fg-subtle">
-          <span className="font-medium text-fg-muted">{yearsString}</span>
+          <span className="font-medium text-fg-muted md:hidden">{yearsString}</span>
 
           {item.board && <span>{item.board}</span>}
 

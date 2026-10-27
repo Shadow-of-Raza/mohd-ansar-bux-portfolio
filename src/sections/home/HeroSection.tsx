@@ -108,7 +108,7 @@ export function HeroSection({
 
       {/* Main hero content: vertically centered */}
       <Container className="relative z-10 flex flex-1 flex-col justify-center">
-        <div className="max-w-[720px] lg:max-w-[55%] xl:max-w-[52%]">
+        <div className="max-w-[720px] lg:max-w-[62%] xl:max-w-[58%]">
           {/* Availability badge: quiet surface-1 style with electric dot */}
           {availability?.open && availability?.label && (
             <div className="mb-2.5 sm:mb-3">
@@ -121,10 +121,10 @@ export function HeroSection({
             <p className="mb-2 text-label font-label tracking-widest text-fg-subtle sm:mb-2.5">{eyebrow}</p>
           )}
 
-          {/* Name as the single dominant h1 landmark at text-display-2xl */}
+          {/* Name as the single dominant h1 landmark at text-display-xl (H1) */}
           <h1
             id="hero-title"
-            className="text-display-2xl font-display tracking-tight text-balance text-white uppercase"
+            className="text-display-xl font-display tracking-tight text-balance text-white uppercase"
           >
             {site.name}
           </h1>

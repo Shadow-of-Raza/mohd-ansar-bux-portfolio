@@ -90,13 +90,25 @@ export function ProjectsPreviewSection({
         <div className="my-8 h-px w-full bg-line sm:my-10 lg:my-12" aria-hidden="true" />
 
         {/* Projects Cards Grid:
-            - Mobile: 1 column
-            - Tablet & Desktop: 2 columns with generous gap for editorial presentation
+            - Bento Layout: First featured card spans full width (2 columns on tablet/desktop)
+            - Remaining cards sit side-by-side in 2 columns (no lonely card per H5)
         */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
-          {items.map((project) => (
-            <ProjectCard key={project.id} project={project} skillMap={skillMap} />
-          ))}
+          {items.map((project, index) => {
+            const isFeatured = index === 0;
+            return (
+              <div
+                key={project.id}
+                className={cn(isFeatured && "md:col-span-2")}
+              >
+                <ProjectCard
+                  project={project}
+                  skillMap={skillMap}
+                  featured={isFeatured}
+                />
+              </div>
+            );
+          })}
         </div>
 
         {/* Mobile-only Bottom CTA */}
