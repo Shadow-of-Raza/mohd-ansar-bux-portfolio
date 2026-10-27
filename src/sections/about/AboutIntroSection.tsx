@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { cn } from "@/lib/utils/cn";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ResumeButton } from "@/components/shared/ResumeButton";
+import { PageHero } from "@/components/shared/PageHero";
 import type { Profile } from "@/lib/data/schemas";
 
 export type AboutIntroSectionProps = {
@@ -22,7 +22,7 @@ export type AboutIntroSectionProps = {
 export function AboutIntroSection({ profile, siteName, className }: AboutIntroSectionProps) {
   const page = profile.page;
   const rawEyebrow = page.eyebrow?.trim() || "About";
-  const eyebrowText = /^\d{2,3}\s*[—–-]\s*/.test(rawEyebrow) ? rawEyebrow : `01 — ${rawEyebrow}`;
+  const eyebrowText = rawEyebrow.replace(/^\d{2,3}\s*[—–-]\s*/, "");
 
   // Page h1 must always render when page exists: profile.page.title, falling back to siteName
   const title = page.title?.trim() || siteName || "About";
@@ -32,10 +32,10 @@ export function AboutIntroSection({ profile, siteName, className }: AboutIntroSe
   const hasResume = Boolean(profile.resume?.file && profile.resume.file.trim().length > 0);
 
   return (
-    <section
+    <PageHero
       id="about-intro"
       aria-labelledby="about-page-title"
-      className={cn("relative w-full overflow-hidden pt-12 pb-[clamp(3.5rem,8vw,6rem)] sm:pt-16 lg:pt-20", className)}
+      className={className}
     >
       <Container>
         {/* Page Hero Header */}
@@ -112,6 +112,6 @@ export function AboutIntroSection({ profile, siteName, className }: AboutIntroSe
           </div>
         )}
       </Container>
-    </section>
+    </PageHero>
   );
 }

@@ -3,12 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils/cn";
 import { Container } from "@/components/ui/Container";
-import { LinkButton } from "@/components/ui/LinkButton";
-import { CopyButton } from "@/components/ui/CopyButton";
 import { SocialLinks } from "@/components/shared/SocialLinks";
+import { FooterCtaBand } from "./FooterCtaBand";
 import { BackToTop } from "./BackToTop";
 import { CurrentYear } from "./CurrentYear";
-import { renderAccent } from "@/lib/utils/format";
 import type { NavItem } from "@/lib/data/availability";
 import type { Contact, Site } from "@/lib/data/schemas";
 import type { ServicesData } from "@/lib/data/loaders";
@@ -32,9 +30,6 @@ export type FooterProps = {
  * 6. Signature detail: oversized cropped wordmark of the name across the bottom edge.
  */
 export function Footer({ site, navItems, hasContact, contact, services, className }: FooterProps) {
-  const hasCtaHeading = Boolean(site.footer?.ctaTitle);
-  const hasEmail = Boolean(contact?.email);
-  const showCtaLine = hasCtaHeading || hasEmail || hasContact;
   const showServicesColumn = Boolean(services && services.items.length > 0);
   const showConnectColumn = Boolean(site.socials && site.socials.length > 0);
 
@@ -48,42 +43,8 @@ export function Footer({ site, navItems, hasContact, contact, services, classNam
       </h2>
 
       <Container className="relative z-10 flex flex-col gap-16 md:gap-24">
-        {/* 1. CTA Line */}
-        {showCtaLine && (
-          <div className="flex flex-col justify-between gap-8 border-b border-line pb-16 lg:flex-row lg:items-end">
-            <div className="max-w-2xl">
-              {hasCtaHeading && (
-                <p className="text-display-lg font-display leading-[0.95] text-white">
-                  {renderAccent(site.footer?.ctaTitle)}
-                </p>
-              )}
-              {site.role && (
-                <p className="mt-3 text-lead font-body text-fg-muted">
-                  {site.role} — available for high-impact projects and engineering roles.
-                </p>
-              )}
-            </div>
-
-            <div className="flex flex-wrap items-center gap-4">
-              {hasEmail && contact?.email && (
-                <CopyButton
-                  text={contact.email}
-                  label={contact.email}
-                  copiedLabel="Email Copied"
-                  variant="secondary"
-                  size="md"
-                  ariaLabel={`Copy email address ${contact.email}`}
-                />
-              )}
-
-              {hasContact && (
-                <LinkButton href="/contact" variant="primary" size="md">
-                  Contact me
-                </LinkButton>
-              )}
-            </div>
-          </div>
-        )}
+        {/* 1. CTA Line (hidden on /contact per G6) */}
+        <FooterCtaBand site={site} contact={contact} hasContact={hasContact} />
 
         {/* 2 & 3. Brand Block & Link Columns */}
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">

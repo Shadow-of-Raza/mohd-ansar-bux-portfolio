@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { renderAccent } from "@/lib/utils/format";
-import { cn } from "@/lib/utils/cn";
+import { PageHero } from "@/components/shared/PageHero";
 
 export type ProjectsHeroSectionProps = {
   eyebrow?: string;
@@ -25,15 +25,14 @@ export function ProjectsHeroSection({
   totalCount,
   className,
 }: ProjectsHeroSectionProps) {
-  // Format eyebrow with signature "01 — " number prefix if not already provided
   const rawEyebrow = eyebrow.trim() || "Projects";
-  const eyebrowText = /^\d{2,3}\s*[—–-]\s*/.test(rawEyebrow) ? rawEyebrow : `01 — ${rawEyebrow}`;
+  const eyebrowText = rawEyebrow.replace(/^\d{2,3}\s*[—–-]\s*/, "");
 
   return (
-    <section
+    <PageHero
       id="projects-hero"
       aria-labelledby="projects-hero-title"
-      className={cn("relative w-full pt-28 pb-10 md:pt-36 md:pb-14", className)}
+      className={className}
     >
       {/* Subtle ambient radial glow behind hero title */}
       <div
@@ -42,31 +41,29 @@ export function ProjectsHeroSection({
       />
 
       <Container>
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-[760px]">
-            <div className="mb-3 sm:mb-4">
-              <Eyebrow>{eyebrowText}</Eyebrow>
-            </div>
-
-            <h1
-              id="projects-hero-title"
-              className="font-display text-display-xl text-balance text-white"
-            >
-              {renderAccent(title)}
-            </h1>
-
-            {intro && (
-              <p className="mt-4 max-w-[56ch] font-body text-lead text-pretty text-fg-muted">
-                {intro}
-              </p>
-            )}
+        <div className="max-w-[760px]">
+          <div className="mb-3 sm:mb-4">
+            <Eyebrow>{eyebrowText}</Eyebrow>
           </div>
 
-          {/* Qualification / Project Count Badge */}
+          <h1
+            id="projects-hero-title"
+            className="font-display text-display-xl text-balance text-white"
+          >
+            {renderAccent(title)}
+          </h1>
+
+          {intro && (
+            <p className="mt-4 max-w-[56ch] font-body text-lead text-pretty text-fg-muted">
+              {intro}
+            </p>
+          )}
+
+          {/* Qualification / Project Count Badge (left-aligned under intro per G3) */}
           {totalCount > 0 && (
-            <div className="self-start lg:self-end">
+            <div className="mt-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface-1 px-4 py-2 font-label text-micro tracking-wider text-fg-subtle select-none">
-                <span className="h-2 w-2 rounded-full bg-electric" aria-hidden="true" />
+                <span className="h-2 w-2 rounded-full bg-electric-300" aria-hidden="true" />
                 <span className="text-white font-semibold">{totalCount}</span>
                 <span>{totalCount === 1 ? "Project" : "Projects"}</span>
               </span>
@@ -77,6 +74,6 @@ export function ProjectsHeroSection({
         {/* Section Hairline Divider */}
         <div className="mt-8 h-px w-full bg-line sm:mt-10 lg:mt-12" aria-hidden="true" />
       </Container>
-    </section>
+    </PageHero>
   );
 }

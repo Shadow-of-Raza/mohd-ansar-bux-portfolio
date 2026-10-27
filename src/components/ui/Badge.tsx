@@ -1,7 +1,15 @@
 import React from "react";
 import { cn } from "@/lib/utils/cn";
 
-export type BadgeVariant = "default" | "present" | "pursuing" | "completed" | "open-source" | "available";
+export type BadgeVariant =
+  | "default"
+  | "present"
+  | "pursuing"
+  | "completed"
+  | "open-source"
+  | "available"
+  | "live"
+  | "professional";
 
 export type BadgeProps = React.HTMLAttributes<HTMLSpanElement> & {
   variant?: BadgeVariant;
@@ -15,6 +23,8 @@ const variantClasses: Record<BadgeVariant, string> = {
   completed: "bg-surface-2 border border-line text-fg-subtle",
   available: "bg-surface-1 border border-line-strong text-fg-muted",
   "open-source": "border border-electric/50 text-electric-200 bg-transparent",
+  professional: "bg-surface-2 border border-line text-fg-muted",
+  live: "bg-surface-2 border border-line text-white",
   default: "bg-surface-2 border border-line text-fg-muted",
 };
 
@@ -29,16 +39,13 @@ export function Badge({ variant = "default", className, children, ...props }: Ba
       {...props}
     >
       {(variant === "present" || variant === "pursuing") && (
-        <span className="relative flex h-1.5 w-1.5">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-electric-200 opacity-75 motion-safe:animate-ping motion-reduce:hidden" />
-          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white" />
-        </span>
+        <span className="h-1.5 w-1.5 rounded-full bg-white shrink-0" aria-hidden="true" />
       )}
       {variant === "available" && (
-        <span className="relative flex h-1.5 w-1.5">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-electric-400 opacity-75 motion-safe:animate-ping motion-reduce:hidden" />
-          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-electric" />
-        </span>
+        <span className="h-1.5 w-1.5 rounded-full bg-electric shrink-0" aria-hidden="true" />
+      )}
+      {variant === "live" && (
+        <span className="h-1.5 w-1.5 rounded-full bg-electric-300 shrink-0" aria-hidden="true" />
       )}
       <span>{children}</span>
     </span>

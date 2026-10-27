@@ -3,7 +3,7 @@ import { GraduationCap } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { cn } from "@/lib/utils/cn";
+import { PageHero } from "@/components/shared/PageHero";
 
 export type EducationHeroSectionProps = {
   eyebrow?: string;
@@ -32,15 +32,16 @@ export function EducationHeroSection({
   count,
   className,
 }: EducationHeroSectionProps) {
-  const eyebrowText = eyebrow || page?.eyebrow?.trim() || "Education";
+  const rawEyebrow = eyebrow || page?.eyebrow?.trim() || "Education";
+  const eyebrowText = rawEyebrow.replace(/^\d{2,3}\s*[—–-]\s*/, "");
   const headingTitle = title || page?.title?.trim() || "What I've *studied*";
   const introText = intro || page?.intro?.trim();
 
   return (
-    <section
+    <PageHero
       id="education-hero"
       aria-labelledby="education-page-title"
-      className={cn("relative w-full pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20", className)}
+      className={className}
     >
       <Container>
         <div className="max-w-3xl space-y-6">
@@ -60,7 +61,7 @@ export function EducationHeroSection({
 
           {count !== undefined && count > 0 && (
             <div className="pt-2">
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-electric/30 bg-surface-2/80 px-4 py-2 font-label text-small text-electric-200 shadow-sm backdrop-blur-xs">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-electric/30 bg-surface-2/80 px-3.5 py-1.5 font-label text-micro text-electric-200 shadow-sm backdrop-blur-xs">
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-electric-900/60 text-electric-300">
                   <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
@@ -75,6 +76,6 @@ export function EducationHeroSection({
         {/* Editorial hairline separator */}
         <div className="mt-12 sm:mt-16 w-full border-b border-line" aria-hidden="true" />
       </Container>
-    </section>
+    </PageHero>
   );
 }

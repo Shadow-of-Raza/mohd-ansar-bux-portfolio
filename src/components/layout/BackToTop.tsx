@@ -24,7 +24,7 @@ export function BackToTop({ className, label = "Back to top" }: BackToTopProps) 
       onClick={handleClick}
       aria-label={label}
       className={cn(
-        "group inline-flex min-h-[44px] items-center gap-2 text-label font-label tracking-[0.06em] text-fg-muted transition-colors duration-200 select-none",
+        "group inline-flex min-h-[44px] items-center gap-2 text-micro font-label tracking-[0.06em] text-fg-subtle transition-colors duration-200 select-none",
         "hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-300",
         className,
       )}

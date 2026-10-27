@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
-import { cn } from "@/lib/utils/cn";
+import { PageHero } from "@/components/shared/PageHero";
 
 export type PdHeroProps = {
   title: string;
@@ -66,10 +66,10 @@ export function PdHero({
   const isLive = status.toLowerCase() === "live";
 
   return (
-    <section
+    <PageHero
       id="pd-hero"
       aria-labelledby="project-title"
-      className={cn("relative w-full pt-28 pb-8 md:pt-36 md:pb-12", className)}
+      className={className}
     >
       {/* Subtle radial ambient glow behind the hero */}
       <div
@@ -91,20 +91,13 @@ export function PdHero({
 
         {/* Category & Status Badges */}
         <div className="mb-4 flex flex-wrap items-center gap-3">
-          <Badge variant={type === "open-source" ? "open-source" : "default"}>
+          <Badge variant={type === "open-source" ? "open-source" : "professional"}>
             {formatTypeLabel(type)}
           </Badge>
 
-          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface-2 px-3 py-1 font-label text-micro text-white">
-            <span
-              className={cn(
-                "h-2 w-2 rounded-full",
-                isLive ? "bg-emerald-400 animate-pulse" : "bg-electric",
-              )}
-              aria-hidden="true"
-            />
-            <span>{formatStatusLabel(status)}</span>
-          </span>
+          <Badge variant={isLive ? "live" : "completed"}>
+            {formatStatusLabel(status)}
+          </Badge>
         </div>
 
         {/* Project Title */}
@@ -143,6 +136,6 @@ export function PdHero({
           </div>
         )}
       </Container>
-    </section>
+    </PageHero>
   );
 }

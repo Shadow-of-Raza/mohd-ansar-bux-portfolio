@@ -3,6 +3,7 @@ import { Clock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { renderAccent } from "@/lib/utils/format";
+import { PageHero } from "@/components/shared/PageHero";
 import { cn } from "@/lib/utils/cn";
 
 export type ContactHeroSectionProps = {
@@ -32,15 +33,14 @@ export function ContactHeroSection({
   responseTime,
   className,
 }: ContactHeroSectionProps) {
-  // Format eyebrow with signature "01 — " number prefix if not already provided
   const rawEyebrow = eyebrow.trim() || "Contact";
-  const eyebrowText = /^\d{2,3}\s*[—–-]\s*/.test(rawEyebrow) ? rawEyebrow : `01 — ${rawEyebrow}`;
+  const eyebrowText = rawEyebrow.replace(/^\d{2,3}\s*[—–-]\s*/, "");
 
   return (
-    <section
+    <PageHero
       id="contact-hero"
       aria-labelledby="contact-hero-title"
-      className={cn("relative w-full pt-28 pb-10 md:pt-36 md:pb-14", className)}
+      className={className}
     >
       {/* Subtle ambient radial glow behind hero title */}
       <div
@@ -49,34 +49,32 @@ export function ContactHeroSection({
       />
 
       <Container>
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-[760px]">
-            <div className="mb-3 sm:mb-4">
-              <Eyebrow>{eyebrowText}</Eyebrow>
-            </div>
-
-            <h1
-              id="contact-hero-title"
-              className="font-display text-display-xl text-balance text-white"
-            >
-              {renderAccent(title)}
-            </h1>
-
-            {intro && (
-              <p className="mt-4 max-w-[56ch] font-body text-lead text-pretty text-fg-muted">
-                {intro}
-              </p>
-            )}
+        <div className="max-w-4xl">
+          <div className="mb-3 sm:mb-4">
+            <Eyebrow>{eyebrowText}</Eyebrow>
           </div>
 
-          {/* Status & Response Time Badges */}
-          <div className="flex flex-wrap items-center gap-2.5 self-start lg:self-end">
+          <h1
+            id="contact-hero-title"
+            className="font-display text-display-xl text-balance text-white"
+          >
+            {renderAccent(title)}
+          </h1>
+
+          {intro && (
+            <p className="mt-4 max-w-[56ch] font-body text-lead text-pretty text-fg-muted">
+              {intro}
+            </p>
+          )}
+
+          {/* Status & Response Time Badges (left-aligned under intro per G3) */}
+          <div className="mt-6 flex flex-wrap items-center gap-2.5">
             {availability && (
               <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface-1 px-4 py-2 font-label text-micro tracking-wider text-fg-subtle select-none">
                 <span
                   className={cn(
                     "h-2 w-2 rounded-full",
-                    availability.open ? "bg-electric animate-pulse" : "bg-fg-subtle",
+                    availability.open ? "bg-electric-300" : "bg-fg-subtle",
                   )}
                   aria-hidden="true"
                 />
@@ -98,6 +96,6 @@ export function ContactHeroSection({
         {/* Section Hairline Divider */}
         <div className="mt-10 h-px w-full bg-line md:mt-14" aria-hidden="true" />
       </Container>
-    </section>
+    </PageHero>
   );
 }
