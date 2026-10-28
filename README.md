@@ -24,7 +24,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Documentation & Machine Migration
 
-- **[docs/SYSTEM-REQUIREMENTS.md](./docs/SYSTEM-REQUIREMENTS.md)**: Hardware, OS, Node, and environment setup instructions for new systems.
+- **[NEW-SYSTEM-SETUP.md](./NEW-SYSTEM-SETUP.md)**: **Quick 3-step setup & continuation guide** with copy-paste Agent Tuning Prompt for new machines.
+- **[docs/SYSTEM-REQUIREMENTS.md](./docs/SYSTEM-REQUIREMENTS.md)**: Detailed hardware, OS, Node, and environment setup instructions.
 - **[docs/AGENT-HANDOVER.md](./docs/AGENT-HANDOVER.md)**: Complete Agent Tuning Prompt to copy-paste into Antigravity or any AI assistant.
 - **[docs/PROGRESS.md](./docs/PROGRESS.md)**: Current roadmap and phase completion status.
 - **[docs/walkthroughs/INDEX.md](./docs/walkthroughs/INDEX.md)**: Historical changelogs and verification walkthroughs.
