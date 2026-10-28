@@ -2,6 +2,7 @@
 
 | Date       | ID          | Type    | Summary                                                                            | Link                                                       |
 | ---------- | ----------- | ------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| 2026-10-28 | BACKUP-HANDOVER | chore   | Complete project backup, system requirements guide, agent tuning prompt, and remote push | [BACKUP-HANDOVER_2026-10-28.md](./BACKUP-HANDOVER_2026-10-28.md) |
 | 2026-10-27 | SPACE-BG    | feat    | Global space background (nebula gradient + calm twinkling starfield; transparent header/footer) | [SPACE-BG_2026-10-27.md](./SPACE-BG_2026-10-27.md) |
 | 2026-10-27 | CLEANUP-PUSH | chore   | Script and asset cleanup, safety checks (no secrets, .env.local ignored), and first GitHub push | [CLEANUP-PUSH_2026-10-27.md](./CLEANUP-PUSH_2026-10-27.md) |
 | 2026-10-27 | POLISH      | polish  | Static UI polish pass across Global (G1–G7), Home (H1–H6), and Pages (A1, S1, E1, K1, C1–C3, P1) with before/after screenshots | [POLISH_2026-10-27.md](./POLISH_2026-10-27.md) |

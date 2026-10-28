@@ -14,9 +14,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Scripts
 
-- `pnpm dev` - Start development server
-- `pnpm validate:data` - Validate data files
-- `pnpm build` - Run prebuild data validation and production build
-- `pnpm lint` - Run ESLint
+- `pnpm dev` - Start development server (Turbopack)
+- `pnpm validate:data` - Validate all data files, schemas, and assets
+- `pnpm build` - Run prebuild data validation and production SSG build
+- `pnpm lint` - Run ESLint (Next 16 flat config)
 - `pnpm typecheck` - Run TypeScript compiler checks
 - `pnpm format` - Run Prettier formatting
+- `python scripts/capture-screenshots.py` - Automated headless responsive screenshot capture tool (1440px, 768px, 375px)
+
+## Documentation & Machine Migration
+
+- **[docs/SYSTEM-REQUIREMENTS.md](./docs/SYSTEM-REQUIREMENTS.md)**: Hardware, OS, Node, and environment setup instructions for new systems.
+- **[docs/AGENT-HANDOVER.md](./docs/AGENT-HANDOVER.md)**: Complete Agent Tuning Prompt to copy-paste into Antigravity or any AI assistant.
+- **[docs/PROGRESS.md](./docs/PROGRESS.md)**: Current roadmap and phase completion status.
+- **[docs/walkthroughs/INDEX.md](./docs/walkthroughs/INDEX.md)**: Historical changelogs and verification walkthroughs.
+- **[AGENTS.md](./AGENTS.md)**: Core project rules, design tokens, and architectural invariants.
